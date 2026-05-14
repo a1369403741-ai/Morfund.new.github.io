@@ -4249,14 +4249,14 @@
     .rmb-section-header p{ font-size:12px; }
     .product-page-rmb .rmb-product-spec .sec-title,
     .product-page-rmb .rmb-process .sec-title{
-      white-space:nowrap;
-      font-size:clamp(19px, 5.6vw, 28px) !important;
+      white-space:normal;
+      font-size:28px !important;
       line-height:1.25;
     }
     .product-page-usd #products .sec-title,
     .product-page-usd #process .sec-title,
     .product-page-usd #scenarios .sec-title{
-      white-space:nowrap;
+      white-space:normal;
       font-size:28px !important;
       line-height:1.25;
     }
@@ -4345,6 +4345,16 @@
       grid-column:2;
       width:auto;
       text-align:left;
+    }
+    .product-page-usd .advantages-header h2,
+    .product-page-usd .sec-title,
+    .product-page-rmb .rmb-section-header h2,
+    .product-page-rmb .sec-title{
+      max-width:100%;
+      font-size:28px !important;
+      line-height:1.28;
+      white-space:normal !important;
+      overflow-wrap:break-word;
     }
     .rmb-dowsure .rmb-dowsure-band{
       font-size:18px;
