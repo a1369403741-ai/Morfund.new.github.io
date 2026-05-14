@@ -1,0 +1,5841 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Morfund — 跨境电商美金融资 · $10M 极致额度</title>
+<meta name="description" content="专为 Amazon、Walmart、eBay 等主流跨境电商卖家提供高达 $10M 美金融资额度，最低 5.8% 起息，资金直达香港企业账户。">
+<meta property="og:title" content="Morfund — 跨境电商美金融资">
+<meta property="og:description" content="$10M 极致额度，香港主体合规，最快 1 周开户放款。">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     FastPay Landing — V2 Refined
+     Brand: dark editorial · light-streak signature · official Amazon partner
+     ============================================================ */
+
+  :root{
+    /* surfaces */
+    --bg:        #07070C;
+    --bg-1:      #0B0B12;
+    --bg-2:      #10101A;
+    --card:      #11111B;
+    --card-2:    #161626;
+    --card-hi:   #1B1B28;
+
+    /* lines */
+    --line:      rgba(255,255,255,0.06);
+    --line-2:    rgba(255,255,255,0.10);
+    --line-3:    rgba(255,255,255,0.16);
+
+    /* ink */
+    --ink:       #F2F2F6;
+    --ink-2:     #B0B0BE;
+    --ink-3:     #6E6E80;
+    --ink-4:     #3F3F4E;
+
+    /* brand */
+    --red:       #F40064;
+    --red-2:     #FF2B7B;
+    --lime:      #FF6200;
+
+    /* signature streak palette (matches hero photo) */
+    --magenta:   #F40064;
+    --violet:    #7C4DFF;
+    --blue:      #4D7BFF;
+    --cyan:      #22E1FF;
+    --font-sans: 'Inter', 'Source Han Sans SC', 'Source Han Sans CN', 'Source Han Sans', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --btn-grad: linear-gradient(90deg, #1F63FF 0%, #3157FF 32%, #5E2CFF 68%, #7A1FFF 100%);
+    --btn-grad-hover: linear-gradient(90deg, #2B6CFF 0%, #3B60FF 32%, #6938FF 68%, #862AFF 100%);
+
+    --grad-trail: linear-gradient(90deg, #FF2E9A 0%, #C04BFF 35%, #4D7BFF 65%, #22E1FF 100%);
+    --grad-trail-vert: linear-gradient(180deg, #FF2E9A 0%, #C04BFF 35%, #4D7BFF 65%, #22E1FF 100%);
+
+    /* radii */
+    --r-xs: 6px;
+    --r-sm: 10px;
+    --r-md: 14px;
+    --r-lg: 20px;
+    --r-xl: 28px;
+    --r-2xl: 36px;
+
+    /* layout */
+    --container: 1200px;
+    --container-wide: 1200px;
+    --gutter: 32px;
+
+    /* easing */
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  *, *::before, *::after{ box-sizing: border-box; }
+  html{ -webkit-text-size-adjust: 100%; }
+  html, body{ margin: 0; padding: 0; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter Tight', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-feature-settings: "ss01","cv11","kern";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    line-height: 1.55;
+  }
+  ::selection{ background: var(--red); color: #fff; }
+  img{ max-width: 100%; display: block; }
+  a{ color: inherit; }
+
+  /* ---------- type system ---------- */
+  .display{
+    font-family: 'Inter Tight','Noto Sans SC',sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  .serif-i{
+    font-family: 'Instrument Serif','Noto Serif SC',serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .serif-cn{
+    font-family: 'Noto Serif SC','Inter Tight',serif;
+    font-weight: 500;
+  }
+  .mono{
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-feature-settings: "ss01","ss02";
+  }
+  .num{
+    font-feature-settings:"tnum","ss01";
+    letter-spacing: 1em;
+    font-weight: 600;
+  }
+
+  .eyebrow{
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    font-weight: 500;
+  }
+
+  /* ---------- layout primitives ---------- */
+  .container{ width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+  .container-wide{ width: 100%; max-width: var(--container-wide); margin: 0 auto; padding: 0 var(--gutter); }
+  section{ position: relative; }
+  .hairline{ height: 1px; background: var(--line); }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position: sticky; top: 0; z-index: 60;
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    background: rgba(7,7,12,0.62);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    height: 68px;
+    gap: 48px;
+  }
+  .nav-logo{ display: flex; align-items: center; gap: 10px; }
+  .nav-logo img{ height: 22px; }
+  .nav-links{ display: flex; align-items: center; gap: 36px; justify-self: center; }
+  .nav-links a{
+    color: var(--ink-2); text-decoration: none;
+    font-size: 14px; font-weight: 450;
+    display: inline-flex; align-items: center; gap: 5px;
+    transition: color .2s var(--ease-out);
+  }
+  .nav-links a:hover{ color: var(--ink); }
+  .nav-links svg{ width: 9px; height: 9px; opacity: .45; }
+  .nav-cta{ display: flex; gap: 10px; align-items: center; }
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 8px; padding: 11px 20px;
+    border-radius: 999px;
+    font-family: 'Inter Tight','Noto Sans SC',sans-serif;
+    font-size: 20px; font-weight: 700;
+    letter-spacing: -0.05em;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .25s var(--ease-out);
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .btn-ghost{
+    color: var(--ink);
+    border-color: var(--line-2);
+    background: transparent;
+  }
+  .btn-ghost:hover{
+    background: rgba(255,255,255,0.04);
+    border-color: var(--line-3);
+  }
+  .btn-primary{
+    color: #fff;
+    background: var(--btn-grad);
+    box-shadow: 0 0 0 1px rgba(255,255,255,.16) inset, 0 10px 28px -10px rgba(82,72,255,.72);
+  }
+  .btn-primary:hover{
+    background: var(--btn-grad-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 0 0 1px rgba(255,255,255,.22) inset, 0 14px 34px -10px rgba(96,68,255,.82);
+  }
+  .btn-light{
+    color: #0a0a0f;
+    background: #fff;
+  }
+  .btn-light:hover{ background: #eaeaef; }
+  .btn-lg{ padding: 18px 26px; font-size: 14.5px; }
+
+  .arrow-i{ width: 12px; height: 12px; }
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero{
+    position: relative;
+    min-height: 700px;
+    padding: 96px 0 120px;
+    overflow: hidden;
+    isolation: isolate;
+    background: #050509;
+  }
+  .hero-photo{
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+      url("./assets/hero.png") center right / cover no-repeat;
+  }
+  /* Photo darkening mask — gentler than V1 to let the photo breathe */
+  .hero-veil{
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background:
+      linear-gradient(90deg,
+        rgba(5,5,9,0.96) 0%,
+        rgba(5,5,9,0.86) 24%,
+        rgba(5,5,9,0.45) 48%,
+        rgba(5,5,9,0.05) 72%,
+        rgba(5,5,9,0.20) 100%),
+      linear-gradient(180deg,
+        rgba(5,5,9,0.55) 0%,
+        rgba(5,5,9,0) 22%,
+        rgba(5,5,9,0) 70%,
+        rgba(5,5,9,0.85) 100%);
+  }
+
+  .hero-grid{
+    position: relative;
+    z-index: 4;
+    min-height: 600px;
+    display: grid;
+    grid-template-columns: minmax(560px, 660px) 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hero-copy{ max-width: 660px; }
+
+  .hero-eyebrow{
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 5px 14px 5px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line-2);
+    background: rgba(42, 42, 68, 0.336);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .hero-eyebrow .dot{
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--lime);
+    box-shadow: 0 0 0 4px rgba(47, 78, 255, 0.14), 0 0 16px rgba(47, 78, 255, 0.7);
+  }
+  .hero-eyebrow .lbl{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: var(--ink-2);
+    text-transform: uppercase;
+  }
+  .hero-eyebrow .div{
+    width: 1px; height: 11px; background: var(--line-3);
+  }
+  .hero-eyebrow .ver{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .hero h1{
+    margin: 30px 0 0;
+    font-family: 'Inter Tight','Noto Sans SC',sans-serif;
+    font-weight: 600;
+    font-size: clamp(62px, 6.5vw, 96px);
+    line-height: 1.1;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+  .hero h1 .highlight{
+    background: var(--grad-trail);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    /* subtle gradient anchored to magenta-cyan signature — used ONCE */
+  }
+  .hero h1 .ital{
+    font-family: 'Noto Serif SC','Instrument Serif',serif;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    /* serif italic accent for editorial feel */
+  }
+
+  .hero-sub{
+    margin-top: 20px;
+    max-width: 600px;
+    font-size: 17.5px;
+    line-height: 1.65;
+    color: var(--ink-2);
+    font-weight: 400;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.45);
+  }
+
+  .hero-ctas{
+    margin-top: 60px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 80px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line-2);
+    width: fit-content;
+  }
+  .hero-meta .m{ display: flex; flex-direction: column; gap: 2px; }
+  .hero-meta .v{
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  .hero-meta .l{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    color: var(--ink-3);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  /* Floating tag bar in hero photo region — refined, smaller */
+  .hero-tagbar{
+    position: absolute;
+    right: var(--gutter);
+    bottom: 36px;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+    max-width: 280px;
+  }
+  .hero-tag{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 17px 13px;
+    border-radius: 999px;
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    background: rgba(8,8,14,0.55);
+    border: 1px solid rgba(255,255,255,0.10);
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: var(--ink-2);
+    font-weight: 450;
+  }
+  .hero-tag .swatch{
+    width: 16px; height: 6px; border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Hero scroll cue */
+  .hero-scroll{
+    position: absolute;
+    left: var(--gutter);
+    bottom: 36px;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink-3);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .hero-scroll .line{
+    width: 32px; height: 1px;
+    background: linear-gradient(90deg, var(--ink-3), transparent);
+  }
+
+  /* ============================================================
+     SECTION SHELL
+     ============================================================ */
+  .sec{
+    padding: 128px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .sec.tight{ padding: 120px 0; }
+  .sec > .container{ position: relative; z-index: 2; }
+
+  .sec-bg{
+    position: absolute; inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .grid-mask{
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 0%, transparent 78%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 0%, transparent 78%);
+  }
+  .blob{
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: .14;
+    pointer-events: none;
+  }
+  .blob.magenta{ background: var(--magenta); }
+  .blob.violet { background: var(--violet); }
+  .blob.cyan   { background: var(--cyan); }
+  .blob.red    { background: var(--red); }
+
+  /* Section header — editorial */
+  .sec-head{
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 64px;
+    align-items: end;
+    margin-bottom: 100px;
+  }
+  .sec-eyebrow{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .sec-num{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    color: var(--ink-3);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .sec-num .grad{
+    background: var(--grad-trail);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    font-weight: 700;
+  }
+  .sec-pip{
+    width: 28px; height: 1px; background: var(--ink-4);
+  }
+  .sec-tag{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.16em;
+    color: var(--ink-2);
+    text-transform: uppercase;
+  }
+  .sec-title{
+    font-family: 'Inter Tight','Noto Sans SC',sans-serif;
+    font-weight: 600;
+    font-size: clamp(44px, 4.2vw, 60px);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    margin: 0;
+    color: var(--ink);
+    max-width: 820px;
+    text-wrap: balance;
+  }
+  .sec-title .ital{
+    font-family: 'Noto Serif SC', serif;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+  }
+  .sec-title .grad{
+    background: var(--grad-trail);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .sec-desc{
+    color: var(--ink-2);
+    font-size: 14px;
+    line-height: 1.65;
+    max-width: 380px;
+    padding-bottom: 4px;
+  }
+
+  /* Subtle section seam */
+  .seam{
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      var(--line) 18%,
+      var(--line-2) 50%,
+      var(--line) 82%,
+      transparent 100%);
+  }
+
+  /* ============================================================
+     SECTION 01 — PROCESS
+     editorial 3-step layout, NOT identical cards
+     ============================================================ */
+  .process-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .process-step{
+    padding: 36px 32px 36px 0;
+    border-right: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    min-height: 120px;
+    position: relative;
+  }
+  .process-step:nth-child(2){ padding-left: 32px; }
+  .process-step:nth-child(3){
+    padding-left: 36px;
+    border-right: 0;
+  }
+  .process-step .num{
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 84px;
+    font-weight: 200;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    color: var(--ink-4);
+    margin-bottom: 28px;
+  }
+  .process-step.active .num{
+    background: var(--grad-trail);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .process-step h3{
+    font-family: 'Inter Tight','Noto Sans SC',sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
+    color: var(--ink);
+  }
+  .process-step p{
+    color: var(--ink-2);
+    font-size: 14.5px;
+    line-height: 1.65;
+    margin: 0;
+    max-width: 320px;
+  }
+  .process-meta{
+    margin-top: auto;
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    color: var(--ink-3);
+    text-transform: uppercase;
+  }
+  .process-meta .meta-dot{
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--ink-3);
+  }
+  .process-meta .meta-dot.live{
+    background: var(--lime);
+    box-shadow: 0 0 8px var(--lime);
+  }
+
+  /* ============================================================
+     SECTION 02 — AMAZON LENDING (asymmetric split)
+     ============================================================ */
+  .amazon-split{
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+  }
+  .amazon-hero-card{
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--r-xl);
+    border: 1px solid var(--line);
+    background:
+      radial-gradient(800px 240px at 70% 30%, rgba(255,153,0,0.10), transparent 60%),
+      var(--card);
+    padding: 44px 44px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 40px;
+  }
+  .amazon-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding: 7px 13px 7px 9px;
+    border-radius: 999px;
+    background: rgba(255,153,0,0.08);
+    border: 1px solid rgba(255,153,0,0.22);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.12em;
+    color: #FF6200;
+    align-self: flex-start;
+  }
+  .amazon-mark{
+    width: 16px; height: 16px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #FF6200, #FFB547);
+    color: #2a1a00;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    font-family: 'Inter Tight', sans-serif;
+  }
+  .amazon-card-title{
+    font-family: 'Inter Tight','Noto Sans SC',sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    letter-spacing: -0.028em;
+    line-height: 1.18;
+    color: var(--ink);
+    margin: 40px 0 20px;
+  }
+  .amazon-card-desc{
+    color: var(--ink-2);
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 420px;
+    margin: 0 0 28px;
+  }
+  .amazon-flow{
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 40px;
+  }
+  .flow-row{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1.2fr;
+    gap: 14px;
+    align-items: center;
+  }
+  .flow-node{
+    padding: 16px 18px;
+    border-radius: var(--r-md);
+    border: 1px solid var(--line-2);
+    background: rgba(255,255,255,0.025);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 12px;
+  }
+  .flow-icn{
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #FF9900, #FFB547);
+    color: #2a1a00;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .flow-icn.fp{
+    background: var(--grad-trail);
+    color: #fff;
+  }
+  .flow-icn.cny{
+    background: linear-gradient(135deg, #D9FF3F, #22E1FF);
+    color: #0a0a0f;
+  }
+  .flow-text{
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--ink);
+    font-weight: 200;
+  }
+  .flow-text .meta{
+    display: block;
+    color: var(--ink-3);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .flow-arr{
+    color: var(--ink-3);
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .amazon-feature-list{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--r-xl);
+    padding: 12px 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  .feat-item{
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 0;
+    align-items: start;
+  }
+  .feat-item:last-child{ border-bottom: 0; }
+  .feat-num{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--ink-3);
+    letter-spacing: 0.12em;
+    padding-top: 4px;
+  }
+  .feat-body h4{
+    font-family: 'Inter Tight','Noto Sans SC',sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -0.015em;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+  .feat-body p{
+    color: var(--ink-2);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ============================================================
+     SECTION 03 — DOWSURE AI (asymmetric data display)
+     ============================================================ */
+  .ai-split{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .ai-card{
+    border-radius: var(--r-xl);
+    border: 1px solid var(--line);
+    background:
+      radial-gradient(600px 300px at 100% 0%, rgba(124,77,255,0.10), transparent 60%),
+      var(--card);
+    padding: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .ai-card-tag{
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--line-2);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    color: var(--ink-2);
+    align-self: flex-start;
+  }
+  .ai-card-tag .live-dot{
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--lime);
+    box-shadow: 0 0 8px var(--lime);
+  }
+  .ai-card h3{
+    font-family: 'Inter Tight','Noto Sans SC',sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: -0.028em;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--ink);
+  }
+  .ai-card p{
+    color: var(--ink-2);
+    font-size: 14.5px;
+    line-height: 1.65;
+    margin: 0;
+  }
+  .feature-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+  }
+  .feature-tag{
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line-2);
+    font-size: 14px;
+    color: var(--ink-2);
+    font-weight: 450;
+  }
+  .feature-tag .d{
+    width: 5px; height: 5px; border-radius: 50%;
+  }
+  .feature-tag.more{ color: var(--ink-3); }
+
+  .ai-stat-card{
+    border-radius: var(--r-xl);
+    border: 1px solid var(--line);
+    background: var(--card);
+    padding: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .ai-stat-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .ai-stat-chip{
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--line-2);
+    background: rgba(255,255,255,0.025);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    color: var(--ink-2);
+  }
+  .ai-stat-chip.lime{
+    background: rgba(217,255,63,0.06);
+    border-color: rgba(217,255,63,0.22);
+    color: var(--lime);
+  }
+  .ai-stat-bignum{
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    font-size: 124px;
+    letter-spacing: -0.05em;
+    line-height: 0.92;
+    color: var(--ink);
+    margin: 12px 0 0;
+  }
+  .ai-stat-bignum .pct{
+    font-size: 56px;
+    font-weight: 400;
+    color: var(--ink-3);
+    margin-left: 6px;
+    letter-spacing: -0.03em;
+  }
+  .ai-stat-bignum .plus{
+    color: var(--lime);
+    font-weight: 400;
+  }
+  .ai-stat-cap{
+    color: var(--ink-2);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 360px;
+  }
+  .ai-stat-graph{
+    height: 80px;
+    margin-top: 8px;
+    position: relative;
+  }
+  .ai-stat-graph svg{
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ============================================================
+     SECTION 04 — PRODUCT PILLARS (varied, not uniform)
+     ============================================================ */
+  .pillar-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr;
+    gap: 20px;
+  }
+  .pillar{
+    border-radius: var(--r-xl);
+    border: 1px solid var(--line);
+    background: var(--card);
+    padding: 32px 32px 32px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 360px;
+    transition: border-color .25s var(--ease-out), transform .35s var(--ease-out);
+  }
+  .pillar:hover{
+    border-color: var(--line-3);
+    transform: translateY(-2px);
+  }
+  .pillar.featured{
+    background:
+      radial-gradient(640px 280px at 0% 100%, rgba(232,52,78,0.10), transparent 60%),
+      var(--card);
+  }
+  .pillar-icn-wrap{
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line-2);
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+  .pillar.featured .pillar-icn-wrap{
+    background: rgba(232,52,78,0.12);
+    border-color: rgba(232,52,78,0.30);
+    color: var(--red-2);
+  }
+  .pillar h4{
+    font-family: 'Inter Tight','Noto Sans SC',sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    margin: 0 0 12px;
+    color: var(--ink);
+  }
+  .pillar h4 .ital{
+    font-family: 'Noto Serif SC', serif;
+    font-style: italic;
+    font-weight: 500;
+  }
+  .pillar p{
+    color: var(--ink-2);
+    font-size: 14px;
+    line-height: 1.65;
+    margin: 0;
+    max-width: 340px;
+  }
+  .pillar-foot{
+    margin-top: auto;
+    padding-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    color: var(--ink-3);
+    text-transform: uppercase;
+  }
+  .pillar-foot .link{
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    transition: color .2s var(--ease-out);
+  }
+  .pillar-foot .link:hover{ color: var(--red-2); }
+
+  /* ============================================================
+     SECTION 05 — AD CHANNELS (split)
+     ============================================================ */
+  .ads-split{
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 24px;
+    align-items: stretch;
+  }
+  .ads-headline{
+    border-radius: var(--r-xl);
+    border: 1px solid var(--line);
+    background: var(--card);
+    padding: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .ads-headline h3{
+    font-family: 'Inter Tight','Noto Sans SC',sans-serif;
+    font-weight: 600;
+    font-size: 38px;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0;
+    color: var(--ink);
+  }
+  .ads-headline h3 .ital{
+    font-family: 'Noto Serif SC', serif;
+    font-style: italic;
+    font-weight: 500;
+  }
+  .ads-headline p{
+    color: var(--ink-2);
+    font-size: 14.5px;
+    line-height: 1.65;
+    margin: 0;
+  }
+  .ads-channels{
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--r-xl);
+    border: 1px solid var(--line);
+    background: var(--card);
+    overflow: hidden;
+  }
+  .channel-row{
+    display: grid;
+    grid-template-columns: 36px 1fr auto auto;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--line);
+    transition: background .2s var(--ease-out);
+  }
+  .channel-row:last-child{ border-bottom: 0; }
+  .channel-row:hover{ background: rgba(255,255,255,0.02); }
+  .channel-mark{
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    font-family: 'Inter Tight', sans-serif;
+  }
+  .channel-mark.amz{ background: linear-gradient(135deg, #FF9900, #FFB547); color: #2a1a00; }
+  .channel-mark.meta{ background: linear-gradient(135deg, #1877F2, #4DA3FF); }
+  .channel-mark.goog{ background: linear-gradient(135deg, #4285F4, #34A853); }
+  .channel-mark.tt{ background: linear-gradient(135deg, #FF0050, #25F4EE); }
+  .channel-info .name{
+    font-family: 'Inter Tight','Noto Sans SC',sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .channel-info .meta{
+    color: var(--ink-3);
+    font-size: 14px;
+    margin-top: 2px;
+  }
+  .channel-pct{
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--lime);
+    letter-spacing: -0.02em;
+  }
+  .channel-arrow{
+    color: var(--ink-3);
+    transition: color .2s var(--ease-out), transform .2s var(--ease-out);
+  }
+  .channel-row:hover .channel-arrow{ color: var(--ink); transform: translateX(2px); }
+
+  /* ============================================================
+     SECTION 06 — STATS + TESTIMONIAL
+     ============================================================ */
+  .stats-row{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .stat-cell{
+    padding: 36px 32px 36px 0;
+    border-right: 1px solid var(--line);
+  }
+  .stat-cell:nth-child(n+2){ padding-left: 32px; }
+  .stat-cell:last-child{ border-right: 0; }
+  .stat-label{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.16em;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .stat-value{
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    font-size: 56px;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .stat-value .grad{
+    background: var(--grad-trail);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .stat-value .unit{
+    font-size: 22px;
+    color: var(--ink-2);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-left: 4px;
+  }
+  .stat-sub{
+    margin-top: 10px;
+    color: var(--ink-2);
+    font-size: 14px;
+    line-height: 1.55;
+    max-width: 240px;
+  }
+
+  .testi-wrap{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 24px;
+  }
+  .testi-card{
+    border-radius: var(--r-xl);
+    border: 1px solid var(--line);
+    background: var(--card);
+    padding: 48px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    min-height: 360px;
+  }
+  .testi-tag{
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line-2);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    color: var(--ink-2);
+    align-self: flex-start;
+  }
+  .testi-tag .d{
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 8px var(--cyan);
+  }
+  .testi-quote{
+    font-family: 'Inter Tight','Noto Sans SC',sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.45;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .testi-quote .ital{
+    font-family: 'Noto Serif SC', serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .testi-quote .accent{
+    background: var(--grad-trail);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    font-weight: 500;
+  }
+  .testi-byline{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .testi-avatar{
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2A1F4D, #4D2F1F);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+    border: 1px solid var(--line-2);
+  }
+  .testi-byline .name{
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .testi-byline .role{
+    font-size: 14px;
+    color: var(--ink-3);
+    margin-top: 2px;
+  }
+
+  .testi-stats{
+    border-radius: var(--r-xl);
+    border: 1px solid var(--line);
+    background: var(--card);
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .testi-stat-item{
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .testi-stat-item:last-child{ border-bottom: 0; padding-bottom: 0; }
+  .testi-stat-item:first-child{ padding-top: 0; }
+  .testi-stat-l{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .testi-stat-v{
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .testi-stat-v .grad{
+    background: var(--grad-trail);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .testi-stat-v .unit{
+    font-size: 16px;
+    color: var(--ink-2);
+    font-weight: 400;
+    margin-left: 4px;
+  }
+
+  /* ============================================================
+     SECTION 07 — ABOUT
+     ============================================================ */
+  .about-split{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 24px;
+  }
+  .about-card{
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    background:
+      radial-gradient(600px 280px at 0% 100%, rgba(124,77,255,0.10), transparent 60%),
+      var(--card);
+    padding: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .about-card .tag{
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 20px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line-2);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    color: var(--ink-2);
+    align-self: flex-start;
+  }
+  .about-card h3{
+    font-family: 'Inter Tight','Noto Sans SC',sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--ink);
+  }
+  .about-card h3 .ital{
+    font-family: 'Noto Serif SC', serif;
+    font-style: italic;
+    font-weight: 500;
+  }
+  .about-card p{
+    color: var(--ink-2);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 550px;
+  }
+  .about-marks{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 24px;
+    margin-top: 12px;
+  }
+  .about-mark{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--ink-2);
+    font-size: 12px;
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+  }
+  .about-mark .dot{
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--lime);
+    box-shadow: 0 0 8px rgba(217,255,63,0.55);
+    flex-shrink: 0;
+  }
+
+  .compliance-list{
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    padding: 8px 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  .comp-item{
+    padding: 26px 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 14px;
+  }
+  .comp-item:last-child{ border-bottom: 0; }
+  .comp-l{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .comp-icn{
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--line-2);
+    background: rgba(255,255,255,0.03);
+    color: var(--ink-2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .comp-text .t{
+    font-size: 16px;
+    color: var(--ink);
+    font-weight: 400;
+    margin: 0;
+  }
+  .comp-text .s{
+    font-size: 12px;
+    color: var(--ink-3);
+    margin-top: 4px;
+  }
+  .comp-stamp{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--line-2);
+  }
+
+  /* ============================================================
+     FINAL CTA
+     ============================================================ */
+  .final-cta{
+    padding: 140px 0 168px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg) 0%, #0A0A12 100%);
+  }
+  .final-cta-streak{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .final-cta-streak svg{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .final-cta .tag{
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 13px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line-2);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    letter-spacing: 0.16em;
+    color: var(--ink-2);
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+  }
+  .final-cta .tag .d{
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--lime);
+    box-shadow: 0 0 10px var(--lime);
+  }
+  .final-cta h2{
+    font-family: 'Inter Tight','Noto Sans SC',sans-serif;
+    font-weight: 600;
+    font-size: clamp(56px, 5.5vw, 82px);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    margin: 0 0 24px;
+    color: var(--ink);
+    position: relative;
+    z-index: 2;
+    text-wrap: balance;
+  }
+  .final-cta h2 .grad{
+    background: var(--grad-trail);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .final-cta h2 .ital{
+    font-family: 'Noto Serif SC', serif;
+    font-style: italic;
+    font-weight: 500;
+  }
+  .final-cta p{
+    margin: 0 auto 44px;
+    max-width: 600px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    position: relative;
+    z-index: 2;
+  }
+  .final-ctas{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ============================================================
+     MOTION — subtle fade-up on scroll, no opening animation
+     ============================================================ */
+  .reveal{
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
+  }
+  .reveal.in{
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ============================================================
+     MORFUND 新增组件 CSS
+     ============================================================ */
+
+  /* 6 大核心卖点：3 列 × 2 行（复用 .pillar 样式） */
+  .benefit-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* 产品要素表 spec-list */
+  .spec-list{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 18px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .spec-row{
+    padding: 20px 0;
+    border-bottom: 24px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    gap: 10px;
+  }
+  .spec-row:last-child{ border-bottom: 0; }
+  .spec-l{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    color: var(--ink-3);
+    text-transform: uppercase;
+  }
+  .spec-v{
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 200;
+    text-align: right;
+  }
+  .spec-v .accent{
+    background: var(--grad-trail);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 300;
+  }
+  .spec-v .meta{
+    display: block;
+    color: var(--ink-3);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    margin-top: 2px;
+    font-weight: 300;
+  }
+
+  /* 5 步申请流程 — process-grid 加 .is-5 modifier */
+  .process-grid.is-5{ grid-template-columns: repeat(5, 1fr); }
+  .process-grid.is-5 .process-step{
+    padding: 30px 22px 36px 0;
+    min-height: 180px;
+  }
+  .process-grid.is-5 .process-step:nth-child(n+2){ padding-left: 24px; }
+  .process-grid.is-5 .process-step:nth-child(5){ padding-right: 0; border-right: 0; }
+  .process-grid.is-5 .process-step .num{ font-size: 60px; margin-bottom: 20px; }
+  .process-grid.is-5 .process-step h3{ font-size: 24px; }
+  .process-grid.is-5 .process-step p{ font-size: 14px; }
+
+  /* 5 大场景 grid (3 列上 + 2 列下) */
+  .scenario-grid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px;
+  }
+  .scenario-card{
+    border-radius: 24px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: border-color .25s var(--ease-out), transform .35s var(--ease-out);
+  }
+  .scenario-card:hover{
+    border-color: var(--line-3);
+    transform: translateY(-2px);
+  }
+  .scenario-grid > .scenario-card:nth-child(1),
+  .scenario-grid > .scenario-card:nth-child(2),
+  .scenario-grid > .scenario-card:nth-child(3){
+    grid-column: span 2;
+  }
+  .scenario-grid > .scenario-card:nth-child(4),
+  .scenario-grid > .scenario-card:nth-child(5){
+    grid-column: span 3;
+  }
+  .scenario-card .scenario-num{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .scenario-card h4{
+    font-family: 'Inter Tight', 'Noto Sans SC', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -0.022em;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--ink);
+  }
+  .scenario-card h4 .ital{
+    font-family: 'Noto Serif SC', serif;
+    font-style: italic;
+    font-weight: 500;
+  }
+  .scenario-bg{
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.6;
+    margin: 0;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .scenario-bg strong{
+    color: var(--ink);
+    font-weight: 500;
+    margin-right: 6px;
+  }
+  .scenario-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .scenario-list li{
+    font-size: 12px;
+    color: var(--ink);
+    line-height: 1.55;
+    padding-left: 18px;
+    position: relative;
+  }
+  .scenario-list li::before{
+    content: '';
+    position: absolute;
+    left: 0; top: 8px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--lime);
+    box-shadow: 0 0 6px rgba(217,255,63,0.5);
+  }
+
+  /* 平台覆盖标签变体 */
+  .channel-pct.coverage{
+    color: var(--ink-2);
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+
+  /* Morfund 新组件响应式 */
+  @media (max-width: 1024px){
+    .benefit-grid{ grid-template-columns: 1fr 1fr; }
+    .scenario-grid{ grid-template-columns: 1fr; }
+    .scenario-grid > .scenario-card:nth-child(n){ grid-column: auto; }
+    .process-grid.is-5{ grid-template-columns: 1fr; }
+    .process-grid.is-5 .process-step{
+      padding: 32px 0 !important;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .process-grid.is-5 .process-step:last-child{ border-bottom: 0; }
+    .spec-row{ grid-template-columns: 110px 1fr; padding: 18px 0; }
+    .spec-list{ padding: 4px 22px; }
+    .spec-v{ font-size: 14px; }
+  }
+  @media (max-width: 640px){
+    .benefit-grid{ grid-template-columns: 1fr; }
+    .scenario-card{ padding: 26px 22px; gap: 14px; }
+    .scenario-card h4{ font-size: 20px; }
+    .spec-row{ grid-template-columns: 1fr; gap: 6px; }
+    .spec-v{ text-align: left; font-size: 13.5px; }
+    .spec-list{ padding: 4px 20px; }
+  }
+
+  /* ---------- nav toggle (汉堡菜单按钮 ≤1024 才显示) ---------- */
+  .nav-toggle{
+    display: none;
+    background: transparent;
+    border: 1px solid var(--line-2);
+    color: var(--ink);
+    width: 40px; height: 40px;
+    border-radius: 999px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background .2s var(--ease-out), border-color .2s var(--ease-out);
+  }
+  .nav-toggle:hover{ background: rgba(255,255,255,0.04); border-color: var(--line-3); }
+
+  /* ============================================================
+     RESPONSIVE — Tablet ≤1024 / Mobile ≤640 / Small ≤375
+     原稿以桌面 1440 viewport 设计；此处补完 3 个断点。
+     注：移动端菜单的开合行为由 JS 接管（见底部 script 注释 TODO）。
+     ============================================================ */
+
+  /* ----- TABLET ≤1024 ----- */
+  @media (max-width: 1024px){
+    :root{
+      --container: 100%;
+      --container-wide: 100%;
+      --gutter: 28px;
+    }
+
+    .nav-inner{ height: 64px; gap: 16px; grid-template-columns: auto 1fr auto; }
+    .nav-links{ display: none; }
+    .nav-toggle{ display: inline-flex; }
+
+    .hero{ min-height: auto; padding: 80px 0 96px; }
+    .hero-grid{ grid-template-columns: 1fr; gap: 0; min-height: auto; }
+    .hero-copy{ max-width: 100%; }
+    .hero h1{ font-size: clamp(48px, 7vw, 72px); margin-top: 28px; }
+    .hero-veil{
+      background:
+        linear-gradient(90deg, rgba(5,5,9,0.96) 0%, rgba(5,5,9,0.82) 45%, rgba(5,5,9,0.5) 100%),
+        linear-gradient(180deg, rgba(5,5,9,0.55) 0%, rgba(5,5,9,0) 22%, rgba(5,5,9,0) 70%, rgba(5,5,9,0.88) 100%);
+    }
+    .hero-tagbar, .hero-scroll{ display: none; }
+    .hero-meta{ gap: 32px; padding-top: 22px; margin-top: 44px; }
+    .hero-meta .v{ font-size: 22px; }
+
+    .sec{ padding: 96px 0; }
+    .sec-head{ grid-template-columns: 1fr; gap: 28px; margin-bottom: 56px; align-items: start; }
+    .sec-desc{ max-width: 100%; }
+    .sec-title{ font-size: clamp(36px, 4.6vw, 52px); }
+
+    .process-grid{ grid-template-columns: 1fr; }
+    .process-step{
+      padding: 32px 0 !important;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+      min-height: auto;
+    }
+    .process-step:last-child{ border-bottom: 0; }
+    .process-step .num{ font-size: 64px; margin-bottom: 20px; }
+
+    .amazon-split{ grid-template-columns: 1fr; }
+    .amazon-hero-card{ padding: 36px 28px 0; min-height: auto; }
+    .amazon-card-title{ font-size: 26px; }
+    .flow-row{ grid-template-columns: 1fr; gap: 12px; }
+    .flow-arr{ transform: rotate(90deg); justify-self: center; }
+    .amazon-feature-list{ padding: 8px 24px; }
+
+    .ai-split{ grid-template-columns: 1fr; }
+    .ai-card, .ai-stat-card{ padding: 36px 28px; }
+    .ai-card h3{ font-size: 24px; }
+    .ai-stat-bignum{ font-size: 88px; }
+    .ai-stat-bignum .pct{ font-size: 40px; }
+
+    .pillar-grid{ grid-template-columns: 1fr 1fr; }
+    .pillar.featured{ grid-column: span 2; }
+    .pillar{ padding: 28px 24px; min-height: auto; }
+
+    .ads-split{ grid-template-columns: 1fr; }
+    .ads-headline{ padding: 36px 28px; gap: 24px; }
+    .ads-headline h3{ font-size: 30px; }
+    .channel-row{ padding: 20px 24px; gap: 16px; }
+
+    .stats-row{ grid-template-columns: 1fr 1fr; }
+    .stat-cell{
+      padding: 26px 24px 26px 0;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .stat-cell:nth-child(odd){ border-right: 1px solid var(--line); }
+    .stat-cell:nth-child(2n){ padding-left: 24px; padding-right: 0; }
+    .stat-cell:nth-last-child(-n+2){ border-bottom: 0; }
+    .stat-value{ font-size: 44px; }
+
+    .testi-wrap{ grid-template-columns: 1fr; margin-top: 48px; }
+    .testi-card{ padding: 36px 28px; min-height: auto; }
+    .testi-quote{ font-size: 22px; }
+    .testi-stats{ padding: 28px 24px; }
+
+    .about-split{ grid-template-columns: 1fr; }
+    .about-card{ padding: 36px 28px; }
+    .about-card h3{ font-size: 26px; }
+    .compliance-list{ padding: 4px 24px; }
+
+    .final-cta{ padding: 96px 0 112px; }
+    .final-cta h2{ font-size: clamp(40px, 6vw, 64px); }
+
+    .footer-grid{ grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 48px; }
+    .footer-brand{ grid-column: span 2; max-width: 100%; }
+    .footer-bot{ flex-direction: column; align-items: flex-start; gap: 12px; }
+  }
+
+  /* ----- MOBILE ≤640 ----- */
+  @media (max-width: 640px){
+    :root{ --gutter: 20px; }
+
+    .nav-inner{ height: 60px; gap: 12px; }
+    .nav-logo img{ height: 20px; }
+    .nav-cta .btn-ghost{ display: none; }
+    .nav-cta .btn{ padding: 9px 16px; font-size: 12.5px; }
+
+    .hero{ padding: 64px 0 80px; }
+    .hero-eyebrow{ padding: 6px 12px 6px 8px; }
+    .hero h1{ font-size: clamp(40px, 9vw, 56px); }
+    .hero-sub{ font-size: 16px; margin-top: 22px; }
+    .hero-ctas{ flex-direction: column; align-items: stretch; gap: 10px; }
+    .hero-ctas .btn{ justify-content: center; }
+    .hero-meta{ grid-template-columns: 1fr 1fr; gap: 20px 24px; margin-top: 40px; }
+    .hero-meta .v{ font-size: 20px; }
+
+    .sec{ padding: 72px 0; }
+    .sec-title{ font-size: clamp(28px, 6vw, 40px); }
+    .sec-desc{ font-size: 14.5px; }
+
+    .process-step .num{ font-size: 56px; margin-bottom: 16px; }
+    .process-step h3{ font-size: 20px; }
+
+    .amazon-hero-card{ padding: 28px 22px 0; }
+    .amazon-card-title{ font-size: 22px; }
+    .feat-item{ grid-template-columns: 40px 1fr; padding: 22px 0; }
+    .amazon-feature-list{ padding: 4px 20px; }
+
+    .ai-card, .ai-stat-card{ padding: 28px 22px; gap: 20px; }
+    .ai-card h3{ font-size: 22px; }
+    .ai-stat-bignum{ font-size: 64px; }
+    .ai-stat-bignum .pct{ font-size: 30px; }
+    .ai-stat-top{ flex-wrap: wrap; gap: 8px; }
+
+    .pillar-grid{ grid-template-columns: 1fr; }
+    .pillar.featured{ grid-column: auto; }
+    .pillar{ padding: 26px 22px; min-height: auto; }
+
+    .ads-headline{ padding: 28px 22px; gap: 24px; }
+    .ads-headline h3{ font-size: 24px; }
+    .channel-row{ grid-template-columns: 32px 1fr auto; padding: 16px 18px; gap: 14px; }
+    .channel-row .channel-arrow{ display: none; }
+    .channel-info .name{ font-size: 14px; }
+    .channel-info .meta{ font-size: 11.5px; }
+
+    .stats-row{ grid-template-columns: 1fr; }
+    .stat-cell{
+      padding: 22px 0 !important;
+      border-right: 0 !important;
+      border-bottom: 1px solid var(--line);
+    }
+    .stat-cell:last-child{ border-bottom: 0; }
+    .stat-value{ font-size: 38px; }
+
+    .testi-card{ padding: 28px 22px; gap: 24px; }
+    .testi-quote{ font-size: 19px; line-height: 1.5; }
+    .testi-stats{ padding: 24px 22px; }
+    .testi-stat-v{ font-size: 28px; }
+
+    .about-card{ padding: 28px 22px; gap: 22px; }
+    .about-card h3{ font-size: 22px; }
+    .about-marks{ grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+    .compliance-list{ padding: 4px 20px; }
+    .comp-item{ padding: 18px 0; gap: 12px; }
+    .comp-text .t{ font-size: 13.5px; }
+    .comp-text .s{ font-size: 11.5px; }
+
+    .final-cta{ padding: 80px 0 88px; }
+    .final-cta h2{ font-size: clamp(32px, 8vw, 48px); }
+    .final-cta p{ font-size: 15px; margin-bottom: 36px; }
+    .final-ctas{ flex-direction: column; align-items: stretch; }
+    .final-ctas .btn{ justify-content: center; }
+
+    .footer{ padding: 56px 0 32px; }
+    .footer-grid{ grid-template-columns: 1fr; gap: 32px; margin-bottom: 36px; }
+    .footer-brand{ grid-column: auto; }
+    .footer-col h5{ margin-bottom: 14px; }
+  }
+
+  /* ----- 极小屏 ≤375 微调 ----- */
+  @media (max-width: 375px){
+    .hero h1{ font-size: 36px; }
+    .hero-meta{ grid-template-columns: 1fr; gap: 14px; }
+    .ai-stat-bignum{ font-size: 56px; }
+    .ai-stat-bignum .pct{ font-size: 26px; }
+    .stat-value{ font-size: 34px; }
+    .sec-title{ font-size: 28px; }
+  }
+
+  /* Global typography directives
+     Desktop base text has been normalized to a minimum of 14px.
+     Mobile overrides keep all small text at 10px or above. */
+  *,
+  *::before,
+  *::after,
+  button,
+  input,
+  textarea,
+  select{
+    font-family: var(--font-sans) !important;
+  }
+
+  .btn-primary,
+  a.btn-primary,
+  button.btn-primary{
+    background: var(--btn-grad) !important;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.16) inset, 0 10px 28px -10px rgba(82,72,255,.72) !important;
+  }
+  .btn-primary:hover,
+  a.btn-primary:hover,
+  button.btn-primary:hover{
+    background: var(--btn-grad-hover) !important;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.22) inset, 0 14px 34px -10px rgba(96,68,255,.82) !important;
+  }
+
+  /* ============================================================
+     Morfund 5.0 Figma alignment overrides
+     ============================================================ */
+  :root{
+    --bg:#050509;
+    --bg-1:#07070C;
+    --card:#080A0B;
+    --card-2:#0B0D12;
+    --line:rgba(255,255,255,.10);
+    --line-2:rgba(88,125,255,.55);
+    --line-3:rgba(137,188,255,.82);
+    --ink:#F2F2F6;
+    --ink-2:#B0B0BE;
+    --ink-3:#787878;
+    --blue:#287EFF;
+    --blue-2:#587DFF;
+    --cyan:#00AAFF;
+    --grad-trail:linear-gradient(147deg,#FF267F 23%,#A53DFF 39%,#1C76FF 61%,#00AAFF 86%);
+    --btn-grad:
+      radial-gradient(80px 90px at 100% 100%, rgba(38,99,255,.15), rgba(0,0,0,0) 70%),
+      radial-gradient(120px 80px at 0% 0%, rgba(6,106,255,.10), rgba(0,0,0,0) 70%),
+      #080A0B;
+    --btn-grad-hover:
+      radial-gradient(110px 110px at 100% 100%, rgba(38,99,255,.24), rgba(0,0,0,0) 70%),
+      radial-gradient(150px 100px at 0% 0%, rgba(6,106,255,.18), rgba(0,0,0,0) 70%),
+      #0A0D12;
+    --container:1200px;
+    --gutter:0px;
+  }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:#050509;
+    font-family:var(--font-sans);
+    letter-spacing:0;
+  }
+  body *{ letter-spacing:0 !important; }
+  .container{ max-width:1200px; padding-left:0; padding-right:0; }
+  .seam{ display:none; }
+  .grid-mask,.blob,.hero-tagbar,.hero-scroll,.hero-meta{ display:none !important; }
+  .ital,.serif-i,.serif-cn{ font-family:var(--font-sans) !important; font-style:normal !important; }
+  .grad,.highlight{
+    background:var(--grad-trail);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .btn{
+    height:60px;
+    min-width:200px;
+    padding:0 32px;
+    border-radius:32px;
+    border:1px solid #587DFF;
+    background:var(--btn-grad);
+    color:#F2F2F6;
+    font-size:16px;
+    font-weight:500;
+    box-shadow:none;
+    letter-spacing:0;
+  }
+  .btn:hover{
+    transform:translateY(-1px);
+    border-color:#89BCFF;
+    background:var(--btn-grad-hover);
+    box-shadow:0 10px 26px rgba(40,126,255,.16);
+  }
+  .btn-ghost{ background:transparent; border-color:rgba(255,255,255,.8); }
+  .site-nav{
+    position:fixed;
+    inset:0 0 auto 0;
+    height:80px;
+    z-index:80;
+    background:rgba(0,0,0,.30);
+    border-bottom:1px solid rgba(255,255,255,.05);
+    -webkit-backdrop-filter:blur(15px);
+    backdrop-filter:blur(15px);
+  }
+  .site-nav .container{
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand-lockup{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    text-decoration:none;
+    color:#fff;
+  }
+  .brand-lockup img{ height:26px; width:auto; }
+  .nav-menu{
+    display:flex;
+    align-items:center;
+    gap:24px;
+  }
+  .nav-menu a{
+    color:#fff;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:400;
+    opacity:.9;
+  }
+  .nav-menu a:hover{ color:#89BCFF; opacity:1; }
+  .nav-login{
+    height:44px;
+    min-width:120px;
+    padding:0 24px;
+    border:1px solid #fff;
+    border-radius:22px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .nav-lang{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    color:#fff;
+    font-size:14px;
+  }
+  .nav-toggle{
+    display:none;
+    width:32px;
+    height:32px;
+    border:0;
+    border-radius:0;
+    color:#fff;
+    background:transparent;
+  }
+  .hero{
+    min-height:850px;
+    padding:0;
+    background:
+      radial-gradient(520px 360px at 74% 32%, rgba(40,126,255,.18), transparent 68%),
+      radial-gradient(520px 360px at 78% 58%, rgba(255,38,127,.10), transparent 70%),
+      #050509;
+  }
+  .hero-photo{
+    background:url("./assets/Hero%E8%83%8C%E6%99%AF-%E7%BD%91%E9%A1%B5%E7%AB%AF.png") center center / cover no-repeat;
+  }
+  .hero-veil{
+    background:none;
+  }
+  .hero-grid{
+    min-height:850px;
+    display:flex;
+    align-items:center;
+  }
+  .hero-copy{
+    max-width:613px;
+    padding-top:64px;
+  }
+  .hero-logo{
+    width:199px;
+    height:34px;
+    object-fit:contain;
+    margin-bottom:36px;
+  }
+  .hero h1{
+    margin:0;
+    color:#F2F2F6;
+    font-family:var(--font-sans);
+    font-size:68px;
+    line-height:89px;
+    font-weight:700;
+    letter-spacing:0;
+  }
+  .hero-sub{
+    margin-top:28px;
+    width:700px;
+    max-width:100%;
+    color:#B0B0BE;
+    font-size:16px;
+    line-height:1.7;
+    text-shadow:none;
+  }
+  .product-chooser{
+    width:500px;
+    max-width:100%;
+    margin-top:44px;
+  }
+  .chooser-title{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    color:#F2F2F6;
+    font-size:20px;
+    font-weight:500;
+  }
+  .chooser-title span:first-child{
+    background:var(--grad-trail);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .chooser-title::after{
+    content:"";
+    height:1px;
+    flex:1;
+    background:linear-gradient(90deg,#587DFF,rgba(88,125,255,0));
+  }
+  .hero-ctas{ margin-top:20px; gap:12px; }
+  .hero-ctas .btn{ flex:1; min-width:0; height:60px; }
+  .sec{
+    padding:120px 0;
+    background:#050509;
+  }
+  .sec-head{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    align-items:flex-start;
+    margin-bottom:48px;
+  }
+  .sec-eyebrow{ margin:0; }
+  .sec-num{
+    color:#287EFF;
+    font-family:Inter,var(--font-sans);
+    font-size:18px;
+    font-weight:500;
+    text-transform:none;
+  }
+  .sec-title{
+    max-width:none;
+    color:#fff;
+    font-size:42px;
+    line-height:1.25;
+    font-weight:700;
+    letter-spacing:0;
+  }
+  .sec-desc{
+    max-width:100%;
+    color:#B0B0BE;
+    font-size:16px;
+    line-height:1.65;
+  }
+  .morfund-intro{
+    padding:120px 0;
+    background:#050509;
+    text-align:center;
+  }
+  .morfund-intro .container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:32px;
+  }
+  .morfund-intro .eyebrow-blue{ color:#287EFF; font-size:18px; font-weight:500; }
+  .morfund-intro h2{
+    margin:0;
+    max-width:1000px;
+    font-size:42px;
+    line-height:1.42;
+    font-weight:700;
+  }
+  .benefit-grid{
+    display:grid;
+    grid-template-columns:400px 580px;
+    justify-content:space-between;
+    align-items:center;
+    gap:80px;
+  }
+  .pillar{
+    min-height:auto;
+    padding:0 0 20px;
+    border:0;
+    border-bottom:1px solid rgba(255,255,255,.10);
+    border-radius:0;
+    background:transparent !important;
+    transform:none !important;
+  }
+  .pillar-icn-wrap{ display:none; }
+  .pillar h4{
+    margin:0 0 4px;
+    font-size:24px;
+    line-height:1.25;
+    font-weight:500;
+    color:#666;
+  }
+  .pillar p{ display:none; }
+  .pillar.featured h4{ color:#fff; }
+  .pillar.featured p{
+    display:block;
+    max-width:400px;
+    color:#B0B0BE;
+    font-size:16px;
+    line-height:1.55;
+  }
+  .benefit-grid::after{
+    content:"";
+    grid-column:2;
+    grid-row:1 / span 6;
+    width:580px;
+    height:380px;
+    border:1px solid #89BCFF;
+    border-radius:16px;
+    background:
+      radial-gradient(220px 180px at 100% 100%, rgba(38,99,255,.16), transparent 72%),
+      radial-gradient(220px 180px at 0 0, rgba(6,106,255,.10), transparent 72%),
+      linear-gradient(90deg,#050509,#050509);
+    box-shadow:0 4px 2px rgba(0,0,0,.25);
+  }
+  .benefit-grid::before{
+    content:"最高额度可达\A$ 10,000,000\A\A旺季备货     新品类拓展     多平台扩张";
+    white-space:pre;
+    grid-column:2;
+    grid-row:1 / span 6;
+    z-index:1;
+    align-self:center;
+    padding:36px 32px;
+    color:#fff;
+    font-family:Inter,var(--font-sans);
+    font-size:16px;
+    line-height:1.55;
+    pointer-events:none;
+  }
+  #products .amazon-split{
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:center;
+  }
+  #products .amazon-hero-card{
+    position:relative;
+    min-height:360px;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    padding:0;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  }
+  #products .amazon-hero-card::before{
+    content:"";
+    display:block;
+    width:var(--quota-ring-width, 520px);
+    max-width:100%;
+    aspect-ratio:1.38;
+    background:url("./assets/quota-ring.png") center/contain no-repeat;
+    filter:saturate(1.15);
+  }
+  #products .amazon-hero-card > *{ display:none; }
+  #products .amazon-hero-card .quota-copy{
+    position:absolute;
+    inset:0;
+    z-index:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    color:#fff;
+    white-space:nowrap;
+    pointer-events:none;
+  }
+  .quota-copy .quota-kicker{
+    font-size:clamp(18px, 2.083vw, 40px);
+    line-height:1.2;
+    font-weight:500;
+  }
+  .quota-copy .quota-value{
+    font-size:clamp(32px, 2.083vw, 40px);
+    line-height:1;
+    font-weight:500;
+    letter-spacing:0;
+  }
+  .quota-copy .quota-note{
+    color:#b0b0be;
+    font-size:14px;
+    line-height:1.2;
+    font-weight:400;
+  }
+  .spec-list{
+    border:0;
+    border-radius:0;
+    padding:0;
+    background:transparent;
+  }
+  .spec-list::before{
+    content:"要素                                           内容";
+    display:block;
+    padding:12px 24px;
+    background:#191919;
+    color:#fff;
+    font-size:12px;
+    line-height:18px;
+    white-space:pre;
+  }
+  .spec-row{
+    grid-template-columns:180px 1fr;
+    padding:12px 24px;
+    border-bottom:1px solid rgba(255,255,255,.16);
+    min-height:42px;
+  }
+  .spec-l{
+    color:#B0B0BE;
+    font-size:14px;
+    text-transform:none;
+    font-family:var(--font-sans);
+  }
+  .spec-v{
+    color:#F2F2F6;
+    font-size:14px;
+    line-height:1.5;
+    font-weight:400;
+  }
+  .spec-v .meta{ color:#B0B0BE; font-family:var(--font-sans); text-transform:none; }
+  .process-grid,.process-grid.is-5{
+    grid-template-columns:repeat(5,1fr);
+    border:0;
+    gap:74px;
+  }
+  .process-step,.process-grid.is-5 .process-step{
+    border:0;
+    border-top:1px solid #0C2447;
+    padding:22px 0 !important;
+    min-height:0;
+  }
+  .process-step .num,.process-grid.is-5 .process-step .num{
+    color:#287EFF;
+    font-size:14px;
+    line-height:1.2;
+    margin-bottom:16px;
+    font-weight:500;
+  }
+  .process-step h3,.process-grid.is-5 .process-step h3{
+    font-size:20px;
+    line-height:1.3;
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .process-step p,.process-grid.is-5 .process-step p{
+    color:#B0B0BE;
+    font-size:14px;
+    line-height:1.6;
+  }
+  .scenario-grid{
+    display:flex;
+    gap:24px;
+    overflow-x:auto;
+    padding-bottom:10px;
+    scroll-snap-type:x mandatory;
+  }
+  .scenario-card{
+    flex:0 0 384px;
+    min-height:490px;
+    border:1px solid #0C2447;
+    border-radius:0;
+    padding:32px 28px;
+    background:linear-gradient(180deg,rgba(12,36,71,.35),rgba(8,10,11,.22));
+    scroll-snap-align:start;
+  }
+  .scenario-card:hover{ border-color:#587DFF; transform:none; }
+  .scenario-card h4{ font-size:18px; font-weight:700; }
+  .scenario-bg{
+    border:0;
+    padding:22px 0;
+    color:#B0B0BE;
+    font-size:14px;
+  }
+  .scenario-list{
+    margin-top:auto;
+    padding:20px 22px;
+    border:1px solid rgba(88,125,255,.28);
+    background:rgba(196,215,245,.04);
+    gap:8px;
+  }
+  .scenario-list li::before{ background:#287EFF; box-shadow:none; }
+  #platforms .ads-headline,
+  #platforms .ads-channels{
+    border-color:#0C2447;
+    border-radius:12px;
+    background:rgba(196,215,245,.04);
+  }
+  .stats-row{
+    border-top:1px solid #0C2447;
+    border-bottom:0;
+  }
+  .stat-cell{
+    border-right:1px solid #0C2447;
+    padding:22px 30px;
+  }
+  .stat-value{
+    font-size:56px;
+    color:#287EFF;
+    font-weight:600;
+  }
+  .stat-sub{ color:#fff; font-size:16px; }
+  .seller-voices{
+    padding:120px 0;
+    background:#050509;
+  }
+  .voice-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-top:48px;
+  }
+  .voice-card{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    overflow:hidden;
+  }
+  .voice-photo{
+    height:400px;
+    border-radius:12px;
+    overflow:hidden;
+    position:relative;
+    background:#111;
+  }
+  .voice-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .voice-photo::after{
+    content:"";
+    position:absolute;
+    inset:auto 0 0;
+    height:130px;
+    background:linear-gradient(180deg,rgba(5,5,9,0),rgba(5,5,9,.72));
+  }
+  .voice-caption{
+    position:absolute;
+    left:30px;
+    right:30px;
+    bottom:20px;
+    z-index:1;
+  }
+  .voice-caption .role{ color:#fff; font-size:16px; font-weight:500; }
+  .voice-caption .title{ color:#fff; font-size:18px; font-weight:700; margin-top:4px; }
+  .voice-quote{
+    padding:0 12px;
+    margin:0;
+    color:rgba(255,255,255,.70);
+    font-size:15px;
+    line-height:1.65;
+  }
+  .final-cta{
+    min-height:568px;
+    padding:120px 0;
+    background:#050509;
+  }
+  .final-cta-streak{
+    background:radial-gradient(650px 260px at 50% 110%, rgba(40,126,255,.85), rgba(40,126,255,.12) 55%, transparent 78%);
+  }
+  .final-cta-streak svg{ opacity:0; }
+  .final-cta .container::before{
+    content:"";
+    display:block;
+    width:600px;
+    max-width:80%;
+    height:1px;
+    margin:0 auto 64px;
+    background:linear-gradient(90deg,transparent,#2B3558,transparent);
+  }
+  .final-cta h2{
+    font-size:68px;
+    line-height:1.2;
+    font-weight:700;
+    letter-spacing:0;
+    background:linear-gradient(86deg,rgba(255,255,255,.3) 2%,#fff 27%,#EEF7FF 80%,rgba(255,255,255,0) 110%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .final-cta p{ font-size:16px; color:#B0B0BE; }
+  @media (max-width:1024px){
+    :root{ --gutter:28px; }
+    .container{ padding-left:28px; padding-right:28px; }
+    .site-nav .container{ padding-left:28px; padding-right:28px; }
+    .nav-menu{ display:none; }
+    .site-nav.is-open{ height:auto; }
+    .site-nav.is-open .container{ align-items:flex-start; padding-top:16px; padding-bottom:16px; height:auto; }
+    .site-nav.is-open .nav-menu{
+      position:absolute;
+      left:28px;
+      right:28px;
+      top:64px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:18px;
+      padding:22px;
+      border:1px solid rgba(88,125,255,.35);
+      border-radius:12px;
+      background:rgba(5,5,9,.96);
+      box-shadow:0 24px 60px rgba(0,0,0,.36);
+    }
+    .nav-toggle{ display:inline-flex; }
+    .hero,.hero-grid{ min-height:760px; }
+    .hero h1{ font-size:56px; line-height:1.25; }
+    .benefit-grid{ grid-template-columns:1fr; gap:32px; }
+    .benefit-grid::before,.benefit-grid::after{ grid-column:1; grid-row:auto; width:100%; }
+    #products .amazon-split{ grid-template-columns:1fr; gap:32px; }
+    .process-grid,.process-grid.is-5{ grid-template-columns:1fr; gap:0; }
+    .voice-grid{ grid-template-columns:1fr; }
+  }
+  @media (max-width:640px){
+    :root{ --gutter:20px; }
+    .container{ padding-left:20px; padding-right:20px; }
+    .site-nav{ height:48px; top:44px; }
+    .site-nav .container{ height:48px; padding-left:20px; padding-right:16px; }
+    .site-nav.is-open .nav-menu{ left:20px; right:20px; top:56px; }
+    .brand-lockup img{ height:21px; }
+    .hero{ min-height:700px; padding-top:92px; }
+    .hero-grid{ min-height:608px; align-items:flex-end; padding-bottom:72px; }
+    .hero-logo{ width:128px; margin-bottom:28px; }
+    .hero h1{ font-size:41px; line-height:1.22; max-width:304px; }
+    .hero-sub{ font-size:12px; line-height:1.5; margin-top:16px; width:353px; }
+    .product-chooser{ margin-top:40px; width:353px; }
+    .chooser-title{ font-size:14px; gap:20px; }
+    .hero-ctas{ flex-direction:row; gap:12px; }
+    .hero-ctas .btn{ height:44px; font-size:14px; padding:0 16px; }
+    .morfund-intro,.sec,.seller-voices{ padding:80px 0; }
+    .morfund-intro h2{ font-size:28px; line-height:1.42; text-align:center; }
+    .sec-num{ font-size:14px; }
+    .sec-title{ font-size:28px; line-height:1.5; }
+    .sec-desc{ font-size:12px; }
+    .benefit-grid::after{ height:231px; }
+    .benefit-grid::before{ font-size:14px; padding:24px; }
+    .pillar h4{ font-size:24px; }
+    .pillar.featured p{ font-size:14px; }
+    #products .amazon-hero-card::before{ width:353px; }
+    .spec-list::before{ content:"要素                                      内容"; }
+    .spec-row{ grid-template-columns:1fr 1.25fr; padding:10px 24px; }
+    .spec-v{ text-align:right; font-size:14px; }
+    .scenario-card{ flex-basis:353px; min-height:490px; }
+    .stats-row{ grid-template-columns:1fr 1fr; }
+    .stat-cell{ border-bottom:1px solid #0C2447; padding:22px 10px; }
+    .stat-value{ font-size:24px; }
+    .voice-photo{ height:400px; }
+    .final-cta{ min-height:320px; padding:40px 0 80px; }
+    .final-cta .container::before{ margin-bottom:32px; }
+    .final-cta h2{ font-size:28px; line-height:1.5; }
+    .final-cta p{ font-size:12px; }
+    .final-cta .btn{ width:250px; height:44px; font-size:14px; }
+  }
+
+  /* Final Figma-aligned overrides for the May iteration. */
+  .advantages-scroll{ position:relative; height:620vh; background:#050509; }
+  .advantages-sticky{ position:sticky; top:0; min-height:100vh; display:flex; align-items:center; padding:120px 0; overflow:hidden; }
+  .advantages-header{ display:flex; flex-direction:column; gap:16px; margin-bottom:60px; }
+  .advantages-header h2{ margin:0; color:#fff; font-family:"Source Han Sans SC","Noto Sans SC",Inter,system-ui,sans-serif; font-size:48px; line-height:1.2; font-weight:700; letter-spacing:0; }
+  .advantages-header p{ margin:0; color:#b0b0be; font-size:16px; line-height:1.6; }
+  .advantages-grid{ display:grid; grid-template-columns:400px minmax(0,580px); gap:150px; align-items:center; justify-content:space-between; }
+  .advantages-tabs{ display:flex; flex-direction:column; width:400px; }
+  .advantage-tab{ position:relative; appearance:none; border:0; border-bottom:1px solid rgba(255,255,255,.08); background:transparent; padding:16px 0; text-align:left; cursor:pointer; color:#666; font:inherit; letter-spacing:0; }
+  .advantage-tab span{ display:block; color:inherit; font-family:"Source Han Sans SC","Noto Sans SC",Inter,system-ui,sans-serif; font-size:24px; font-weight:500; line-height:1.35; }
+  .advantage-tab p{ display:none; margin:4px 0 0; color:#b0b0be; font-size:16px; line-height:1.55; }
+  .advantage-tab.active{ color:#fff; }
+  .advantage-tab.active p{ display:block; }
+  .advantage-mask-shell{ position:relative; height:455px; overflow:hidden; border-radius:20px; -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 12%,#000 88%,transparent 100%); mask-image:linear-gradient(to bottom,transparent 0,#000 12%,#000 88%,transparent 100%); }
+  .advantage-card-track{ position:absolute; inset:0; display:flex; flex-direction:column; gap:34px; will-change:transform; transform:translate3d(0,52.5px,0); }
+  .advantage-visual-card{ flex:0 0 350px; min-height:350px; width:580px; border:1px solid #89bcff; border-radius:16px; padding:36px 32px 28px; background:radial-gradient(circle at 100% 100%,rgba(38,99,255,.15),rgba(5,5,9,0) 45%),radial-gradient(circle at 0 0,rgba(6,106,255,.1),rgba(5,5,9,0) 55%),#050509; box-shadow:0 0 25px rgba(83,77,255,.1); color:#fff; opacity:.18; transition:opacity .12s linear; }
+  .advantage-visual-card.active{ opacity:1; }
+  .advantage-visual-card h3{ margin:0; color:#fff; font-size:20px; line-height:1.25; font-weight:500; }
+  .advantage-visual-card p{ margin:6px 0 0; color:rgba(255,255,255,.5); font-size:14px; line-height:1.5; }
+  .adv-amount{ margin-top:16px; color:#2d89ff; font-family:Inter,system-ui,sans-serif; font-size:56px; line-height:1; font-weight:700; }
+  .quota-bar{ height:10px; margin-top:26px; border-radius:99px; background:rgba(255,255,255,.08); overflow:hidden; }
+  .quota-bar span{ display:block; height:100%; border-radius:99px; background:#287eff; }
+  .quota-meta{ margin-top:8px; color:rgba(255,255,255,.4); font-size:12px; }
+  .scenario-chips{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:38px; }
+  .scenario-chips span,.repay-options span{ display:flex; align-items:center; justify-content:center; min-height:46px; border:1px solid rgba(255,255,255,.1); border-radius:10px; background:rgba(255,255,255,.05); color:rgba(255,255,255,.78); font-size:14px; text-align:center; }
+  .scenario-chips .selected,.repay-options .selected{ border-color:#9061fe; background:rgba(37,112,224,.08); color:#fff; }
+  .currency-stack{ position:relative; height:220px; margin-top:36px; }
+  .currency-note{ position:absolute; width:238px; min-height:148px; border:1px solid rgba(142,197,255,.42); border-radius:16px; padding:28px; background:linear-gradient(135deg,rgba(34,97,255,.28),rgba(255,255,255,.04)); box-shadow:0 18px 48px rgba(0,0,0,.22); }
+  .currency-note strong{ display:block; font-size:42px; line-height:1; }
+  .currency-note span{ display:block; margin-top:12px; color:#b0b0be; font-size:16px; }
+  .currency-note.usd{ left:48px; top:16px; transform:rotate(-8deg); }
+  .currency-note.cnh{ right:48px; top:46px; transform:rotate(8deg); }
+  .platform-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .platform-row span{ display:grid; place-items:center; min-height:78px; border:1px solid rgba(255,255,255,.1); border-radius:12px; background:rgba(255,255,255,.05); color:#fff; font-size:16px; }
+  .official-badge{ margin:42px auto 34px; width:max-content; border:1px solid rgba(142,197,255,.45); border-radius:999px; padding:10px 22px; color:#8ec5ff; font-size:15px; background:rgba(40,126,255,.1); }
+  .score-box{ display:flex; align-items:end; justify-content:space-between; border-top:1px solid rgba(255,255,255,.08); padding-top:24px; }
+  .score-box span{ color:rgba(255,255,255,.5); font-size:14px; }
+  .score-box strong{ color:#fff; font-size:52px; line-height:1; }
+  .score-box em{ color:rgba(255,255,255,.4); font-style:normal; font-size:20px; }
+  .data-rows{ display:grid; gap:12px; margin-top:24px; }
+  .data-rows div{ display:flex; justify-content:space-between; border:1px solid rgba(255,255,255,.1); border-radius:10px; padding:14px 18px; background:rgba(255,255,255,.04); }
+  .data-rows span{ color:rgba(255,255,255,.5); }
+  .data-rows strong{ color:#fff; }
+  .apply-steps{ display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; color:#b0b0be; font-size:12px; }
+  .apply-steps strong{ flex:0 0 100%; color:#fff; font-size:16px; }
+  .apply-steps span{ border:1px solid rgba(255,255,255,.1); border-radius:999px; padding:7px 10px; }
+  .repay-options{ display:flex; gap:12px; margin-top:24px; }
+  .repay-options span:first-child{ flex:1; }
+  .repay-chart{ height:110px; display:flex; align-items:end; justify-content:space-between; margin-top:24px; }
+  .repay-chart i{ display:block; width:60px; height:20px; border-radius:4px 4px 0 0; background:#2261ff; }
+  .repay-chart .principal{ height:85px; background:linear-gradient(to bottom,#aa38ed 0 76%,#2261ff 76% 100%); }
+  .repay-note{ text-align:center; color:rgba(255,255,255,.4); font-size:12px; }
+  .account-flow{ display:grid; grid-template-columns:120px 1fr 140px; align-items:center; gap:18px; margin-top:52px; }
+  .account-flow div{ display:grid; justify-items:center; gap:14px; color:#fff; font-size:16px; text-align:center; }
+  .account-flow span{ width:60px; height:60px; border-radius:15px; border:1px solid rgba(172,220,255,.3); background:linear-gradient(135deg,#47f3ff,#117cff 35%,#0b1027); }
+  .account-flow div:last-child span{ background:linear-gradient(135deg,#ff47c2,#ff1178 35%,#270b15); }
+  .account-flow i{ height:2px; background:linear-gradient(90deg,#2261ff,#aa38ed); box-shadow:0 0 18px rgba(40,126,255,.8); }
+  .account-arrival{ margin-top:52px; border:1px solid rgba(255,255,255,.1); border-radius:10px; padding:16px 24px; background:rgba(17,17,17,.5); text-align:center; color:#fff; font-size:14px; }
+  #scenarios{ padding-bottom:120px; overflow:hidden; }
+  .scenario-marquee{ width:100vw; margin-left:calc(50% - 50vw); overflow:hidden; }
+  .scenario-track{ display:flex; gap:16px; width:max-content; animation:scenarioMarquee 46s linear infinite; will-change:transform; }
+  .scenario-marquee:hover .scenario-track{ animation-play-state:paused; }
+  @keyframes scenarioMarquee{ from{ transform:translate3d(0,0,0); } to{ transform:translate3d(calc(-50% - 8px),0,0); } }
+  .scenario-card{ flex:0 0 430px; width:430px; min-height:512px; height:512px; display:flex; flex-direction:column; justify-content:flex-start; gap:16px; border:1px solid rgba(255,255,255,.1); border-radius:8px; padding:28px 32px; background:#11111b; color:#fff; transform:none; }
+  .scenario-card:hover{ border-color:rgba(137,188,255,.7); transform:none; }
+  .scenario-card .scenario-num{ display:none; }
+  .scenario-card h4{ margin:0; color:#fff; font-size:14px; line-height:1.35; font-weight:700; }
+  .scenario-card blockquote{ margin:0; min-height:52px; display:flex; align-items:center; flex-shrink:0; border-left:2px solid #287eff; padding-left:14px; color:#fff; font-size:18px; line-height:1.45; font-weight:600; }
+  .scenario-bg{ margin:-4px 0 0; color:#b0b0be; font-size:15px; line-height:1.55; }
+  .scenario-bg strong{ display:none; }
+  .scenario-list{ display:grid; gap:10px; margin:auto 0 0; padding:22px 26px 24px; list-style:none; border:0; border-radius:8px; background:rgba(16,27,49,.88); flex-shrink:0; }
+  .scenario-list::before{ content:"Morfund 方案"; color:#fff; font-size:16px; line-height:1.35; font-weight:500; margin-bottom:2px; }
+  .scenario-list li{ position:relative; padding-left:28px; color:#f2f2f6; font-size:14px; line-height:1.55; }
+  .scenario-list li::before{ content:"✓"; position:absolute; left:0; top:-.05em; width:auto; height:auto; border-radius:0; background:none; color:#287eff; font-size:18px; line-height:1; font-weight:500; }
+  .dowsure-highlight{ margin:0 0 40px; color:#fff; font-size:28px; line-height:1.45; font-weight:700; }
+  .dowsure-highlight strong{ color:#287eff; font-size:28px; }
+  #cases .sec-head,
+  #cases-rmb .sec-head{ grid-template-columns:1fr; gap:24px; }
+  #cases .sec-desc,
+  #cases-rmb .sec-desc{ max-width:1000px; }
+  @media(max-width:1024px){
+    .advantages-scroll{ height:auto; }
+    .advantages-sticky{ position:relative; min-height:auto; padding:96px 0; }
+    .advantages-grid{ grid-template-columns:1fr; gap:32px; }
+    .advantages-tabs{ width:100%; overflow-x:auto; flex-direction:row; gap:12px; padding-bottom:6px; scrollbar-width:none; }
+    .advantages-tabs::-webkit-scrollbar{ display:none; }
+    .advantage-tab{ flex:0 0 220px; border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:14px; background:rgba(255,255,255,.03); }
+    .advantage-tab span{ font-size:20px; }
+    .advantage-tab p{ display:block; font-size:13px; }
+    .advantage-mask-shell{ height:auto; overflow:visible; -webkit-mask-image:none; mask-image:none; }
+    .advantage-card-track{ position:relative; flex-direction:row; overflow-x:auto; gap:16px; transform:none !important; scroll-snap-type:x mandatory; scrollbar-width:none; }
+    .advantage-card-track::-webkit-scrollbar{ display:none; }
+    .advantage-visual-card{ flex:0 0 min(580px, calc(100vw - 40px)); width:min(580px, calc(100vw - 40px)); opacity:1 !important; scroll-snap-align:start; }
+  }
+  @media(max-width:640px){
+    .advantages-header h2{ font-size:32px; }
+    .advantages-header p{ font-size:14px; }
+    .advantage-visual-card{ min-height:330px; padding:26px 20px; }
+    .adv-amount{ font-size:38px; }
+    .scenario-card{ flex-basis:353px; width:353px; min-height:512px; padding:24px 22px; }
+    .scenario-card h4{ font-size:24px; }
+    .scenario-card blockquote{ font-size:16px; }
+    .dowsure-highlight{ font-size:22px; }
+    .currency-note{ width:190px; padding:22px; }
+    .currency-note.usd{ left:8px; }
+    .currency-note.cnh{ right:8px; }
+    .repay-options{ flex-direction:column; }
+    .repay-chart i{ width:42px; }
+    .account-flow{ grid-template-columns:1fr; gap:16px; margin-top:26px; }
+    .account-flow i{ width:2px; height:44px; justify-self:center; }
+    .account-arrival{ margin-top:26px; }
+  }
+
+  /* Task overrides: external nav removed, product tabs, Figma CTA and PNG advantage cards. */
+  .cta-figma,
+  .hero-ctas .btn{
+    border-radius:60px;
+    border:1px solid #5188FF;
+    background:
+      radial-gradient(405.85% 101.55% at 100% 102.63%, rgba(38,99,255,.15) 0%, rgba(0,0,0,0) 100%),
+      radial-gradient(447.57% 128.86% at 3.36% -4.75%, rgba(6,106,255,.10) 0%, rgba(0,0,0,0) 66.35%),
+      #050509;
+    box-shadow:0 4px 4px 0 rgba(0,0,0,.25);
+  }
+  .hero-ctas .btn:hover{
+    border-color:#89BCFF;
+    background:
+      radial-gradient(405.85% 101.55% at 100% 102.63%, rgba(38,99,255,.22) 0%, rgba(0,0,0,0) 100%),
+      radial-gradient(447.57% 128.86% at 3.36% -4.75%, rgba(6,106,255,.16) 0%, rgba(0,0,0,0) 66.35%),
+      #050509;
+  }
+  .hero,
+  .hero-grid{
+    min-height:max(850px, 100vh);
+  }
+  .morfund-intro{
+    padding-top:180px;
+    padding-bottom:180px;
+  }
+  .morfund-intro .scroll-reveal-copy{
+    --scroll-reveal-base-opacity:.3;
+    --scroll-reveal-base-rotation:3deg;
+  }
+  .morfund-intro .product-fill-title{
+    margin-bottom:20px;
+  }
+  .intro-fill-token{
+    display:inline-block;
+    color:rgba(255,255,255,.6);
+    white-space:pre;
+    font:inherit;
+  }
+  .intro-fill-token.is-filled{
+    color:#fff;
+  }
+  .intro-fill-token.is-en{
+    font-family:inherit;
+    font-weight:inherit;
+  }
+  .intro-fill-token.is-highlight.is-filled{
+    background:var(--grad-trail);
+    background-size:calc(var(--group-total) * 1em) 100%;
+    background-position:calc(var(--group-index) * -1em) 0;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .intro-fill-space{
+    white-space:pre;
+  }
+  .scroll-reveal-token{
+    display:inline-block;
+    opacity:var(--token-opacity, var(--scroll-reveal-base-opacity, .3));
+    transform:translateY(var(--token-y, 10px)) rotate(var(--token-rotation, var(--scroll-reveal-base-rotation, 3deg)));
+    transform-origin:50% 72%;
+    will-change:opacity,transform;
+  }
+  .scroll-reveal-space{
+    display:inline;
+    white-space:pre;
+  }
+  body.product-intro-entry .morfund-intro .scroll-reveal-copy{
+    animation:productIntroEntry 1s var(--ease-out) both;
+  }
+  @keyframes productIntroEntry{
+    from{ opacity:0; transform:translateY(42px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .scroll-reveal-token{
+      opacity:1 !important;
+      transform:none !important;
+    }
+  }
+  .product-tab-anchor{
+    position:sticky;
+    top:54px;
+    z-index:80;
+    height:60px;
+    margin-top:54px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    pointer-events:none;
+  }
+  .product-switch{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:0;
+    width:412px;
+    height:60px;
+    box-sizing:border-box;
+    padding:5px;
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:30px;
+    background:rgba(5,5,9,.80);
+    overflow:hidden;
+    isolation:isolate;
+    backdrop-filter:blur(5px);
+    -webkit-backdrop-filter:blur(5px);
+    box-shadow:0 18px 42px rgba(0,0,0,.24);
+    pointer-events:auto;
+  }
+  .product-switch::before,
+  .product-switch::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    pointer-events:none;
+    z-index:0;
+  }
+  .product-switch::before{
+    content:none;
+  }
+  .product-switch::after{
+    content:none;
+  }
+  .product-tab{
+    position:relative;
+    z-index:1;
+    width:200px;
+    height:48px;
+    border:0;
+    border-radius:30px;
+    background:transparent;
+    color:rgba(255,255,255,.6);
+    font-family:"Source Han Sans SC","Noto Sans SC",Inter,system-ui,sans-serif;
+    font-size:16px;
+    font-weight:400;
+    letter-spacing:0;
+    cursor:pointer;
+  }
+  .product-tab.active{
+    color:#fff;
+    font-weight:500;
+    background:linear-gradient(90.13deg,#711FFF 0%,#307EFF 58.43%,#27D0FF 94.93%);
+    box-shadow:inset 0 0 4px rgba(255,255,255,.5);
+  }
+  .morfund-intro .btn,
+  .final-cta .btn{
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .morfund-intro .btn::before,
+  .final-cta .btn::before{
+    content:"";
+    position:absolute;
+    inset:-2px auto -2px -45%;
+    width:38%;
+    transform:skewX(-22deg);
+    background:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.38), rgba(255,255,255,0));
+    filter:blur(.2px);
+    animation:shinyButtonSweep 2.8s ease-in-out infinite;
+    pointer-events:none;
+  }
+  .morfund-intro .btn::after,
+  .final-cta .btn::after{
+    content:"";
+    position:absolute;
+    inset:1px;
+    border-radius:inherit;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 0 28px rgba(48,126,255,.22);
+    pointer-events:none;
+  }
+  @keyframes shinyButtonSweep{
+    0%{ left:-45%; opacity:0; }
+    12%{ opacity:1; }
+    42%{ left:115%; opacity:1; }
+    100%{ left:115%; opacity:0; }
+  }
+  .advantage-mask-shell{
+    height:494px;
+  }
+  .advantage-visual-card{
+    flex:0 0 380px;
+    width:580px;
+    min-height:380px;
+    height:380px;
+    border:0;
+    border-radius:16px;
+    padding:0;
+    background:transparent;
+    box-shadow:none;
+    overflow:visible;
+  }
+  .advantage-visual-card img{
+    display:block;
+    width:680px;
+    height:480px;
+    max-width:none;
+    transform:translate(-50px,-50px);
+    pointer-events:none;
+  }
+  .scenario-marquee{
+    position:relative;
+    -webkit-mask-image:linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%);
+    mask-image:linear-gradient(to right, transparent 0, #000 24%, #000 76%, transparent 100%);
+  }
+  .scenario-track{
+    animation-duration:66s;
+  }
+  .scenario-card:hover{
+    border-color:rgba(137,188,255,.7);
+    transform:none;
+  }
+  @media(max-width:1024px){
+    .hero,
+    .hero-grid{ min-height:100vh; }
+    .product-tab-anchor{ top:44px; margin-top:44px; }
+    .product-switch{ width:372px; max-width:calc(100vw - 40px); }
+    .product-tab{ width:180px; }
+    .advantage-mask-shell{ height:auto; }
+    .advantage-visual-card{
+      flex:0 0 min(580px, calc(100vw - 40px));
+      width:min(580px, calc(100vw - 40px));
+      height:auto;
+      min-height:0;
+      aspect-ratio:580/380;
+      overflow:hidden;
+    }
+    .advantage-visual-card img{
+      width:117.241%;
+      height:auto;
+      transform:translate(-7.353%,-10.417%);
+    }
+  }
+  @media(min-width:1025px){
+    .sec-head{
+      gap:16px;
+      margin-bottom:60px;
+    }
+    .sec-head > div{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+    .sec-head .sec-eyebrow{
+      margin-bottom:0;
+    }
+    .sec-title{
+      font-size:clamp(36px, 2.5vw, 48px);
+      line-height:1.2;
+      font-weight:700;
+      white-space:nowrap;
+    }
+    .sec-title br{ display:none; }
+    .sec-desc{
+      margin:0;
+      font-size:16px;
+      line-height:1.6;
+    }
+    .advantages-grid{
+      grid-template-columns:450px minmax(0,580px);
+      gap:150px;
+    }
+    .advantages-tabs{
+      width:450px;
+    }
+    .voice-card{
+      transition:transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+      transform-origin:center center;
+    }
+    .voice-card:hover{
+      transform:scale(1.05);
+      z-index:2;
+    }
+  }
+  @media(max-width:640px){
+    .hero,
+    .hero-grid{ min-height:100vh; }
+    .product-tab-anchor{ top:36px; margin-top:36px; }
+    .product-switch{ width:calc(100vw - 40px); }
+    .product-tab{ width:50%; min-width:156px; font-size:14px; }
+  }
+
+  @property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  @property --gradient-angle-offset {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  @property --gradient-percent {
+    syntax: "<percentage>";
+    initial-value: 5%;
+    inherits: false;
+  }
+  @property --gradient-shine {
+    syntax: "<color>";
+    initial-value: white;
+    inherits: false;
+  }
+  @property --inner-opacity {
+    syntax: "<number>";
+    initial-value: .22;
+    inherits: false;
+  }
+  @property --inner-blur {
+    syntax: "<length>";
+    initial-value: 16px;
+    inherits: false;
+  }
+  .morfund-intro .btn,
+  .final-cta .btn{
+    --button-bg:#080A0B;
+    --button-fg:#fff;
+    --button-border-subtle:#1a1818;
+    --highlight:blue;
+    --highlight-subtle:#8484ff;
+    --gradient-angle:0deg;
+    --gradient-angle-offset:0deg;
+    --gradient-percent:5%;
+    --gradient-shine:white;
+    --duration:4.3s;
+    --transition:420ms linear;
+    --inner-opacity:.22;
+    --inner-blur:16px;
+    min-width:296px;
+    height:64px;
+    padding:0 38px;
+    border:1px solid transparent;
+    border-radius:360px;
+    color:var(--button-fg);
+    background:
+      linear-gradient(var(--button-bg), var(--button-bg)) padding-box,
+      conic-gradient(
+        from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+        transparent,
+        var(--highlight) var(--gradient-percent),
+        var(--gradient-shine) calc(var(--gradient-percent) * 2),
+        var(--highlight) calc(var(--gradient-percent) * 3),
+        transparent calc(var(--gradient-percent) * 4)
+      ) border-box !important;
+    box-shadow:
+      inset 0 0 0 1px var(--button-border-subtle),
+      0 18px 44px rgba(0,0,0,.36);
+    font-family:Inter,var(--font-sans);
+    font-size:18px;
+    line-height:1.2;
+    font-weight:700;
+    letter-spacing:-.03em;
+    animation:gradient-angle var(--duration) linear infinite;
+    transition:
+      box-shadow 240ms linear,
+      filter 240ms linear,
+      --gradient-angle-offset var(--transition),
+      --gradient-percent var(--transition),
+      --gradient-shine var(--transition),
+      --inner-opacity var(--transition),
+      --inner-blur var(--transition);
+  }
+  .morfund-intro .btn span,
+  .final-cta .btn span{
+    position:relative;
+    z-index:2;
+  }
+  .morfund-intro .btn::before,
+  .final-cta .btn::before{
+    content:none;
+  }
+  .morfund-intro .btn::after,
+  .final-cta .btn::after{
+    content:"";
+    position:absolute;
+    inset:1px;
+    z-index:1;
+    border-radius:inherit;
+    pointer-events:none;
+    background:conic-gradient(
+      from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+      transparent 0deg,
+      transparent 230deg,
+      rgba(0,0,255,0) 252deg,
+      rgba(0,0,255,.42) 282deg,
+      rgba(132,132,255,.72) 300deg,
+      rgba(0,0,255,.46) 318deg,
+      rgba(0,0,255,0) 344deg,
+      transparent 360deg
+    );
+    mask-image:radial-gradient(ellipse at center, transparent 0%, transparent 44%, rgba(0,0,0,.18) 56%, rgba(0,0,0,.72) 74%, #000 100%);
+    -webkit-mask-image:radial-gradient(ellipse at center, transparent 0%, transparent 44%, rgba(0,0,0,.18) 56%, rgba(0,0,0,.72) 74%, #000 100%);
+    filter:blur(var(--inner-blur));
+    opacity:var(--inner-opacity);
+    mix-blend-mode:screen;
+  }
+  .morfund-intro .btn:hover,
+  .morfund-intro .btn:focus-visible,
+  .final-cta .btn:hover,
+  .final-cta .btn:focus-visible{
+    --gradient-percent:19%;
+    --gradient-angle-offset:95deg;
+    --gradient-shine:var(--highlight-subtle);
+    --inner-opacity:.84;
+    --inner-blur:18px;
+    filter:brightness(1.05);
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,.055),
+      0 18px 44px rgba(0,0,0,.38),
+      0 10px 36px rgba(38,56,255,.12);
+  }
+  .morfund-intro .btn:active,
+  .final-cta .btn:active{
+    translate:0 1px;
+  }
+  .shiny-cta{
+    --button-bg:#080A0B;
+    --button-fg:#fff;
+    --button-border-subtle:#1a1818;
+    --highlight:blue;
+    --highlight-subtle:#8484ff;
+    --gradient-angle:0deg;
+    --gradient-angle-offset:0deg;
+    --gradient-percent:5%;
+    --gradient-shine:white;
+    --duration:4.3s;
+    --transition:420ms linear;
+    --inner-opacity:.22;
+    --inner-blur:16px;
+    isolation:isolate;
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+    min-width:296px;
+    height:64px;
+    padding:0 38px;
+    border:1px solid transparent;
+    border-radius:360px;
+    color:var(--button-fg);
+    background:
+      linear-gradient(var(--button-bg), var(--button-bg)) padding-box,
+      conic-gradient(
+        from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+        transparent,
+        var(--highlight) var(--gradient-percent),
+        var(--gradient-shine) calc(var(--gradient-percent) * 2),
+        var(--highlight) calc(var(--gradient-percent) * 3),
+        transparent calc(var(--gradient-percent) * 4)
+      ) border-box;
+    box-shadow:inset 0 0 0 1px var(--button-border-subtle);
+    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    font-size:18px;
+    line-height:1.2;
+    font-weight:700;
+    letter-spacing:-.03em;
+    animation:gradient-angle var(--duration) linear infinite;
+    transition:
+      box-shadow 240ms linear,
+      filter 240ms linear,
+      --gradient-angle-offset var(--transition),
+      --gradient-percent var(--transition),
+      --gradient-shine var(--transition),
+      --inner-opacity var(--transition),
+      --inner-blur var(--transition);
+  }
+  .shiny-cta span{
+    position:relative;
+    z-index:2;
+  }
+  .shiny-cta::before{
+    content:none;
+  }
+  .shiny-cta::after{
+    content:"";
+    position:absolute;
+    inset:1px;
+    z-index:1;
+    border-radius:inherit;
+    pointer-events:none;
+    background:conic-gradient(
+      from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+      transparent 0deg,
+      transparent 230deg,
+      rgba(0,0,255,0) 252deg,
+      rgba(0,0,255,.42) 282deg,
+      rgba(132,132,255,.72) 300deg,
+      rgba(0,0,255,.46) 318deg,
+      rgba(0,0,255,0) 344deg,
+      transparent 360deg
+    );
+    mask-image:radial-gradient(ellipse at center, transparent 0%, transparent 44%, rgba(0,0,0,.18) 56%, rgba(0,0,0,.72) 74%, #000 100%);
+    -webkit-mask-image:radial-gradient(ellipse at center, transparent 0%, transparent 44%, rgba(0,0,0,.18) 56%, rgba(0,0,0,.72) 74%, #000 100%);
+    filter:blur(var(--inner-blur));
+    opacity:var(--inner-opacity);
+    mix-blend-mode:screen;
+  }
+  .shiny-cta:hover,
+  .shiny-cta:focus-visible{
+    --gradient-percent:19%;
+    --gradient-angle-offset:95deg;
+    --gradient-shine:var(--highlight-subtle);
+    --inner-opacity:.84;
+    --inner-blur:18px;
+    filter:brightness(1.05);
+    transform:none !important;
+    background:
+      linear-gradient(var(--button-bg), var(--button-bg)) padding-box,
+      conic-gradient(
+        from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+        transparent,
+        var(--highlight) var(--gradient-percent),
+        var(--gradient-shine) calc(var(--gradient-percent) * 2),
+        var(--highlight) calc(var(--gradient-percent) * 3),
+        transparent calc(var(--gradient-percent) * 4)
+      ) border-box !important;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.055);
+  }
+  .shiny-cta:active{
+    translate:0 1px;
+  }
+  @keyframes gradient-angle{
+    to{ --gradient-angle:360deg; }
+  }
+  .mobile-adv-copy,
+  .mobile-carousel-controls{
+    display:none;
+  }
+
+  @media(max-width:640px){
+    .hero{
+      height:700px;
+      min-height:700px;
+      padding-top:120px;
+      padding-bottom:0;
+    }
+    .hero-grid{
+      height:auto;
+      min-height:580px;
+      align-items:start;
+    }
+    .hero-logo{
+      width:128px;
+      height:22px;
+      object-fit:contain;
+    }
+    .morfund-intro .btn,
+    .final-cta .btn{
+      min-width:250px;
+      height:56px;
+      padding:0 28px;
+      font-size:15px;
+    }
+    .advantages-scroll{
+      height:auto;
+      min-height:0;
+      background:#07070c;
+      overflow:visible;
+    }
+    .advantages-sticky{
+      position:relative;
+      top:auto;
+      min-height:0;
+      height:auto;
+      padding:80px 0 64px;
+      overflow:visible;
+      align-items:start;
+    }
+    .advantages-sticky .container{
+      padding-left:20px;
+      padding-right:20px;
+      overflow:visible;
+    }
+    .advantages-header{
+      gap:16px;
+      margin-bottom:42px;
+      padding-right:20px;
+    }
+    .advantages-header .eyebrow-blue{
+      font-size:14px;
+    }
+    .advantages-header h2{
+      font-size:28px;
+      line-height:1.35;
+      color:#f2f2f6;
+    }
+    .advantages-header p{
+      font-size:12px;
+      line-height:1.6;
+    }
+    .advantages-grid{
+      display:block;
+      overflow:visible;
+    }
+    .advantages-tabs{
+      display:none;
+    }
+    .advantage-mask-shell{
+      height:auto;
+      overflow:visible;
+    }
+    .advantage-card-track{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      width:100%;
+      transform:none !important;
+      transition:none;
+      will-change:auto;
+    }
+    .advantage-visual-card{
+      flex:0 0 auto;
+      width:100%;
+      height:auto;
+      min-height:0;
+      aspect-ratio:auto;
+      overflow:visible;
+      opacity:1 !important;
+      scroll-snap-align:none;
+      display:flex;
+      flex-direction:column;
+      gap:0px;
+    }
+    .advantage-visual-card img{
+      width:100%;
+      height:auto;
+      max-width:100%;
+      aspect-ratio:353/231;
+      object-fit:cover;
+      border-radius:12px;
+      transform:none;
+    }
+    .mobile-adv-copy{
+      display:block;
+      padding:0 4px;
+    }
+    .mobile-adv-copy h3{
+      margin:0 0 8px;
+      color:#fff;
+      font-size:20px;
+      line-height:1.3;
+      font-weight:700;
+    }
+    .mobile-adv-copy p{
+      margin:0 0 18px;
+      color:#b0b0be;
+      font-size:12px;
+      line-height:1.65;
+    }
+    .mobile-adv-link{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      height:38px;
+      padding:0 18px;
+      border:1px solid rgba(81,136,255,.72);
+      border-radius:60px;
+      color:#fff;
+      background:#050509;
+      text-decoration:none;
+      font-size:12px;
+      font-weight:600;
+    }
+    .scenario-marquee,
+    .voice-carousel-shell{
+      position:relative;
+      width:100%;
+      margin-left:0;
+      overflow:hidden;
+      -webkit-mask-image:none;
+      mask-image:none;
+    }
+    .scenario-track{
+      animation:none;
+      gap:12px;
+      transition:transform .36s var(--ease-out);
+      will-change:transform;
+    }
+    .scenario-card[aria-hidden="true"]{
+      display:none;
+    }
+    .scenario-card{
+      flex:0 0 calc(100vw - 56px);
+      width:calc(100vw - 56px);
+      max-width:100%;
+      min-height:500px;
+    }
+    .voice-carousel-shell{
+      margin-top:36px;
+    }
+    .voice-grid{
+      display:flex;
+      gap:12px;
+      margin-top:0;
+      transition:transform .36s var(--ease-out);
+      will-change:transform;
+    }
+    .voice-card{
+      flex:0 0 100%;
+      width:100%;
+    }
+    .mobile-carousel-controls{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:12px;
+      margin-top:20px;
+    }
+    .mobile-carousel-progress{
+      flex:1;
+      height:3px;
+      border-radius:999px;
+      background:rgba(255,255,255,.14);
+      overflow:hidden;
+    }
+    .mobile-carousel-progress span{
+      display:block;
+      width:0;
+      height:100%;
+      border-radius:inherit;
+      background:#287eff;
+      transition:width .32s var(--ease-out);
+    }
+    .mobile-carousel-controls button{
+      width:42px;
+      height:42px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:50%;
+      color:#fff;
+      background:#050509;
+      font-size:22px;
+      line-height:1;
+    }
+    .final-ctas{
+      align-items:center !important;
+    }
+    .final-cta .shiny-cta{
+      margin-left:auto;
+      margin-right:auto;
+    }
+  }
+  .morfund-intro .shiny-cta,
+  .final-cta .shiny-cta{
+    min-width:296px;
+    height:64px;
+    padding:0 38px;
+    font-size:18px;
+    background:
+      linear-gradient(var(--button-bg), var(--button-bg)) padding-box,
+      conic-gradient(
+        from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+        transparent,
+        var(--highlight) var(--gradient-percent),
+        var(--gradient-shine) calc(var(--gradient-percent) * 2),
+        var(--highlight) calc(var(--gradient-percent) * 3),
+        transparent calc(var(--gradient-percent) * 4)
+      ) border-box !important;
+    box-shadow:inset 0 0 0 1px var(--button-border-subtle) !important;
+    transform:none !important;
+  }
+  .morfund-intro .shiny-cta:hover,
+  .morfund-intro .shiny-cta:focus-visible,
+  .final-cta .shiny-cta:hover,
+  .final-cta .shiny-cta:focus-visible{
+    background:
+      linear-gradient(var(--button-bg), var(--button-bg)) padding-box,
+      conic-gradient(
+        from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+        transparent,
+        var(--highlight) var(--gradient-percent),
+        var(--gradient-shine) calc(var(--gradient-percent) * 2),
+        var(--highlight) calc(var(--gradient-percent) * 3),
+        transparent calc(var(--gradient-percent) * 4)
+      ) border-box !important;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.055) !important;
+    transform:none !important;
+  }
+  .advantages-header .eyebrow-blue{
+    color:#287EFF !important;
+  }
+  ::selection{
+    background:#287EFF;
+    color:#fff;
+  }
+  ::-moz-selection{
+    background:#287EFF;
+    color:#fff;
+  }
+  .morfund-intro{
+    padding-top:100px;
+  }
+  .morfund-intro .product-intro-label{
+    color:#287EFF;
+    opacity:1;
+    transform:none;
+  }
+  .hero-grid{
+    justify-content:center;
+    text-align:center;
+  }
+  .hero-copy{
+    max-width:760px;
+    margin:0 auto;
+    padding-top:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .hero-logo{
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .hero-sub{
+    text-align:center;
+  }
+  .product-chooser{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .chooser-title{
+    justify-content:center;
+    color:#fff;
+    font-family:"Source Han Sans CN","Noto Sans SC",sans-serif;
+    font-size:16px;
+    font-style:normal;
+    font-weight:500;
+    line-height:normal;
+  }
+  .chooser-title span:first-child{
+    background:none;
+    -webkit-background-clip:initial;
+    background-clip:initial;
+    color:#fff;
+  }
+  .chooser-title::after{
+    display:none;
+  }
+  .product-chooser .product-tab-anchor{
+    position:relative;
+    top:auto;
+    z-index:80;
+    width:100%;
+    height:60px;
+    margin-top:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    pointer-events:none;
+  }
+  .product-tab-anchor.is-pinned{
+    position:fixed;
+    top:24px;
+    left:0;
+    right:0;
+    z-index:9999;
+    width:100%;
+    height:60px;
+    margin-top:0;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    pointer-events:none;
+  }
+  .product-tab-anchor.is-pinned .product-switch{
+    position:relative;
+    top:auto;
+    left:auto;
+    transform:none;
+    z-index:10000;
+  }
+  #products .amazon-split{
+    grid-template-columns:minmax(0, 568px) minmax(0, 568px);
+    gap:64px;
+    align-items:center;
+  }
+  #products .amazon-hero-card{
+    --quota-ring-width:486px;
+    min-height:353px;
+  }
+  #products .amazon-hero-card::before{
+    margin-left:0;
+    margin-right:auto;
+    transform:scale(1.4);
+    transform-origin:center center;
+  }
+  #products .amazon-hero-card .quota-copy{
+    inset:0 auto auto 0;
+    width:min(var(--quota-ring-width), 100%);
+    height:353px;
+    gap:22px;
+  }
+  .quota-copy .quota-kicker{
+    font-size:16px !important;
+  }
+  .quota-copy .quota-value{
+    font-size:40px !important;
+  }
+  .quota-copy .quota-note{
+    font-size:14px;
+  }
+  .spec-list{
+    position:relative;
+  }
+  .spec-list::before{
+    content:"要素";
+    padding:12px 24px;
+    text-align:left;
+    white-space:normal;
+  }
+  .spec-list::after{
+    content:"内容";
+    position:absolute;
+    top:0;
+    right:24px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    color:#fff;
+    font-size:12px;
+    line-height:18px;
+  }
+  .scenario-bg{
+    height:90.5px;
+    min-height:90.5px;
+    box-sizing:border-box;
+  }
+  .stats-row .stat-cell:first-child{
+    padding-left:0;
+  }
+  #cases .dowsure-title-break{
+    display:block !important;
+  }
+  .sec-title,
+  .sec-title *,
+  .advantages-header h2{
+    font-weight:700 !important;
+  }
+  @media(min-width:1025px){
+    .spec-row{
+      grid-template-columns:140px 1fr;
+    }
+    .spec-v{
+      text-align:right;
+      white-space:nowrap;
+    }
+    .advantage-mask-shell{
+      -webkit-mask-image:linear-gradient(to bottom, transparent 0, #000 4%, #000 96%, transparent 100%);
+      mask-image:linear-gradient(to bottom, transparent 0, #000 4%, #000 96%, transparent 100%);
+    }
+    .advantage-tab:not(.active) span{
+      font-size:20px;
+    }
+    .advantage-card-track{
+      gap:60px;
+    }
+    .process-grid.reveal .process-step{
+      opacity:0;
+      transform:translateY(28px);
+      transition:opacity .62s var(--ease-out), transform .62s var(--ease-out);
+    }
+    .process-grid.reveal.in .process-step{
+      opacity:1;
+      transform:translateY(0);
+    }
+    .process-grid.reveal.in .process-step:nth-child(1){ transition-delay:.05s; }
+    .process-grid.reveal.in .process-step:nth-child(2){ transition-delay:.17s; }
+    .process-grid.reveal.in .process-step:nth-child(3){ transition-delay:.29s; }
+    .process-grid.reveal.in .process-step:nth-child(4){ transition-delay:.41s; }
+    .process-grid.reveal.in .process-step:nth-child(5){ transition-delay:.53s; }
+  }
+  @media(max-width:1024px){
+    #products .amazon-split{
+      grid-template-columns:1fr;
+    }
+    #products .amazon-hero-card{
+      min-height:360px;
+    }
+    #products .amazon-hero-card::before{
+      width:min(560px, 100%);
+      margin-left:auto;
+      margin-right:auto;
+    }
+    #products .amazon-hero-card .quota-copy{
+      inset:0;
+      width:auto;
+      height:auto;
+    }
+  }
+  @media(max-width:640px){
+    #products .amazon-hero-card{
+      min-height:270px;
+    }
+    .quota-copy .quota-kicker{
+      font-size:14px !important;
+    }
+    .quota-copy .quota-value{
+      font-size:32px !important;
+    }
+    .quota-copy .quota-note{
+      font-size:12px;
+    }
+    .scenario-bg{
+      height:auto;
+      min-height:50px;
+    }
+  }
+  @media(max-width:640px){
+    .hero-grid{
+      justify-content:flex-start;
+      text-align:left;
+    }
+    .hero-copy{
+      align-items:flex-start;
+      text-align:left;
+      max-width:100%;
+      margin:0;
+      padding-top:100px;
+    }
+    .hero-logo{
+      margin-left:0;
+      margin-right:0;
+    }
+    .hero-sub{
+      width:100%;
+      text-align:left;
+    }
+    .hero-photo{
+      background:url("./assets/Hero%E8%83%8C%E6%99%AF-%E6%89%8B%E6%9C%BA%E7%AB%AF.png") center top / cover no-repeat;
+    }
+    .hero-veil{
+      background:none;
+    }
+    .product-page .sec-head .sec-eyebrow{
+      margin-bottom:8px;
+    }
+    .hero h1{
+      max-width:100% !important;
+      font-size:38px !important;
+      line-height:1.18 !important;
+      white-space:normal;
+    }
+    .hero h1 br{
+      display:none;
+    }
+    .hero h1 .highlight{
+      display:inline;
+      white-space:nowrap;
+    }
+    .product-chooser{
+      width:calc(100vw - 40px);
+      max-width:100%;
+      align-items:flex-start;
+      margin-left:0;
+      margin-right:0;
+    }
+    .chooser-title{
+      justify-content:flex-start;
+      text-align:left;
+    }
+    .product-chooser .product-tab-anchor{
+      width:100%;
+      height:54px;
+      justify-content:flex-start;
+      align-items:center;
+    }
+    .product-switch{
+      width:100% !important;
+      max-width:100% !important;
+      height:54px;
+    }
+    .product-tab-anchor.is-pinned .product-switch{
+      width:calc(100vw - 40px) !important;
+      max-width:calc(100vw - 40px) !important;
+    }
+    .product-tab{
+      flex:1 1 0;
+      width:auto !important;
+      min-width:0 !important;
+      height:44px;
+    }
+    .product-switch > .product-tab{
+      flex:0 0 50% !important;
+      width:50% !important;
+      max-width:50% !important;
+      min-width:0 !important;
+      white-space:nowrap;
+    }
+    .morfund-intro .shiny-cta,
+    .final-cta .shiny-cta{
+      min-width:250px;
+      height:50px;
+      padding:0 28px;
+      font-size:14px;
+    }
+    .sec-title br,
+    .morfund-intro h2 br,
+    .advantages-header h2 br,
+    .final-cta h2 br,
+    #cases .dowsure-title-break{
+      display:none !important;
+    }
+    .morfund-intro .product-fill-title,
+    .morfund-intro h2{
+      font-size:18px !important;
+      line-height:1.55;
+    }
+    .advantage-visual-card img{
+      width:116%;
+      max-width:none;
+      height:auto;
+      margin-left:-32px;
+      transform:none;
+      transform-origin:left top;
+      object-fit:contain;
+      aspect-ratio:auto;
+    }
+    .dowsure-highlight,
+    .dowsure-highlight strong{
+      font-size:20px !important;
+    }
+  }
+
+  /* RMB product page: scoped additions. USD page is left intact and only hidden/shown by product state. */
+  .product-page{ display:none; }
+  body[data-product="usd"] .product-page-usd,
+  body[data-product="rmb"] .product-page-rmb,
+  body:not([data-product]) .product-page-rmb{ display:block; }
+
+  .product-page-rmb{
+    background:#050509;
+    color:#fff;
+  }
+  .product-page-rmb .sec,
+  .rmb-intro,
+  .rmb-advantages-scroll,
+  .rmb-final-cta{
+    background:#050509;
+  }
+  .rmb-intro{
+    padding:100px 0 180px;
+    text-align:center;
+  }
+  .rmb-intro .product-intro-label{
+    margin-bottom:32px;
+    color:#287EFF;
+    font-size:18px;
+    font-weight:500;
+  }
+  .rmb-intro .product-fill-title{
+    max-width:1200px;
+    margin:0 auto 24px;
+    color:rgba(255,255,255,.6);
+    font-family:"Source Han Sans CN","Source Han Sans SC","Noto Sans SC",Inter,system-ui,sans-serif;
+    font-size:42px;
+    line-height:1.45;
+    font-weight:700;
+    letter-spacing:0;
+  }
+  .rmb-intro .rmb-intro-stats{
+    margin:60px auto 0;
+    text-align:left;
+  }
+  .rmb-section-header{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    margin-bottom:60px;
+  }
+  .rmb-section-header .eyebrow-blue{
+    color:#287EFF;
+    font-size:18px;
+    font-weight:500;
+  }
+  .rmb-section-header h2{
+    margin:0;
+    color:#fff;
+    font-family:"Source Han Sans CN","Source Han Sans SC","Noto Sans SC",Inter,system-ui,sans-serif;
+    font-size:48px;
+    line-height:1.2;
+    font-weight:700;
+  }
+  .rmb-section-header p{
+    margin:0;
+    color:#B0B0BE;
+    font-size:16px;
+    line-height:1.6;
+  }
+
+  .rmb-advantages-scroll{
+    position:relative;
+    height:620vh;
+  }
+  .rmb-advantages-scroll .advantages-sticky{
+    position:sticky;
+    top:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:120px 0;
+    overflow:hidden;
+  }
+  .rmb-advantages-scroll .advantages-grid{
+    display:grid;
+    grid-template-columns:450px minmax(0,580px);
+    gap:150px;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .rmb-advantages-scroll .advantage-mask-shell{
+    height:494px;
+    overflow:hidden;
+    border-radius:20px;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 12%,#000 88%,transparent 100%);
+    mask-image:linear-gradient(to bottom,transparent 0,#000 12%,#000 88%,transparent 100%);
+  }
+  .rmb-advantages-scroll .advantage-card-track{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    gap:60px;
+    will-change:transform;
+  }
+  .rmb-advantages-scroll .advantage-visual-card{
+    flex:0 0 380px;
+    width:580px;
+    height:380px;
+    min-height:380px;
+    padding:0;
+    border:0;
+    background:transparent;
+    box-shadow:none;
+    opacity:.18;
+    overflow:visible;
+  }
+  .rmb-advantages-scroll .advantage-visual-card.active{ opacity:1; }
+  .rmb-advantages-scroll .advantage-visual-card img{
+    width:680px;
+    height:480px;
+    max-width:none;
+    transform:translate(-50px,-50px);
+    pointer-events:none;
+  }
+
+  .rmb-product-spec .rmb-product-grid{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(320px, 384px));
+    gap:24px;
+    justify-content:center;
+  }
+  .rmb-finance-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:600px;
+    padding:40px 32px;
+    border:1px solid rgba(255,255,255,.05);
+    border-radius:24px;
+    background:linear-gradient(122.62deg, rgba(10,10,15,.8) 0%, rgba(13,13,20,.6) 100%);
+    overflow:hidden;
+  }
+  .rmb-finance-top{ display:grid; gap:30px; }
+  .rmb-bank-line{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    min-height:26px;
+    white-space:nowrap;
+  }
+  .rmb-bank-line img{ height:26px; width:auto; max-width:150px; object-fit:contain; }
+  .rmb-bank-line span{ font-size:16px; color:#fff; }
+  .rmb-recommend{
+    margin-left:auto;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    height:26px;
+    padding:0 14px;
+    border:1px solid rgba(40,126,255,.3);
+    border-radius:99px;
+    background:rgba(21,126,246,.07);
+    color:#287EFF;
+    font-size:14px;
+    font-weight:500;
+  }
+  .rmb-tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:16px; }
+  .rmb-tags span{
+    padding:4px 12px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;
+    background:rgba(255,255,255,.05);
+    color:#DADAE6;
+    font-size:12px;
+    line-height:18px;
+  }
+  .rmb-card-rule{
+    height:1px;
+    width:100%;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.1), transparent);
+  }
+  .rmb-card-metrics{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  .rmb-metric small{
+    display:block;
+    color:#B0B0BE;
+    font-size:14px;
+    margin-bottom:4px;
+  }
+  .rmb-metric strong{
+    color:#fff;
+    font-family:Inter,"Noto Sans SC",sans-serif;
+    font-size:24px;
+    line-height:1.25;
+  }
+  .rmb-metric strong.blue{ color:#287EFF; }
+  .rmb-detail-list{
+    display:grid;
+    gap:8px;
+    margin:0;
+    padding:0;
+    list-style:none;
+    color:#E0E0E8;
+    font-size:14px;
+    white-space:nowrap;
+  }
+  .rmb-detail-list li{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    padding:4px 0;
+  }
+  .rmb-detail-list span:first-child{ color:#B0B0BE; }
+  .rmb-card-button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:54px;
+    margin-top:28px;
+    border:1px solid transparent;
+    border-radius:99px;
+    background:
+      linear-gradient(#050509,#050509) padding-box,
+      linear-gradient(147deg,#FF267F 0%,#A53DFF 32%,#1C76FF 68%,#00AAFF 100%) border-box;
+    color:#fff;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:500;
+  }
+  .rmb-spec-note{
+    margin:24px 0 0;
+    color:#666670;
+    font-size:13px;
+    text-align:center;
+  }
+
+  .rmb-process .process-grid.is-4{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .rmb-admission .admission-panel{
+    display:grid;
+    gap:0;
+  }
+  .rmb-bank-tabs{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    min-height:80px;
+  }
+  .rmb-bank-tab{
+    border:1px solid transparent;
+    border-radius:8px 8px 0 0;
+    background:transparent;
+    opacity:1;
+    cursor:pointer;
+    display:grid;
+    place-items:center;
+    padding:24px 28px;
+  }
+  .rmb-bank-tab.active{
+    border-color:#89BCFF;
+    border-bottom-color:#89BCFF;
+    border-radius:16px 16px 0 0;
+    background:
+      radial-gradient(405.85% 101.55% at 100% 102.63%, rgba(38,99,255,.15) 0%, rgba(0,0,0,0) 100%),
+      radial-gradient(447.57% 128.86% at 3.36% -4.75%, rgba(6,106,255,.10) 0%, rgba(0,0,0,0) 66.35%),
+      #050509;
+    box-shadow:0 0 25px rgba(83,77,255,.1);
+  }
+  .rmb-bank-tab img{
+    max-height:24px;
+    width:auto;
+    opacity:.4;
+    transition:opacity .2s ease;
+  }
+  .rmb-bank-tab:hover img,
+  .rmb-bank-tab.active img{
+    opacity:1;
+  }
+  .rmb-admission-card-header{
+    display:none;
+  }
+  .rmb-admission-card{
+    display:none;
+    min-height:300px;
+    padding:36px 32px;
+    border:1px solid #89BCFF;
+    border-radius:0 16px 16px 16px;
+    background:
+      radial-gradient(405.85% 101.55% at 100% 102.63%, rgba(38,99,255,.15) 0%, rgba(0,0,0,0) 100%),
+      radial-gradient(447.57% 128.86% at 3.36% -4.75%, rgba(6,106,255,.10) 0%, rgba(0,0,0,0) 66.35%),
+      #050509;
+    box-shadow:0 0 25px rgba(83,77,255,.1);
+  }
+  .rmb-admission-card.active{ display:grid; grid-template-columns:1fr 1fr; gap:0; }
+  .rmb-admission-group{
+    padding:10px 40px;
+  }
+  .rmb-admission-pill{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:4px 14px;
+    border:1px solid rgba(40,126,255,.3);
+    border-radius:99px;
+    background:rgba(21,126,246,.07);
+    color:#287EFF;
+    font-size:14px;
+    font-weight:500;
+    margin-bottom:32px;
+  }
+  .rmb-admission-list{
+    display:grid;
+    gap:12px;
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+  .rmb-admission-list li{
+    position:relative;
+    padding-left:22px;
+    color:#fff;
+    font-size:14px;
+    line-height:1.5;
+  }
+  .rmb-admission-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    top:0;
+    color:#287EFF;
+  }
+  .rmb-admission-list b{
+    display:inline-block;
+    width:60px;
+    color:#95999F;
+    font-weight:400;
+  }
+
+  .rmb-dowsure .rmb-dowsure-band{
+    margin:48px 0;
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    padding:20px 28px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:8px;
+    background:#11111B;
+    color:#fff;
+    font-size:24px;
+    line-height:1.5;
+    font-weight:700;
+  }
+  .rmb-final-cta{
+    min-height:400px;
+  }
+  .product-page-rmb .rmb-final-cta h2{
+    background:linear-gradient(90deg, rgba(255,255,255,.3) 0%, #fff 34%, #eef7ff 70%, rgba(255,255,255,0) 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:transparent;
+  }
+
+  @media(max-width:1260px){
+    .rmb-product-spec .rmb-product-grid{
+      grid-template-columns:repeat(2, minmax(320px, 384px));
+    }
+  }
+  @media(max-width:1024px){
+    .rmb-advantages-scroll{
+      height:auto;
+    }
+    .rmb-advantages-scroll .advantages-sticky{
+      position:relative;
+      min-height:0;
+      padding:96px 0;
+      overflow:visible;
+    }
+    .rmb-advantages-scroll .advantages-grid{
+      display:block;
+    }
+    .rmb-advantages-scroll .advantages-tabs{
+      display:none;
+    }
+    .rmb-advantages-scroll .advantage-mask-shell{
+      height:auto;
+      overflow:visible;
+      -webkit-mask-image:none;
+      mask-image:none;
+    }
+    .rmb-advantages-scroll .advantage-card-track{
+      position:relative;
+      transform:none !important;
+      gap:20px;
+    }
+    .rmb-advantages-scroll .advantage-visual-card{
+      width:115%;
+      height:auto;
+      min-height:0;
+      opacity:1 !important;
+      display:flex;
+      flex-direction:column;
+      gap:0;
+    }
+    .rmb-advantages-scroll .advantage-visual-card img{
+      width:100%;
+      height:auto;
+      max-width:100%;
+      aspect-ratio:353/231;
+      object-fit:cover;
+      border-radius:12px;
+      transform:none;
+    }
+    .rmb-process .process-grid.is-4{
+      grid-template-columns:repeat(2,1fr);
+    }
+  }
+  @media(max-width:640px){
+    .rmb-intro{
+      padding:80px 0;
+    }
+    .rmb-intro .product-intro-label{
+      font-size:14px;
+      text-align:center;
+    }
+    .rmb-intro .product-fill-title{
+      font-size:18px;
+      line-height:1.6;
+      text-align:center;
+    }
+    .rmb-intro .rmb-intro-stats{
+      margin-top:42px;
+    }
+    .rmb-section-header{
+      gap:16px;
+      margin-bottom:42px;
+    }
+    .rmb-section-header .eyebrow-blue{ font-size:14px; }
+    .rmb-section-header h2{ font-size:28px; line-height:1.35; }
+    .rmb-section-header p{ font-size:12px; }
+    .product-page-rmb .rmb-product-spec .sec-title,
+    .product-page-rmb .rmb-process .sec-title{
+      white-space:nowrap;
+      font-size:clamp(19px, 5.6vw, 28px) !important;
+      line-height:1.25;
+    }
+    .product-page-usd #products .sec-title,
+    .product-page-usd #process .sec-title,
+    .product-page-usd #scenarios .sec-title{
+      white-space:nowrap;
+      font-size:28px !important;
+      line-height:1.25;
+    }
+    .product-page-usd #products .sec-title br,
+    .product-page-usd #process .sec-title br,
+    .product-page-usd #scenarios .sec-title br{
+      display:none !important;
+    }
+    .product-page-rmb .rmb-intro-desktop-break{
+      display:none;
+    }
+    .rmb-product-spec .rmb-product-grid{
+      grid-template-columns:1fr;
+    }
+    .rmb-finance-card{
+      min-height:58px;
+      padding:40px 24px;
+    }
+    .rmb-card-metrics{
+      grid-template-columns:1fr 1fr;
+    }
+    .rmb-detail-list{
+      white-space:normal;
+    }
+    .rmb-process .process-grid.is-4{
+      grid-template-columns:1fr;
+    }
+    .product-page-rmb .rmb-process .process-step .num,
+    .product-page-rmb .rmb-process .process-step.active .num{
+      background:none !important;
+      -webkit-background-clip:initial !important;
+      background-clip:initial !important;
+      -webkit-text-fill-color:#287EFF !important;
+      color:#287EFF !important;
+    }
+    .product-page-rmb .rmb-admission .admission-panel{
+      gap:18px;
+    }
+    .product-page-rmb .rmb-bank-tabs{
+      display:none;
+    }
+    .product-page-rmb .rmb-admission-card,
+    .product-page-rmb .rmb-admission-card.active{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:36px;
+      border-radius:16px;
+      padding:36px 32px;
+      border:1px solid #2e4563;
+      background:
+        radial-gradient(405.85% 101.55% at 100% 102.63%, rgba(38,99,255,.15) 0%, rgba(0,0,0,0) 100%),
+        radial-gradient(447.57% 128.86% at 3.36% -4.75%, rgba(6,106,255,.10) 0%, rgba(0,0,0,0) 66.35%),
+        #050509;
+      box-shadow:0 0 25px rgba(83,77,255,.1);
+    }
+    .product-page-rmb .rmb-admission-card-header{
+      display:block;
+      height:24px;
+      margin-bottom:-12px;
+    }
+    .product-page-rmb .rmb-admission-card-header img{
+      display:block;
+      width:auto;
+      max-width:140px;
+      height:100%;
+      object-fit:contain;
+      object-position:left center;
+    }
+    .rmb-admission-group{
+      padding:0;
+    }
+    .product-page-rmb .rmb-admission-list li{
+      display:grid;
+      grid-template-columns:16px 54px minmax(0,1fr);
+      column-gap:6px;
+      align-items:start;
+      padding-left:0;
+      text-align:left;
+    }
+    .product-page-rmb .rmb-admission-list li::before{
+      position:static;
+      grid-column:1;
+      line-height:1.5;
+    }
+    .product-page-rmb .rmb-admission-list b{
+      grid-column:2;
+      width:auto;
+      text-align:left;
+    }
+    .rmb-dowsure .rmb-dowsure-band{
+      font-size:18px;
+      line-height:1.55;
+      margin:32px 0;
+    }
+    .rmb-final-cta h2{
+      font-size:28px;
+      line-height:1.5;
+    }
+  }
+
+  /* RMB desktop-only refinements. Keep USD and mobile sealed unless explicitly shared. */
+  @media(min-width:1025px){
+    .product-page-rmb .rmb-intro .product-fill-title{
+      font-size:42px !important;
+    }
+    .product-page-rmb .rmb-product-spec .rmb-finance-card:nth-child(5) .rmb-card-metrics{
+      grid-template-columns:minmax(132px,1fr) minmax(164px,1fr);
+      gap:10px;
+    }
+    .product-page-rmb .rmb-product-spec .rmb-finance-card:nth-child(5) .rmb-metric:nth-child(1) strong,
+    .product-page-rmb .rmb-product-spec .rmb-finance-card:nth-child(5) .rmb-metric:nth-child(2) strong{
+      white-space:nowrap;
+    }
+    .product-page-rmb .rmb-process .process-step.active .num,
+    .product-page-rmb .rmb-process .process-step .num{
+      background:none !important;
+      -webkit-background-clip:initial !important;
+      background-clip:initial !important;
+      -webkit-text-fill-color:#287EFF;
+      color:#287EFF !important;
+    }
+    .product-page-rmb .rmb-bank-tab{
+      opacity:1;
+      border:1px solid transparent;
+      border-radius:16px 16px 0 0;
+      background:transparent;
+      box-shadow:none;
+    }
+    .product-page-rmb .rmb-bank-tab img{
+      opacity:.4;
+    }
+    .product-page-rmb .rmb-bank-tab:hover img,
+    .product-page-rmb .rmb-bank-tab.active img{
+      opacity:1;
+    }
+    .product-page-rmb .rmb-bank-tab.active{
+      border-color:transparent;
+      background:
+        radial-gradient(78px 52px at 15% 16%, rgba(137,188,255,.16), rgba(0,0,0,0) 74%) padding-box,
+        radial-gradient(405.85% 101.55% at 100% 102.63%, rgba(38,99,255,.2) 0%, rgba(0,0,0,0) 100%) padding-box,
+        linear-gradient(#050509,#050509) padding-box,
+        linear-gradient(90deg, #5280FF 0%, rgba(82,128,255,.2) 34%, rgba(82,128,255,.2) 68%, #3731FF 100%) border-box;
+    }
+    .product-page-rmb .rmb-admission-card{
+      border:1px solid transparent;
+      background:
+        radial-gradient(110px 80px at 6% 7%, rgba(137,188,255,.10), rgba(0,0,0,0) 72%) padding-box,
+        radial-gradient(405.85% 101.55% at 100% 102.63%, rgba(38,99,255,.15) 0%, rgba(0,0,0,0) 100%) padding-box,
+        radial-gradient(447.57% 128.86% at 3.36% -4.75%, rgba(6,106,255,.10) 0%, rgba(0,0,0,0) 66.35%) padding-box,
+        linear-gradient(#050509,#050509) padding-box,
+        linear-gradient(90deg, #5280FF 0%, rgba(82,128,255,.2) 34%, rgba(82,128,255,.2) 68%, #3731FF 100%) border-box;
+    }
+    .product-page-rmb .rmb-admission-list li{
+      display:grid;
+      grid-template-columns:64px minmax(0,1fr);
+      column-gap:12px;
+      align-items:start;
+      text-align:left;
+    }
+    .product-page-rmb .rmb-admission-list b{
+      width:auto;
+      text-align:left;
+    }
+    .product-page-rmb .dowsure-title-break{
+      display:block;
+    }
+  }
+
+  /* Shared final CTA background for RMB and USD. */
+  .product-page .final-cta{
+    background:#050509 url("./assets/%E5%BA%95%E9%83%A8-%E6%B8%90%E5%8F%98%E8%83%8C%E6%99%AF.png") center bottom / cover no-repeat !important;
+  }
+  .product-page .final-cta-streak,
+  .product-page .final-cta-streak svg{
+    display:none !important;
+  }
+  .product-page .final-cta .container::before{
+    display:none !important;
+  }
+  .rmb-intro .product-fill-title{
+    margin-bottom:20px;
+  }
+  .rmb-intro.morfund-intro .product-intro-label{
+    margin-bottom:0;
+    font-size:18px;
+  }
+  .rmb-intro.morfund-intro .rmb-intro-stats{
+    width:100%;
+    max-width:1200px;
+    margin-top:28px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  @media(min-width:641px){
+    .morfund-intro,
+    .rmb-intro{
+      padding-top:200px !important;
+    }
+  }
+  @media(max-width:640px){
+    .hero-copy{
+      padding-top:160px !important;
+    }
+    .morfund-intro,
+    .rmb-intro{
+      padding-top:140px !important;
+      padding-bottom:80px !important;
+    }
+    .rmb-intro.morfund-intro .product-intro-label{
+      margin-bottom:0;
+      font-size:18px;
+    }
+  }
+</style>
+</head>
+<body data-product="rmb">
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="top">
+  <div class="hero-photo"></div>
+  <div class="hero-veil"></div>
+
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <img class="hero-logo" src="./assets/morfund-logo.svg" alt="Morfund">
+      <h1>
+        专为跨境电商卖家打造的<br>
+        <span class="highlight">资金方案</span>
+      </h1>
+
+      <p class="hero-sub">
+        为跨境卖家提供人民币/美元融资，解决在库存备货、旺季冲量、平台账期周转中的资金瓶颈。
+      </p>
+
+      <div class="product-chooser">
+        <div class="chooser-title"><span>请选择您的融资币种</span></div>
+        <div class="product-tab-anchor" id="product-tabs">
+          <div class="product-switch" role="tablist" aria-label="融资币种切换">
+            <button class="product-tab active" type="button" role="tab" aria-selected="true" data-product="rmb">人民币融资产品</button>
+            <button class="product-tab" type="button" role="tab" aria-selected="false" data-product="usd">美元融资产品</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-meta">
+        <div class="m">
+          <div class="v">$10M</div>
+          <div class="l">最高授信额度</div>
+        </div>
+        <div class="m">
+          <div class="v">5.8%<span style="color:var(--ink-3);font-size:.6em;font-weight:400;margin-left:2px;">起</span></div>
+          <div class="l">最低年化利率</div>
+        </div>
+        <div class="m">
+          <div class="v">4-6<span style="color:var(--ink-3);font-size:.65em;font-weight:400;margin-left:3px;">月</span></div>
+          <div class="l">灵活贷款期限</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="product-page product-page-rmb" data-product-page="rmb">
+<section class="rmb-intro morfund-intro" id="product-intro-rmb" aria-labelledby="rmb-product-title">
+  <div class="container reveal">
+    <div class="eyebrow-blue product-intro-label">Morfund 人民币融资产品</div>
+    <h2 id="rmb-product-title" class="product-fill-title" data-intro-fill>为 Amazon 美国站、德国站卖家提供对公额度<br class="rmb-intro-desktop-break"><span class="intro-fill-gradient">最高 2,000 万元人民币</span>的融资额度，解决跨境卖家在库存备货、旺季冲量、平台账期周转中的资金瓶颈</h2>
+    <a class="btn btn-primary shiny-cta product-jump" href="#product-tabs" data-product="rmb"><span>点击申请人民币融资</span></a>
+    <div class="stats-row rmb-intro-stats reveal">
+      <div class="stat-cell">
+        <div class="stat-sub">对公最高额度</div>
+        <div class="stat-value"><span class="grad">2,000</span><span class="unit">万</span></div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-sub">个人最高额度</div>
+        <div class="stat-value"><span class="grad">100</span><span class="unit">万</span></div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-sub">年化利率</div>
+        <div class="stat-value"><span class="grad">3</span><span class="unit">% 起</span></div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-sub">最长贷款期限</div>
+        <div class="stat-value"><span class="grad">9</span><span class="unit">个月</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rmb-advantages-scroll" id="why-rmb" aria-labelledby="rmb-advantages-title">
+  <div class="advantages-sticky">
+    <div class="container">
+      <div class="rmb-section-header reveal">
+        <div class="eyebrow-blue">为什么选择跨商贷-人民币</div>
+        <h2 id="rmb-advantages-title">六大核心优势，为大卖量身定制</h2>
+        <p>从额度、币种到合规，每一项都为跨境卖家的真实场景设计。</p>
+      </div>
+
+      <div class="advantages-grid reveal">
+        <div class="advantages-tabs" role="tablist" aria-label="人民币六大核心优势">
+          <button class="advantage-tab active" type="button" role="tab" aria-selected="true" data-index="0">
+            <span>额度覆盖广</span>
+            <p>个人产品最高 100 万元；对公产品最高 2000 万元（广发、微众），满足不同规模卖家的备货需求。</p>
+          </button>
+          <button class="advantage-tab" type="button" role="tab" aria-selected="false" data-index="1">
+            <span>费率低至 3%</span>
+            <p>浦发对公宁波地区低至 3%，广发对公低至 4%，相比传统贷款利率优势显著。</p>
+          </button>
+          <button class="advantage-tab" type="button" role="tab" aria-selected="false" data-index="2">
+            <span>期限灵活</span>
+            <p>最短 3 个月，最长 9 个月（微众对公），可按业务周期灵活选择。</p>
+          </button>
+          <button class="advantage-tab" type="button" role="tab" aria-selected="false" data-index="3">
+            <span>额度可循环</span>
+            <p>额度循环使用，随借随还，适配旺季备货和日常周转。</p>
+          </button>
+          <button class="advantage-tab" type="button" role="tab" aria-selected="false" data-index="4">
+            <span>提前还款无违约金</span>
+            <p>提前还款不产生额外违约金，资金回笼后可灵活降低成本。</p>
+          </button>
+          <button class="advantage-tab" type="button" role="tab" aria-selected="false" data-index="5">
+            <span>申请便捷</span>
+            <p>线上提交资料，结合店铺经营数据快速匹配银行产品。</p>
+          </button>
+        </div>
+
+        <div class="advantage-mask-shell" aria-live="polite">
+          <div class="advantage-card-track">
+            <article class="advantage-visual-card active" data-index="0">
+              <img src="./assets/rmb-adv-quota.png" alt="人民币额度覆盖广">
+              <div class="mobile-adv-copy"><h3>额度覆盖广</h3><p>个人产品最高 100 万元；对公产品最高 2000 万元（广发、微众），满足不同规模卖家的备货需求。</p></div>
+            </article>
+            <article class="advantage-visual-card" data-index="1">
+              <img src="./assets/rmb-adv-rate.png" alt="人民币费率低至 3%">
+              <div class="mobile-adv-copy"><h3>费率低至 3%</h3><p>浦发对公宁波地区低至 3%，广发对公低至 4%，相比传统贷款利率优势显著。</p></div>
+            </article>
+            <article class="advantage-visual-card" data-index="2">
+              <img src="./assets/rmb-adv-term.png" alt="人民币期限灵活">
+              <div class="mobile-adv-copy"><h3>期限灵活</h3><p>最短 3 个月，最长 9 个月（微众对公），可按业务周期灵活选择。</p></div>
+            </article>
+            <article class="advantage-visual-card" data-index="3">
+              <img src="./assets/rmb-adv-recycle.png" alt="人民币额度可循环">
+              <div class="mobile-adv-copy"><h3>额度可循环</h3><p>额度循环使用，随借随还，适配旺季备货和日常周转。</p></div>
+            </article>
+            <article class="advantage-visual-card" data-index="4">
+              <img src="./assets/rmb-adv-repay.png" alt="人民币提前还款无违约金">
+              <div class="mobile-adv-copy"><h3>提前还款无违约金</h3><p>提前还款不产生额外违约金，资金回笼后可灵活降低成本。</p></div>
+            </article>
+            <article class="advantage-visual-card" data-index="5">
+              <img src="./assets/rmb-adv-apply.png" alt="人民币申请便捷">
+              <div class="mobile-adv-copy"><h3>申请便捷</h3><p>线上提交资料，结合店铺经营数据快速匹配银行产品。</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="seam"></div>
+
+<section class="sec rmb-product-spec" id="products-rmb">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-eyebrow"><span class="sec-num">产品要素对比</span></div>
+        <h2 class="sec-title">一站式人民币融资专为出海企业设计</span></h2>
+      </div>
+      <p class="sec-desc">五大银行产品矩阵，灵活额度与极致利率。所有产品参数、申请条件、放款细节一目了然。选择最适合您业务的融资方案。</p>
+    </div>
+
+    <div class="rmb-product-grid reveal">
+      <article class="rmb-finance-card">
+        <div class="rmb-finance-top">
+          <div>
+            <div class="rmb-bank-line"><img src="./assets/bank-gfb.png" alt="广发银行"><span>个人融资</span></div>
+            <div class="rmb-tags"><span>随借随还</span><span>低门槛</span><span>快速审批</span></div>
+          </div>
+          <div class="rmb-card-rule"></div>
+          <div class="rmb-card-metrics"><div class="rmb-metric"><small>最高额度</small><strong>100 万元</strong></div><div class="rmb-metric"><small>年化利率</small><strong class="blue">6% – 12%</strong></div></div>
+          <ul class="rmb-detail-list"><li><span>贷款期限</span><b>3 个月 / 6 个月</b></li><li><span>还款方式</span><b>先息后本 / 等额本息</b></li><li><span>额度循环</span><b>额度循环 1 年</b></li><li><span>支持平台</span><b>Amazon 美国站、德国站</b></li><li><span>提前还款</span><b>无违约金，随借随还</b></li></ul>
+        </div>
+        <a class="rmb-card-button product-jump" href="#product-tabs" data-product="rmb">立即申请</a>
+      </article>
+      <article class="rmb-finance-card">
+        <div class="rmb-finance-top">
+          <div>
+            <div class="rmb-bank-line"><img src="./assets/bank-gfb.png" alt="广发银行"><span>对公融资</span><em class="rmb-recommend">推荐</em></div>
+            <div class="rmb-tags"><span>超低利率</span><span>大额度</span><span>灵活还款</span></div>
+          </div>
+          <div class="rmb-card-rule"></div>
+          <div class="rmb-card-metrics"><div class="rmb-metric"><small>最高额度</small><strong>2,000 万元</strong></div><div class="rmb-metric"><small>年化利率</small><strong class="blue">低至 4%</strong></div></div>
+          <ul class="rmb-detail-list"><li><span>贷款期限</span><b>最长 6 个月</b></li><li><span>还款方式</span><b>先息后本</b></li><li><span>额度循环</span><b>随借随还</b></li><li><span>支持平台</span><b>Amazon 美国站、德国站</b></li><li><span>提前还款</span><b>无违约金</b></li></ul>
+        </div>
+        <a class="rmb-card-button product-jump" href="#product-tabs" data-product="rmb">立即申请</a>
+      </article>
+      <article class="rmb-finance-card">
+        <div class="rmb-finance-top">
+          <div>
+            <div class="rmb-bank-line"><img src="./assets/bank-webank.png" alt="微众银行"><span>对公融资</span><em class="rmb-recommend">推荐</em></div>
+            <div class="rmb-tags"><span>纯线上</span><span>长周期</span><span>智能审批</span></div>
+          </div>
+          <div class="rmb-card-rule"></div>
+          <div class="rmb-card-metrics"><div class="rmb-metric"><small>最高额度</small><strong>2,000 万元</strong></div><div class="rmb-metric"><small>年化利率</small><strong class="blue">5.9%</strong></div></div>
+          <ul class="rmb-detail-list"><li><span>贷款期限</span><b>最长 9 个月</b></li><li><span>还款方式</span><b>先息后本 + 等额本息</b></li><li><span>额度循环</span><b>额度可循环</b></li><li><span>支持平台</span><b>Amazon 美国站</b></li></ul>
+        </div>
+        <a class="rmb-card-button product-jump" href="#product-tabs" data-product="rmb">立即申请</a>
+      </article>
+      <article class="rmb-finance-card">
+        <div class="rmb-finance-top">
+          <div>
+            <div class="rmb-bank-line"><img src="./assets/bank-pf.png" alt="浦发银行"><span>对公融资</span><em class="rmb-recommend">推荐</em></div>
+            <div class="rmb-tags"><span>极低利率</span><span>宁波专享</span><span>企业首选</span></div>
+          </div>
+          <div class="rmb-card-rule"></div>
+          <div class="rmb-card-metrics"><div class="rmb-metric"><small>最高额度</small><strong>1,000 万元</strong></div><div class="rmb-metric"><small>年化利率</small><strong class="blue">3% – 7%</strong></div></div>
+          <ul class="rmb-detail-list"><li><span>贷款期限</span><b>最长 6 个月</b></li><li><span>还款方式</span><b>到期一次还本付息</b></li><li><span>支持平台</span><b>Amazon 美国站、德国站</b></li></ul>
+        </div>
+        <a class="rmb-card-button product-jump" href="#product-tabs" data-product="rmb">立即申请</a>
+      </article>
+      <article class="rmb-finance-card">
+        <div class="rmb-finance-top">
+          <div>
+            <div class="rmb-bank-line"><img src="./assets/bank-ccb.png" alt="建设银行"><span>对公融资</span></div>
+            <div class="rmb-tags"><span>国有银行</span><span>稳定可靠</span></div>
+          </div>
+          <div class="rmb-card-rule"></div>
+          <div class="rmb-card-metrics"><div class="rmb-metric"><small>最高额度</small><strong>1,000 万元</strong></div><div class="rmb-metric"><small>年化利率</small><strong class="blue">8.5% – 10.8%</strong></div></div>
+          <ul class="rmb-detail-list"><li><span>贷款期限</span><b>9 期</b></li><li><span>还款方式</span><b>前 3 期付息</b></li></ul>
+        </div>
+        <a class="rmb-card-button product-jump" href="#product-tabs" data-product="rmb">立即申请</a>
+      </article>
+    </div>
+    <p class="rmb-spec-note">* 最终授信额度与利率以各银行实际审批结果为准</p>
+  </div>
+</section>
+
+<div class="seam"></div>
+
+<section class="sec rmb-process" id="process-rmb">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-eyebrow"><span class="sec-num">申请流程</span></div>
+        <h2 class="sec-title">4 步完成申请，最快一周资金到账</h2>
+      </div>
+      <p class="sec-desc">从店铺授权到资金直达账户，全程线上协同。</p>
+    </div>
+    <div class="process-grid is-4 reveal">
+      <div class="process-step active"><div class="num">01</div><h3>店铺授权</h3><p>通过 Amazon Seller Central 完成店铺授权</p></div>
+      <div class="process-step active"><div class="num">02</div><h3>提交申请</h3><p>上传企业及董事资料，完成线上申请</p></div>
+      <div class="process-step active"><div class="num">03</div><h3>银行审批</h3><p>银行对资料进行审核及授信审批</p></div>
+      <div class="process-step active"><div class="num">04</div><h3>支用放款</h3><p>发起支用，资金直达大陆对公账户</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="seam"></div>
+
+<section class="sec rmb-scenarios" id="scenarios-rmb">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-eyebrow"><span class="sec-num">四个场景</span></div>
+        <h2 class="sec-title">场景化解决方案</h2>
+      </div>
+      <p class="sec-desc">无论你在冲旺季、快速起步、融资成本，Morfund 都能匹配解决方案。</p>
+    </div>
+    <div class="scenario-marquee reveal" aria-label="人民币场景化解决方案">
+      <div class="scenario-track rmb-scenario-track">
+        <article class="scenario-card"><h4>旺季备货冲刺</h4><p class="scenario-bg">Prime Day、黑五、圣诞等旺季前，卖家需提前备货，资金缺口大。</p><blockquote>旺季前把额度备好，缺货的时候不用临时找钱，安心冲榜。</blockquote><ul class="scenario-list"><li>广发对公额度最高 2,000 万元，覆盖大批量采购需求</li><li>最长 9 个月贷款期限（微众对公），完美匹配备货—销售—回款周期</li><li>额度可循环随借随还，旺季回款后即可归还，为下一轮备货再次支用</li></ul></article>
+        <article class="scenario-card"><h4>中小卖家快速起步</h4><p class="scenario-bg">GMV规模尚在成长阶段，资金需求在百万级别，希望审批快、门槛低。</p><blockquote>开店刚满一年就能申请，线上搞定，不用请假去银行跑材料。</blockquote><ul class="scenario-list"><li>广发个人产品额度最高 100 万元，成立满 1 年即可申请</li><li>微众对公 500 万以下纯线上办理，无需跑银行，资料上传即可审批</li><li>3 个月短期周转产品（广发个人）灵活匹配小批量备货节奏</li></ul></article>
+        <article class="scenario-card"><h4>多银行分散授信</h4><p class="scenario-bg">卖家希望分散资金来源，不过度依赖单一银行，提升整体授信上限。</p><blockquote>一家不够，几家一起，资金来源稳了，心里才踏实。</blockquote><ul class="scenario-list"><li>同时对接广发、微众、浦发、建行多家银行产品，可叠加申请</li><li>各产品准入条件差异化，依据店铺数据匹配最优方案</li><li>建议额度基于月均回款倍数科学测算，避免过度负债</li></ul></article>
+        <article class="scenario-card"><h4>低利率降低融资成本</h4><p class="scenario-bg">卖家已有贷款，但融资利率较高，希望寻找更优惠的资金来源。</p><blockquote>利率比之前低了一半，每年省下来的利息就是纯利润。</blockquote><ul class="scenario-list"><li>浦发对公利率3%–7%，宁波地区低至3%，大幅降低融资成本</li><li>广发对公利率低至4%，支持先息后本，前期资金压力小</li><li>提前还款无违约金，随时还款，不产生额外利息负担</li></ul></article>
+        <article class="scenario-card" aria-hidden="true"><h4>旺季备货冲刺</h4><p class="scenario-bg">Prime Day、黑五、圣诞等旺季前，卖家需提前备货，资金缺口大。</p><blockquote>旺季前把额度备好，缺货的时候不用临时找钱，安心冲榜。</blockquote><ul class="scenario-list"><li>广发对公额度最高 2,000 万元，覆盖大批量采购需求</li><li>最长 9 个月贷款期限（微众对公），完美匹配备货—销售—回款周期</li><li>额度可循环随借随还，旺季回款后即可归还，为下一轮备货再次支用</li></ul></article>
+        <article class="scenario-card" aria-hidden="true"><h4>中小卖家快速起步</h4><p class="scenario-bg">GMV规模尚在成长阶段，资金需求在百万级别，希望审批快、门槛低。</p><blockquote>开店刚满一年就能申请，线上搞定，不用请假去银行跑材料。</blockquote><ul class="scenario-list"><li>广发个人产品额度最高 100 万元，成立满 1 年即可申请</li><li>微众对公 500 万以下纯线上办理，无需跑银行，资料上传即可审批</li><li>3 个月短期周转产品（广发个人）灵活匹配小批量备货节奏</li></ul></article>
+        <article class="scenario-card" aria-hidden="true"><h4>多银行分散授信</h4><p class="scenario-bg">卖家希望分散资金来源，不过度依赖单一银行，提升整体授信上限。</p><blockquote>一家不够，几家一起，资金来源稳了，心里才踏实。</blockquote><ul class="scenario-list"><li>同时对接广发、微众、浦发、建行多家银行产品，可叠加申请</li><li>各产品准入条件差异化，依据店铺数据匹配最优方案</li><li>建议额度基于月均回款倍数科学测算，避免过度负债</li></ul></article>
+        <article class="scenario-card" aria-hidden="true"><h4>低利率降低融资成本</h4><p class="scenario-bg">卖家已有贷款，但融资利率较高，希望寻找更优惠的资金来源。</p><blockquote>利率比之前低了一半，每年省下来的利息就是纯利润。</blockquote><ul class="scenario-list"><li>浦发对公利率3%–7%，宁波地区低至3%，大幅降低融资成本</li><li>广发对公利率低至4%，支持先息后本，前期资金压力小</li><li>提前还款无违约金，随时还款，不产生额外利息负担</li></ul></article>
+      </div>
+      <div class="mobile-carousel-controls" data-carousel="rmb-scenario" aria-label="切换人民币场景卡片"><div class="mobile-carousel-progress" aria-hidden="true"><span></span></div><button type="button" data-dir="-1" aria-label="上一个场景">‹</button><button type="button" data-dir="1" aria-label="下一个场景">›</button></div>
+    </div>
+  </div>
+</section>
+
+<div class="seam"></div>
+
+<section class="sec rmb-admission" id="admission-rmb">
+  <div class="container">
+    <div class="rmb-section-header reveal"><div class="eyebrow-blue">准入条件速查</div></div>
+    <div class="admission-panel reveal">
+      <div class="rmb-bank-tabs" role="tablist" aria-label="银行准入条件">
+        <button class="rmb-bank-tab active" type="button" data-bank="gfb" aria-selected="true"><img src="./assets/bank-gfb.png" alt="广发银行"></button>
+        <button class="rmb-bank-tab" type="button" data-bank="webank" aria-selected="false"><img src="./assets/bank-webank.png" alt="微众银行"></button>
+        <button class="rmb-bank-tab" type="button" data-bank="pf" aria-selected="false"><img src="./assets/bank-pf.png" alt="浦发银行"></button>
+        <button class="rmb-bank-tab" type="button" data-bank="ccb" aria-selected="false"><img src="./assets/bank-ccb.png" alt="建设银行"></button>
+      </div>
+      <div class="rmb-admission-card active" data-bank-panel="gfb">
+        <div class="rmb-admission-card-header"><img src="./assets/bank-gfb.png" alt="广发银行"></div>
+        <div class="rmb-admission-group"><span class="rmb-admission-pill">个人</span><ul class="rmb-admission-list"><li><b>申请人</b>25–55周岁中国大陆居民，企业法人或占股20%以上股东</li><li><b>企业</b>成立年限&gt;1年，全国有广发银行网点的县市（部分地区除外）</li><li><b>店铺</b>经营时长≥1年，加总年GMV≥50万元，服装退货率≤20%/其他≤15%</li><li><b>支持站点</b>Amazon美国站、德国站</li></ul></div>
+        <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>企业</b>注册≥2年（或实控人从业3年以上且企业成立≥1年），A类外汇企业，信用评级≥BB+，近两年盈利，资产负债率≤70%</li><li><b>店铺</b>合计年GMV≥3000万元，主店铺实际经营满1年，各店铺近一年销售增长率≥-20%</li><li><b>实控人</b>本地户籍或有房产</li></ul></div>
+      </div>
+      <div class="rmb-admission-card" data-bank-panel="webank">
+        <div class="rmb-admission-card-header"><img src="./assets/bank-webank.png" alt="微众银行"></div>
+        <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>企业</b>注册时长≥0.5年，无失信/限高，无当前逾期</li><li><b>法人</b>23–65岁，近24个月无连续逾期3期，近半年逾期≤2次</li><li><b>店铺</b>≥2个店铺（或单店近12月GMV&gt;2000万），至少1店经营≥1年，近12月总销售额≥200万，AHR评分≥200分</li></ul></div>
+      </div>
+      <div class="rmb-admission-card" data-bank-panel="pf">
+        <div class="rmb-admission-card-header"><img src="./assets/bank-pf.png" alt="浦发银行"></div>
+        <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>企业</b>经营时长≥1年，无失信/限高，无当前逾期</li><li><b>店铺</b>Amazon美国站或德国站，经营时长≥6个月，月均销售额≥100万，退货率≤40%，年GMV≥3000万</li></ul></div>
+      </div>
+      <div class="rmb-admission-card" data-bank-panel="ccb">
+        <div class="rmb-admission-card-header"><img src="./assets/bank-ccb.png" alt="建设银行"></div>
+        <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>授信主体</b>大陆地区注册的小型或微型企业</li><li><b>店铺</b>经营年限&gt;1年，近1年退款率≤40%，近12月月均回款额&gt;10000美元，近1年回款率≥20%</li><li><b>FBA比例</b>FBA≤10%且年回款&gt;50%，或FBA&gt;10%均可准入</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="seam"></div>
+
+<section class="sec" id="cases-rmb">
+  <div class="sec-bg">
+    <div class="grid-mask"></div>
+    <div class="blob cyan" style="right:-160px;top:20%;width:460px;height:460px;opacity:.16;"></div>
+    <div class="blob violet" style="left:-160px;bottom:10%;width:460px;height:460px;opacity:.14;"></div>
+  </div>
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-eyebrow"><span class="sec-num">关于 Dowsure豆沙包</span></div>
+        <h2 class="sec-title">专注于为出口跨境电商提供<br class="dowsure-title-break">一站式智能科技服务的创新企业</h2>
+      </div>
+      <p class="sec-desc">公司在深圳、上海、香港、新加坡、胡志明多地设有分支机构及业务团队。公司以"智能科技赋能跨境电商"为使命，与 Amazon、Walmart、eBay、Shopee 等全球主流电商平台建立了长期或独家战略合作关系，同时联合产业内头部支付、物流等服务商，共同构建跨境电商数字基础设施。依托 API、云计算等先进技术，结合 AI 驱动的智能算法与风控模型，Dowsure豆沙包为金融机构提供覆盖信贷、保险、跨境支付、财富、外汇及风险管理等环节的一站式科技解决方案。</p>
+    </div>
+
+    <div class="dowsure-highlight reveal">累计助力 <strong>5 万</strong>卖家获得 <strong>100 亿</strong>发展资金，加速回款金额已达<strong>数亿元</strong></div>
+
+    <div class="stats-row reveal">
+      <div class="stat-cell">
+        <div class="stat-value"><span class="grad">15</span><span class="unit">万 +</span></div>
+        <div class="stat-sub">服务跨境卖家</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value"><span class="grad">20</span><span class="unit">家 +</span></div>
+        <div class="stat-sub">赋能银行及金融机构</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value"><span class="grad">1,000</span><span class="unit">亿 +</span></div>
+        <div class="stat-sub">创造跨境电商销售额</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value"><span class="grad">100</span><span class="unit">亿 +</span></div>
+        <div class="stat-sub">助力跨境卖家发展资金</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="seam"></div>
+
+<section class="seller-voices" id="voices-rmb">
+  <div class="container">
+    <div class="sec-head reveal"><div><div class="sec-eyebrow"><span class="sec-num">卖家心声</span></div><h2 class="sec-title">用 Dowsure豆沙包 一起<br>服务全球跨境电商卖家</h2></div></div>
+    <div class="voice-carousel-shell reveal">
+      <div class="voice-grid rmb-voice-grid">
+        <article class="voice-card"><div class="voice-photo"><img src="./assets/seller-female.png" alt="多平台卖家"><div class="voice-caption"><div class="role">多平台卖家</div><div class="title">Amazon + Walmart 双平台运营</div></div></div><p class="voice-quote">“Amazon 和 Walmart 两边都要备货，以前资金拆东墙补西墙。Morfund 把两个平台店铺一起算额度，总共批了 80 万美元，终于不用天天算现金流了。”</p></article>
+        <article class="voice-card"><div class="voice-photo"><img src="./assets/seller-male.png" alt="香港主体卖家"><div class="voice-caption"><div class="role">香港主体卖家</div><div class="title">年销 1000 万美金</div></div></div><p class="voice-quote">“香港公司在银行直接申请融资很难。通过豆沙包的跨境电商美元贷，看店铺数据，直接批了 100 万美元。选择离岸人民币融资年化只有 5 点多，钱进香港账户，税务处理也方便。”</p></article>
+        <article class="voice-card"><div class="voice-photo"><img src="./assets/seller-warehouse.png" alt="新类目拓展卖家"><div class="voice-caption"><div class="role">新类目拓展卖家</div><div class="title">家居转户外用品</div></div></div><p class="voice-quote">“想试水户外用品但不敢动用全部本金。Morfund 灵活支用，我先提了 8 万测款，卖起来再追加。自己的钱留着做安全垫，心里踏实多了。”</p></article>
+      </div>
+      <div class="mobile-carousel-controls" data-carousel="rmb-voice" aria-label="切换人民币卖家心声"><div class="mobile-carousel-progress" aria-hidden="true"><span></span></div><button type="button" data-dir="-1" aria-label="上一条卖家心声">‹</button><button type="button" data-dir="1" aria-label="下一条卖家心声">›</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta rmb-final-cta" id="pricing-rmb">
+  <div class="container">
+    <h2>让额度直达 2,000 万元</h2>
+    <p>帮助跨境卖家解决备货、旺季冲量、平台账期周转中的资金瓶颈。</p>
+    <div class="final-ctas"><a class="btn btn-primary btn-lg shiny-cta" href="#"><span>点击申请人民币融资</span></a></div>
+  </div>
+</section>
+</main>
+
+<main class="product-page product-page-usd" data-product-page="usd">
+<section class="morfund-intro" id="product-intro" aria-labelledby="morfund-product-title">
+  <div class="container reveal">
+    <div class="eyebrow-blue product-intro-label" data-product-motion="usd-intro-label" data-rmb-sync="same-section-motion">Morfund 美金融资产品</div>
+    <!-- RMB_SYNC_MARK: Future RMB product intro sections with matching structure should reuse data-scroll-reveal="reactbits" on PC and mobile. -->
+    <h2 id="morfund-product-title" class="product-fill-title" data-intro-fill data-product-motion="usd-intro" data-rmb-sync="same-section-motion">为 Amazon、Walmart、等主流平台卖家提供<br><span class="intro-fill-gradient">高达 1,000 万美元</span>的美元融资额度，解决跨境卖家在库存备货、旺季冲量、平台账期周转中的资金瓶颈</h2>
+    <a class="btn btn-primary shiny-cta product-jump" href="#product-tabs" data-product="usd"><span>点击申请美元融资</span></a>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 01 — WHY MORFUND (六大核心优势)
+     ============================================================ -->
+<section class="advantages-scroll" id="why" aria-labelledby="advantages-title">
+  <div class="advantages-sticky">
+    <div class="container">
+      <div class="advantages-header reveal">
+        <div class="eyebrow-blue">为什么选择跨商贷-美元</div>
+        <h2 id="advantages-title">六大核心优势，为大卖量身定制</h2>
+        <p>从额度、币种到合规，每一项都为跨境卖家的真实场景设计。</p>
+      </div>
+
+      <div class="advantages-grid reveal">
+        <div class="advantages-tabs" role="tablist" aria-label="六大核心优势">
+          <button class="advantage-tab active" type="button" role="tab" aria-selected="true" data-index="0">
+            <span>额度高</span>
+            <p>最高 1000 万美元 授信，满足大卖家备货旺季资金需求。</p>
+          </button>
+          <button class="advantage-tab" type="button" role="tab" aria-selected="false" data-index="1">
+            <span>币种灵活</span>
+            <p>支持 美元融资，也可选择 离岸人民币。</p>
+          </button>
+          <button class="advantage-tab" type="button" role="tab" aria-selected="false" data-index="2">
+            <span>平台官方</span>
+            <p>平台官方合作伙伴；支持 Amazon、Walmart、eBay等平台。</p>
+          </button>
+          <button class="advantage-tab" type="button" role="tab" aria-selected="false" data-index="3">
+            <span>申请方便</span>
+            <p>线上提交资料，基于店铺资产评估额度。</p>
+          </button>
+          <button class="advantage-tab" type="button" role="tab" aria-selected="false" data-index="4">
+            <span>还款灵活</span>
+            <p>根据客户推荐产品及还款方案，支持多种还款方式。</p>
+          </button>
+          <button class="advantage-tab" type="button" role="tab" aria-selected="false" data-index="5">
+            <span>入账便捷</span>
+            <p>资金直达 香港企业账户，跨境结算更高效。</p>
+          </button>
+        </div>
+
+        <div class="advantage-mask-shell" aria-live="polite">
+          <div class="advantage-card-track">
+            <article class="advantage-visual-card quota active" data-index="0">
+              <img src="./assets/advantage-quota.png" alt="最高额度可达 $10,000,000">
+              <div class="mobile-adv-copy">
+                <h3>额度高</h3>
+                <p>最高 1000 万美元授信，满足大卖家备货旺季资金需求。</p>
+                <a class="mobile-adv-link product-jump" href="#product-tabs" data-product="usd">点击申请美元融资</a>
+              </div>
+            </article>
+
+            <article class="advantage-visual-card currency" data-index="1">
+              <img src="./assets/advantage-currency.png" alt="币种灵活">
+              <div class="mobile-adv-copy">
+                <h3>币种灵活</h3>
+                <p>支持美元融资，也可选择离岸人民币。</p>
+                <a class="mobile-adv-link product-jump" href="#product-tabs" data-product="usd">点击申请美元融资</a>
+              </div>
+            </article>
+
+            <article class="advantage-visual-card platform" data-index="2">
+              <img src="./assets/advantage-platform.png" alt="平台官方合作伙伴">
+              <div class="mobile-adv-copy">
+                <h3>平台官方</h3>
+                <p>平台官方合作伙伴；支持 Amazon、Walmart、eBay 等平台。</p>
+                <a class="mobile-adv-link product-jump" href="#product-tabs" data-product="usd">点击申请美元融资</a>
+              </div>
+            </article>
+
+            <article class="advantage-visual-card apply" data-index="3">
+              <img src="./assets/advantage-apply.png" alt="申请方便">
+              <div class="mobile-adv-copy">
+                <h3>申请方便</h3>
+                <p>线上提交资料，基于店铺资产评估额度。</p>
+                <a class="mobile-adv-link product-jump" href="#product-tabs" data-product="usd">点击申请美元融资</a>
+              </div>
+            </article>
+
+            <article class="advantage-visual-card repay" data-index="4">
+              <img src="./assets/advantage-repay.png" alt="还款灵活">
+              <div class="mobile-adv-copy">
+                <h3>还款灵活</h3>
+                <p>根据客户推荐产品及还款方案，支持多种还款方式。</p>
+                <a class="mobile-adv-link product-jump" href="#product-tabs" data-product="usd">点击申请美元融资</a>
+              </div>
+            </article>
+
+            <article class="advantage-visual-card account" data-index="5">
+              <img src="./assets/advantage-account.png" alt="入账便捷">
+              <div class="mobile-adv-copy">
+                <h3>入账便捷</h3>
+                <p>资金直达香港企业账户，跨境结算更高效。</p>
+                <a class="mobile-adv-link product-jump" href="#product-tabs" data-product="usd">点击申请美元融资</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="seam"></div>
+
+<!-- ============================================================
+     SECTION 02 — PRODUCT SPEC (产品要素表)
+     ============================================================ -->
+<section class="sec" id="products">
+  <div class="sec-bg">
+    <div class="grid-mask"></div>
+    <div class="blob violet" style="left:50%;top:-160px;width:560px;height:560px;transform:translateX(-50%);opacity:.16;"></div>
+  </div>
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-eyebrow">
+          <span class="sec-num">产品要素</span>
+          </div>
+        <h2 class="sec-title">一张表，看懂 <br> Morfund <span class="ital">美元融资</span></h2>
+      </div>
+      <p class="sec-desc">所有产品参数、申请条件、放款细节一目了然。无需销售跟进，自助查询。</p>
+    </div>
+
+    <div class="amazon-split reveal">
+      <div class="amazon-hero-card">
+        <div class="quota-copy" aria-label="最高额度可达 $10,000,000，根据店铺经营情况核定">
+          <div class="quota-kicker">最高额度可达</div>
+          <div class="quota-value">$ 10,000,000</div>
+          <div class="quota-note">根据店铺经营情况核定</div>
+        </div>
+        <div>
+          <span class="amazon-badge"><span class="amazon-mark">$</span>  </span>
+          <h3 class="amazon-card-title">利率低至 <span style="background:var(--grad-trail);-webkit-background-clip:text;background-clip:text;color:transparent;">5.8%</span>，<br>期限 4-6 个月。</h3>
+          <p class="amazon-card-desc">美元 SOFR+4% / 离岸人民币 HBR+4%。先息后本或等额本息，按需匹配你的经营节奏。</p>
+        </div>
+
+        <div class="amazon-flow">
+          <div class="flow-row">
+            <div class="flow-node">
+              <div class="flow-text">USD<span class="meta">SOFR + 4%</span></div>
+            </div>
+            <span class="flow-arr">/</span>
+            <div class="flow-node">
+              <div class="flow-text">CNH<span class="meta">HBR + 4%</span></div>
+            </div>
+            <span class="flow-arr">→</span>
+            <div class="flow-node">
+              <div class="flow-text">最低年化<span class="meta">From 5.8% / Year</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec-list">
+        <div class="spec-row">
+          <span class="spec-l">授信主体</span>
+          <span class="spec-v">香港企业</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-l">贷款币种</span>
+          <span class="spec-v">USD 美元 / CNH 离岸人民币</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-l">贷款期限</span>
+          <span class="spec-v">4 – 6 个月</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-l">贷款利率</span>
+          <span class="spec-v">美元 SOFR+4% ; 离岸人民币 HBR+4%（低至5.8%）</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-l">还款方式</span>
+          <span class="spec-v">先息后本/前3个月还息后三个月等额本息</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-l">放款账户</span>
+          <span class="spec-v">香港企业账户</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-l">适用平台</span>
+          <span class="spec-v">Amazon、Walmart 等</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="seam"></div>
+
+<!-- ============================================================
+     SECTION 03 — PROCESS (5 步申请流程)
+     ============================================================ -->
+<section class="sec" id="process">
+  <div class="sec-bg">
+    <div class="grid-mask"></div>
+    <div class="blob magenta" style="right:-220px;top:50%;width:520px;height:520px;transform:translateY(-50%);opacity:.16;"></div>
+    <div class="blob cyan" style="left:-180px;top:30%;width:420px;height:420px;opacity:.14;"></div>
+  </div>
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-eyebrow">
+          <span class="sec-num">申请流程</span>
+        </div>
+        <h2 class="sec-title">5 步完成融资，<br>最快<span class="ital">一周资金到账</span></h2>
+      </div>
+      <p class="sec-desc">从店铺授权到资金直达香港账户，全程线上协同。如已开通香港银行账户，可跳过 Step 4 直接放款。</p>
+    </div>
+
+    <div class="process-grid is-5 reveal">
+      <div class="process-step active">
+        <div class="num">01</div>
+        <h3>店铺授权</h3>
+        <p>通过 Amazon Seller Central 完成店铺授权</p>
+        </div>
+      <div class="process-step active">
+        <div class="num">02</div>
+        <h3>提交申请</h3>
+        <p>上传企业及董事资料，完成线上申请</p>
+        </div>
+      <div class="process-step active">
+        <div class="num">03</div>
+        <h3>授信审批</h3>
+        <p>由银行进行资料审核及授信审批</p>
+        </div>
+      <div class="process-step active">
+        <div class="num">04</div>
+        <h3>香港开户</h3>
+        <p>香港本地银行开户，最快一周内完成</p>
+        </div>
+      <div class="process-step active">
+        <div class="num">05</div>
+        <h3>支用放款</h3>
+        <p>客户发起支用，资金直达香港账户</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<div class="seam"></div>
+
+<!-- ============================================================
+     SECTION 04 — SCENARIOS (5 大场景化解决方案)
+     ============================================================ -->
+<section class="sec" id="scenarios">
+  <div class="sec-bg">
+    <div class="grid-mask"></div>
+    <div class="blob red" style="left:50%;top:-120px;width:480px;height:480px;transform:translateX(-50%);opacity:.10;"></div>
+  </div>
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-eyebrow">
+          <span class="sec-num">五大场景化解决方案</span>
+          </div>
+        <h2 class="sec-title">五个场景，<br>精准对位你的<span class="ital">资金需求</span></h2>
+      </div>
+      <p class="sec-desc">无论你在冲旺季、跨平台扩张、试错新品类，还是港企运营——Morfund 都能匹配解决方案。</p>
+    </div>
+
+    <div class="scenario-marquee reveal" aria-label="五大场景化解决方案">
+      <div class="scenario-track">
+        <article class="scenario-card">
+          <span class="scenario-num">场景 01</span>
+          <h4>新品类试错</h4>
+          <p class="scenario-bg"><strong>背景</strong>卖家想拓展新品类（如从家居到户外用品），但不确定市场反响，不愿动用全部自有资金。</p>
+          <blockquote>用 Morfund 的钱测新品，自己的钱留作安全垫，风险可控。</blockquote>
+          <ul class="scenario-list">
+            <li>灵活支用，按实际资金需求提款</li>
+            <li>先息后本还款，前期资金压力小</li>
+            <li>香港主体放款，跨境结算灵活</li>
+          </ul>
+        </article>
+
+        <article class="scenario-card">
+          <span class="scenario-num">场景 02</span>
+          <h4>多平台扩张</h4>
+          <p class="scenario-bg"><strong>背景</strong>卖家想从 Amazon 拓展到 Walmart、TikTok Shop 等新平台，需要额外资金启动。</p>
+          <blockquote>不用押上全部身家做新平台，用 Morfund 的资金试错，成功了再追加投入。</blockquote>
+          <ul class="scenario-list">
+            <li>支持 Amazon+ Walmart（美国站） 同时核额</li>
+            <li>多平台店铺数据汇总评估，额度更充足</li>
+            <li>美国站和欧洲站本土店卖家也可申请</li>
+          </ul>
+        </article>
+
+        <article class="scenario-card">
+          <span class="scenario-num">场景 03</span>
+          <h4>旺季备货冲刺</h4>
+          <p class="scenario-bg"><strong>背景</strong>Prime Day、黑五、圣诞等旺季前，卖家需提前1-2个月备货，资金缺口大。</p>
+          <blockquote>旺季前多备 50% 的货，销售额提升 30%，不用因为缺货错失商机。</blockquote>
+          <ul class="scenario-list">
+            <li>最高 1000 万美元 额度，覆盖大批量采购需求</li>
+            <li>单次周转最长 120 天，完美匹配备货-销售-回款周期</li>
+            <li>美元直放，省去汇率兑换损失</li>
+          </ul>
+        </article>
+
+        <article class="scenario-card">
+          <span class="scenario-num">场景 04</span>
+          <h4>汇率避险</h4>
+          <p class="scenario-bg"><strong>背景</strong>人民币波动大，卖家担心未来人民币升值侵蚀利润。</p>
+          <blockquote>美元借美元还，不用赌汇率，专心卖货。</blockquote>
+          <ul class="scenario-list">
+            <li>美元直放，收入支出同币种，天然对冲汇率风险</li>
+            <li>也可选择 离岸人民币（HBR+4%），灵活应对汇率走势</li>
+            <li>香港账户结算，跨境资金调配更自由</li>
+          </ul>
+        </article>
+
+        <article class="scenario-card">
+          <span class="scenario-num">场景 05</span>
+          <h4>香港主体合规融资</h4>
+          <p class="scenario-bg"><strong>背景</strong>卖家用香港主体运营店铺，但香港本地银行融资难、门槛高、额度低。</p>
+          <blockquote>香港公司也能拿到融资，不用再绕道大陆主体，税务和合规都更简单。</blockquote>
+          <ul class="scenario-list">
+            <li>专为 香港企业 设计，无需大陆关联企业担保</li>
+            <li>额度高至 1000 万美元，远超香港本地银行同类产品</li>
+            <li>开户绿色通道，最快速度拿下香港汇丰账户</li>
+          </ul>
+        </article>
+
+        <article class="scenario-card" aria-hidden="true">
+          <span class="scenario-num">场景 01</span>
+          <h4>新品类试错</h4>
+          <p class="scenario-bg"><strong>背景</strong>卖家想拓展新品类（如从家居到户外用品），但不确定市场反响，不愿动用全部自有资金。</p>
+          <blockquote>用 Morfund 的钱测新品，自己的钱留作安全垫，风险可控。</blockquote>
+          <ul class="scenario-list">
+            <li>灵活支用，按实际资金需求提款</li>
+            <li>先息后本还款，前期资金压力小</li>
+            <li>香港主体放款，跨境结算灵活</li>
+          </ul>
+        </article>
+
+        <article class="scenario-card" aria-hidden="true">
+          <span class="scenario-num">场景 02</span>
+          <h4>多平台扩张</h4>
+          <p class="scenario-bg"><strong>背景</strong>卖家想从 Amazon 拓展到 Walmart、TikTok Shop 等新平台，需要额外资金启动。</p>
+          <blockquote>不用押上全部身家做新平台，用 Morfund 的资金试错，成功了再追加投入。</blockquote>
+          <ul class="scenario-list">
+            <li>支持 Amazon+ Walmart（美国站） 同时核额</li>
+            <li>多平台店铺数据汇总评估，额度更充足</li>
+            <li>美国站和欧洲站本土店卖家也可申请</li>
+          </ul>
+        </article>
+
+        <article class="scenario-card" aria-hidden="true">
+          <span class="scenario-num">场景 03</span>
+          <h4>旺季备货冲刺</h4>
+          <p class="scenario-bg"><strong>背景</strong>Prime Day、黑五、圣诞等旺季前，卖家需提前1-2个月备货，资金缺口大。</p>
+          <blockquote>旺季前多备 50% 的货，销售额提升 30%，不用因为缺货错失商机。</blockquote>
+          <ul class="scenario-list">
+            <li>最高 1000 万美元 额度，覆盖大批量采购需求</li>
+            <li>单次周转最长 120 天，完美匹配备货-销售-回款周期</li>
+            <li>美元直放，省去汇率兑换损失</li>
+          </ul>
+        </article>
+
+        <article class="scenario-card" aria-hidden="true">
+          <span class="scenario-num">场景 04</span>
+          <h4>汇率避险</h4>
+          <p class="scenario-bg"><strong>背景</strong>人民币波动大，卖家担心未来人民币升值侵蚀利润。</p>
+          <blockquote>美元借美元还，不用赌汇率，专心卖货。</blockquote>
+          <ul class="scenario-list">
+            <li>美元直放，收入支出同币种，天然对冲汇率风险</li>
+            <li>也可选择 离岸人民币（HBR+4%），灵活应对汇率走势</li>
+            <li>香港账户结算，跨境资金调配更自由</li>
+          </ul>
+        </article>
+
+        <article class="scenario-card" aria-hidden="true">
+          <span class="scenario-num">场景 05</span>
+          <h4>香港主体合规融资</h4>
+          <p class="scenario-bg"><strong>背景</strong>卖家用香港主体运营店铺，但香港本地银行融资难、门槛高、额度低。</p>
+          <blockquote>香港公司也能拿到融资，不用再绕道大陆主体，税务和合规都更简单。</blockquote>
+          <ul class="scenario-list">
+            <li>专为 香港企业 设计，无需大陆关联企业担保</li>
+            <li>额度高至 1000 万美元，远超香港本地银行同类产品</li>
+            <li>开户绿色通道，最快速度拿下香港汇丰账户</li>
+          </ul>
+        </article>
+      </div>
+      <div class="mobile-carousel-controls" data-carousel="scenario" aria-label="切换场景卡片">
+        <div class="mobile-carousel-progress" aria-hidden="true"><span></span></div>
+        <button type="button" data-dir="-1" aria-label="上一个场景">‹</button>
+        <button type="button" data-dir="1" aria-label="下一个场景">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="seam"></div>
+
+<!-- ============================================================
+     SECTION 05 — DOWSURE DATA
+     ============================================================ -->
+<section class="sec" id="cases">
+  <div class="sec-bg">
+    <div class="grid-mask"></div>
+    <div class="blob cyan" style="right:-160px;top:20%;width:460px;height:460px;opacity:.16;"></div>
+    <div class="blob violet" style="left:-160px;bottom:10%;width:460px;height:460px;opacity:.14;"></div>
+  </div>
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-eyebrow">
+          <span class="sec-num">关于 Dowsure豆沙包</span>
+        </div>
+        <h2 class="sec-title">专注于为出口跨境电商提供<br class="dowsure-title-break">一站式智能科技服务的创新企业</h2>
+      </div>
+      <p class="sec-desc">公司在深圳、上海、香港、新加坡、胡志明多地设有分支机构及业务团队。公司以"智能科技赋能跨境电商"为使命，与 Amazon、Walmart、eBay、Shopee 等全球主流电商平台建立了长期或独家战略合作关系，同时联合产业内头部支付、物流等服务商，共同构建跨境电商数字基础设施。依托 API、云计算等先进技术，结合 AI 驱动的智能算法与风控模型，Dowsure豆沙包为金融机构提供覆盖信贷、保险、跨境支付、财富、外汇及风险管理等环节的一站式科技解决方案。</p>
+    </div>
+
+    <div class="dowsure-highlight reveal">累计助力 <strong>5 万</strong>卖家获得 <strong>100 亿</strong>发展资金，加速回款金额已达<strong>数亿元</strong></div>
+
+    <div class="stats-row reveal">
+      <div class="stat-cell">
+        <div class="stat-value"><span class="grad">15</span><span class="unit">万 +</span></div>
+        <div class="stat-sub">服务跨境卖家</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value"><span class="grad">20</span><span class="unit">家 +</span></div>
+        <div class="stat-sub">赋能银行及金融机构</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value"><span class="grad">1,000</span><span class="unit">亿 +</span></div>
+        <div class="stat-sub">创造跨境电商销售额</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value"><span class="grad">100</span><span class="unit">亿 +</span></div>
+        <div class="stat-sub">助力跨境卖家发展资金</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="seam"></div>
+
+<!-- ============================================================
+     SELLER VOICES
+     ============================================================ -->
+<section class="seller-voices" id="voices">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-eyebrow">
+          <span class="sec-num">卖家心声</span>
+        </div>
+        <h2 class="sec-title">用 Dowsure豆沙包 一起<br>服务全球跨境电商卖家</h2>
+      </div>
+    </div>
+    <div class="voice-carousel-shell reveal">
+      <div class="voice-grid">
+        <article class="voice-card">
+          <div class="voice-photo">
+            <img src="./assets/seller-female.png" alt="多平台卖家">
+            <div class="voice-caption">
+              <div class="role">多平台卖家</div>
+              <div class="title">Amazon + Walmart 双平台运营</div>
+            </div>
+          </div>
+          <p class="voice-quote">“Amazon 和 Walmart 两边都要备货，以前资金拆东墙补西墙。Morfund 把两个平台店铺一起算额度，总共批了 80 万美元，终于不用天天算现金流了。”</p>
+        </article>
+        <article class="voice-card">
+          <div class="voice-photo">
+            <img src="./assets/seller-male.png" alt="香港主体卖家">
+            <div class="voice-caption">
+              <div class="role">香港主体卖家</div>
+              <div class="title">年销 1000 万美金</div>
+            </div>
+          </div>
+          <p class="voice-quote">“香港公司在银行直接申请融资很难。通过豆沙包的跨境电商美元贷，看店铺数据，直接批了 100 万美元。选择离岸人民币融资年化只有 5 点多，钱进香港账户，税务处理也方便。”</p>
+        </article>
+        <article class="voice-card">
+          <div class="voice-photo">
+            <img src="./assets/seller-warehouse.png" alt="新类目拓展卖家">
+            <div class="voice-caption">
+              <div class="role">新类目拓展卖家</div>
+              <div class="title">家居转户外用品</div>
+            </div>
+          </div>
+          <p class="voice-quote">“想试水户外用品但不敢动用全部本金。Morfund 灵活支用，我先提了 8 万测款，卖起来再追加。自己的钱留着做安全垫，心里踏实多了。”</p>
+        </article>
+      </div>
+      <div class="mobile-carousel-controls" data-carousel="voice" aria-label="切换卖家心声">
+        <div class="mobile-carousel-progress" aria-hidden="true"><span></span></div>
+        <button type="button" data-dir="-1" aria-label="上一条卖家心声">‹</button>
+        <button type="button" data-dir="1" aria-label="下一条卖家心声">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA
+     ============================================================ -->
+<section class="final-cta" id="pricing">
+  <div class="final-cta-streak" aria-hidden="true">
+    <svg viewBox="0 0 1440 600" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="finG" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#FF2E9A" stop-opacity="0"/>
+          <stop offset=".22" stop-color="#FF2E9A" stop-opacity=".55"/>
+          <stop offset=".5" stop-color="#7C4DFF" stop-opacity=".5"/>
+          <stop offset=".78" stop-color="#22E1FF" stop-opacity=".55"/>
+          <stop offset="1" stop-color="#22E1FF" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <g stroke="url(#finG)" fill="none" stroke-linecap="round" opacity=".75">
+        <path d="M-100,320 C 280,320 580,280 800,280 C 1080,280 1280,330 1540,330" stroke-width="1.4"/>
+        <path d="M-100,360 C 280,360 580,310 800,310 C 1080,310 1280,370 1540,370" stroke-width="1" opacity=".7"/>
+        <path d="M-100,400 C 280,400 580,345 800,345 C 1080,345 1280,415 1540,415" stroke-width=".7" opacity=".5"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="container">
+    <h2>把美元额度，直达 $10M</h2>
+    <p>线上申请，最快 1 周开户放款。无需大陆关联企业担保，资金直达香港企业账户。</p>
+    <div class="final-ctas">
+      <a class="btn btn-primary btn-lg shiny-cta" href="#"><span>点击申请美元融资</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<script>
+  // Subtle reveal-on-scroll. No opening animation.
+  (function(){
+    var productTabs = Array.prototype.slice.call(document.querySelectorAll('.product-tab'));
+    var productJumps = Array.prototype.slice.call(document.querySelectorAll('.product-jump'));
+    var productAnchor = document.querySelector('#product-tabs');
+    var productAnchorHome = productAnchor ? productAnchor.parentNode : null;
+    var productAnchorMarker = productAnchor ? document.createComment('product-tabs-home') : null;
+    var productAnchorTop = 0;
+    var refreshScrollRevealText = function(){};
+    if (productAnchor && productAnchorHome && productAnchorMarker) {
+      productAnchorHome.insertBefore(productAnchorMarker, productAnchor);
+    }
+
+    function setProduct(product) {
+      var nextProduct = product || 'rmb';
+      productTabs.forEach(function(tab){
+        var isActive = tab.getAttribute('data-product') === nextProduct;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      document.body.setAttribute('data-product', nextProduct);
+    }
+
+    function getProductTabTopOffset() {
+      return window.matchMedia('(max-width: 640px)').matches ? 12 : (window.matchMedia('(max-width: 1024px)').matches ? 16 : 24);
+    }
+
+    function measureProductAnchor() {
+      if (productAnchor) {
+        productAnchor.classList.remove('is-pinned');
+        if (productAnchorHome && productAnchorMarker && productAnchor.parentNode !== productAnchorHome) {
+          productAnchorHome.insertBefore(productAnchor, productAnchorMarker.nextSibling);
+        }
+        productAnchorTop = productAnchor.getBoundingClientRect().top + window.scrollY;
+      }
+    }
+
+    function updateProductAnchorPin() {
+      if (!productAnchor) return;
+      var shouldPin = window.scrollY >= Math.max(0, productAnchorTop - getProductTabTopOffset());
+      if (shouldPin && productAnchor.parentNode !== document.body) {
+        document.body.appendChild(productAnchor);
+      } else if (!shouldPin && productAnchorHome && productAnchorMarker && productAnchor.parentNode !== productAnchorHome) {
+        productAnchorHome.insertBefore(productAnchor, productAnchorMarker.nextSibling);
+      }
+      productAnchor.classList.toggle('is-pinned', shouldPin);
+    }
+
+    function getProductPinnedStartY() {
+      var hero = document.querySelector('.hero');
+      if (hero) {
+        return Math.max(0, hero.getBoundingClientRect().bottom + window.scrollY);
+      }
+      return Math.max(0, productAnchorTop - getProductTabTopOffset());
+    }
+
+    function switchProduct(product, scrollTarget) {
+      setProduct(product || 'rmb');
+      if (scrollTarget) {
+        var targetY = scrollTarget === 'top' ? 0 : getProductPinnedStartY();
+        window.scrollTo({ top:targetY, behavior:'smooth' });
+      }
+      updateProductAnchorPin();
+    }
+
+    setProduct('rmb');
+    measureProductAnchor();
+    updateProductAnchorPin();
+    window.addEventListener('scroll', updateProductAnchorPin, { passive:true });
+    window.addEventListener('resize', function(){
+      measureProductAnchor();
+      updateProductAnchorPin();
+    });
+    window.addEventListener('load', function(){
+      measureProductAnchor();
+      updateProductAnchorPin();
+    });
+
+    productTabs.forEach(function(tab){
+      tab.addEventListener('click', function(){
+        switchProduct(tab.getAttribute('data-product') || 'rmb', 'pinned');
+      });
+    });
+    productJumps.forEach(function(link){
+      link.addEventListener('click', function(event){
+        event.preventDefault();
+        switchProduct(link.getAttribute('data-product') || 'rmb', 'pinned');
+      });
+    });
+
+    function initScrollRevealText() {
+      var targets = Array.prototype.slice.call(document.querySelectorAll('[data-scroll-reveal="reactbits"]'));
+      if (!targets.length) return;
+
+      targets.forEach(function(target){
+        if (target.dataset.scrollRevealReady === 'true') return;
+        target.dataset.scrollRevealReady = 'true';
+
+        var nodes = Array.prototype.slice.call(target.childNodes);
+        target.textContent = '';
+
+        nodes.forEach(function(node){
+          if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'BR') {
+            target.appendChild(document.createElement('br'));
+            return;
+          }
+          var text = node.textContent || '';
+          Array.prototype.forEach.call(text, function(char){
+            if (/\s/.test(char)) {
+              var space = document.createElement('span');
+              space.className = 'scroll-reveal-space';
+              space.textContent = char;
+              target.appendChild(space);
+              return;
+            }
+            var token = document.createElement('span');
+            token.className = 'scroll-reveal-token';
+            token.textContent = char;
+            target.appendChild(token);
+          });
+        });
+      });
+
+      var tokens = Array.prototype.slice.call(document.querySelectorAll('[data-scroll-reveal="reactbits"] .scroll-reveal-token'));
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function updateScrollRevealText() {
+        if (reduceMotion) {
+          tokens.forEach(function(token){
+            token.style.setProperty('--token-opacity', '1');
+            token.style.setProperty('--token-rotation', '0deg');
+            token.style.setProperty('--token-y', '0px');
+          });
+          return;
+        }
+
+        targets.forEach(function(target){
+          var rect = target.getBoundingClientRect();
+          var start = window.innerHeight * 0.92;
+          var end = window.innerHeight * 0.28;
+          var raw = (start - rect.top) / (start - end);
+          var progress = clamp(raw, 0, 1);
+          var localTokens = Array.prototype.slice.call(target.querySelectorAll('.scroll-reveal-token'));
+          var total = Math.max(1, localTokens.length - 1);
+
+          localTokens.forEach(function(token, index){
+            var tokenProgress = clamp((progress * 1.35) - (index / total) * 0.35, 0, 1);
+            var opacity = 0.3 + tokenProgress * 0.7;
+            var rotation = (1 - tokenProgress) * 3;
+            var y = (1 - tokenProgress) * 10;
+            token.style.setProperty('--token-opacity', opacity.toFixed(3));
+            token.style.setProperty('--token-rotation', rotation.toFixed(3) + 'deg');
+            token.style.setProperty('--token-y', y.toFixed(3) + 'px');
+          });
+        });
+      }
+
+      window.addEventListener('scroll', updateScrollRevealText, { passive:true });
+      window.addEventListener('resize', updateScrollRevealText);
+      refreshScrollRevealText = updateScrollRevealText;
+      updateScrollRevealText();
+    }
+    initScrollRevealText();
+
+    function initIntroFillTitle() {
+      var targets = Array.prototype.slice.call(document.querySelectorAll('[data-intro-fill]'));
+      if (!targets.length) return;
+
+      function isEnglishOrNumber(char) {
+        return /[A-Za-z0-9.,$]/.test(char);
+      }
+
+      function wrapTextNodes(node) {
+        Array.prototype.slice.call(node.childNodes).forEach(function(child){
+          if (child.nodeType === Node.TEXT_NODE) {
+            var inHighlight = !!child.parentElement.closest('.intro-fill-gradient');
+            var fragment = document.createDocumentFragment();
+            Array.prototype.forEach.call(child.textContent || '', function(char){
+              var span = document.createElement('span');
+              if (/\s/.test(char) && !inHighlight) {
+                span.className = 'intro-fill-space';
+                span.textContent = char;
+              } else {
+                span.className = 'intro-fill-token' + (isEnglishOrNumber(char) ? ' is-en' : '');
+                span.textContent = char;
+              }
+              fragment.appendChild(span);
+            });
+            child.parentNode.replaceChild(fragment, child);
+            return;
+          }
+          if (child.nodeType === Node.ELEMENT_NODE && child.tagName !== 'BR') wrapTextNodes(child);
+        });
+      }
+
+      targets.forEach(function(target){
+        if (target.dataset.introFillReady === 'true') return;
+        target.dataset.introFillReady = 'true';
+        wrapTextNodes(target);
+        Array.prototype.slice.call(target.querySelectorAll('.intro-fill-gradient')).forEach(function(group){
+          var groupTokens = Array.prototype.slice.call(group.querySelectorAll('.intro-fill-token'));
+          var total = groupTokens.length;
+          groupTokens.forEach(function(token, index){
+            token.classList.add('is-highlight');
+            token.style.setProperty('--group-index', index);
+            token.style.setProperty('--group-total', total);
+          });
+        });
+      });
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function updateIntroFillTitle() {
+        targets.forEach(function(target){
+          var tokens = Array.prototype.slice.call(target.querySelectorAll('.intro-fill-token'));
+          if (reduceMotion) {
+            tokens.forEach(function(token){
+              token.classList.add('is-filled');
+            });
+            return;
+          }
+
+          var rect = target.getBoundingClientRect();
+          var start = window.innerHeight * 0.94;
+          var end = window.innerHeight * 0.3;
+          var progress = clamp((start - rect.top) / (start - end), 0, 1);
+          var filledCount = Math.floor(progress * (tokens.length + 1));
+
+          tokens.forEach(function(token, index){
+            token.classList.toggle('is-filled', index < filledCount);
+          });
+        });
+      }
+
+      window.addEventListener('scroll', updateIntroFillTitle, { passive:true });
+      window.addEventListener('resize', updateIntroFillTitle);
+      updateIntroFillTitle();
+    }
+    initIntroFillTitle();
+
+    var advantageSection = document.querySelector('.product-page-usd .advantages-scroll');
+    var advantageTrack = advantageSection ? advantageSection.querySelector('.advantage-card-track') : null;
+    var advantageTabs = advantageSection ? Array.prototype.slice.call(advantageSection.querySelectorAll('.advantage-tab')) : [];
+    var advantageCards = advantageSection ? Array.prototype.slice.call(advantageSection.querySelectorAll('.advantage-visual-card')) : [];
+
+    function clamp(value, min, max) {
+      return Math.max(min, Math.min(max, value));
+    }
+
+    function setAdvantageActive(index) {
+      advantageTabs.forEach(function(tab, tabIndex){
+        var isActive = tabIndex === index;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      advantageCards.forEach(function(card, cardIndex){
+        card.classList.toggle('active', cardIndex === index);
+      });
+    }
+
+    function updateMobileAdvantages() {
+      if (!advantageSection || !advantageTrack || !window.matchMedia('(max-width: 640px)').matches) return false;
+
+      advantageTrack.style.transform = 'none';
+      setAdvantageActive(0);
+      advantageCards.forEach(function(card){
+        card.style.opacity = '1';
+      });
+      return true;
+    }
+
+    function updateAdvantages() {
+      if (updateMobileAdvantages()) return;
+      if (!advantageSection || !advantageTrack || window.matchMedia('(max-width: 1024px)').matches) return;
+
+      var rect = advantageSection.getBoundingClientRect();
+      var scrollable = advantageSection.offsetHeight - window.innerHeight;
+      var progress = clamp(-rect.top / scrollable, 0, 1);
+      var cardHeight = 380;
+      var gap = 60;
+      var maskHeight = 494;
+      var step = cardHeight + gap;
+      var activeFloat = progress * (advantageCards.length - 1);
+      var translateY = (maskHeight - cardHeight) / 2 - activeFloat * step;
+      var activeIndex = Math.round(activeFloat);
+
+      advantageTrack.style.transform = 'translate3d(0,' + translateY + 'px,0)';
+      setAdvantageActive(activeIndex);
+
+      advantageCards.forEach(function(card, index){
+        var opacity = clamp(1 - Math.abs(index - activeFloat) / 0.95, 0, 1);
+        card.style.opacity = opacity.toFixed(3);
+      });
+    }
+
+    if (advantageTabs.length) {
+      advantageTabs.forEach(function(tab){
+        tab.addEventListener('click', function(){
+          var index = Number(tab.getAttribute('data-index')) || 0;
+          if (window.matchMedia('(max-width: 1024px)').matches) {
+            var targetCard = advantageCards[index];
+            if (targetCard) targetCard.scrollIntoView({ behavior:'smooth', inline:'start', block:'nearest' });
+            setAdvantageActive(index);
+            return;
+          }
+          if (!advantageSection) return;
+          var sectionTop = advantageSection.getBoundingClientRect().top + window.scrollY;
+          var totalScrollable = advantageSection.offsetHeight - window.innerHeight;
+          var targetY = sectionTop + totalScrollable * (index / Math.max(1, advantageTabs.length - 1));
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
+        });
+      });
+      window.addEventListener('scroll', updateAdvantages, { passive:true });
+      window.addEventListener('resize', updateAdvantages);
+      updateAdvantages();
+    }
+
+    function initScopedAdvantages(sectionSelector) {
+      var section = document.querySelector(sectionSelector);
+      if (!section) return;
+      var track = section.querySelector('.advantage-card-track');
+      var tabs = Array.prototype.slice.call(section.querySelectorAll('.advantage-tab'));
+      var cards = Array.prototype.slice.call(section.querySelectorAll('.advantage-visual-card'));
+      if (!track || !cards.length) return;
+
+      function setActive(index) {
+        tabs.forEach(function(tab, tabIndex){
+          var isActive = tabIndex === index;
+          tab.classList.toggle('active', isActive);
+          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        cards.forEach(function(card, cardIndex){
+          card.classList.toggle('active', cardIndex === index);
+        });
+      }
+
+      function update() {
+        if (window.matchMedia('(max-width: 1024px)').matches) {
+          track.style.transform = 'none';
+          cards.forEach(function(card){ card.style.opacity = '1'; });
+          setActive(0);
+          return;
+        }
+        var rect = section.getBoundingClientRect();
+        var scrollable = section.offsetHeight - window.innerHeight;
+        var progress = clamp(-rect.top / scrollable, 0, 1);
+        var cardHeight = 380;
+        var gap = 60;
+        var maskHeight = 494;
+        var step = cardHeight + gap;
+        var activeFloat = progress * (cards.length - 1);
+        var translateY = (maskHeight - cardHeight) / 2 - activeFloat * step;
+        var activeIndex = Math.round(activeFloat);
+
+        track.style.transform = 'translate3d(0,' + translateY + 'px,0)';
+        setActive(activeIndex);
+        cards.forEach(function(card, index){
+          var opacity = clamp(1 - Math.abs(index - activeFloat) / 0.95, 0, 1);
+          card.style.opacity = opacity.toFixed(3);
+        });
+      }
+
+      tabs.forEach(function(tab){
+        tab.addEventListener('click', function(){
+          var index = Number(tab.getAttribute('data-index')) || 0;
+          if (window.matchMedia('(max-width: 1024px)').matches) {
+            var targetCard = cards[index];
+            if (targetCard) targetCard.scrollIntoView({ behavior:'smooth', inline:'start', block:'nearest' });
+            setActive(index);
+            return;
+          }
+          var sectionTop = section.getBoundingClientRect().top + window.scrollY;
+          var totalScrollable = section.offsetHeight - window.innerHeight;
+          var targetY = sectionTop + totalScrollable * (index / Math.max(1, tabs.length - 1));
+          window.scrollTo({ top: targetY, behavior:'smooth' });
+        });
+      });
+
+      window.addEventListener('scroll', update, { passive:true });
+      window.addEventListener('resize', update);
+      update();
+    }
+    initScopedAdvantages('.rmb-advantages-scroll');
+
+    function initRmbAdmission() {
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('.rmb-bank-tab'));
+      var panels = Array.prototype.slice.call(document.querySelectorAll('.rmb-admission-card'));
+      if (!tabs.length || !panels.length) return;
+
+      function setBank(bank) {
+        tabs.forEach(function(tab){
+          var isActive = tab.getAttribute('data-bank') === bank;
+          tab.classList.toggle('active', isActive);
+          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        panels.forEach(function(panel){
+          panel.classList.toggle('active', panel.getAttribute('data-bank-panel') === bank);
+        });
+      }
+
+      tabs.forEach(function(tab){
+        tab.addEventListener('click', function(){
+          setBank(tab.getAttribute('data-bank') || 'gfb');
+        });
+      });
+      setBank('gfb');
+    }
+    initRmbAdmission();
+
+    function initMobileCarousel(controlSelector, trackSelector, itemSelector) {
+      var controls = document.querySelector(controlSelector);
+      var track = document.querySelector(trackSelector);
+      var items = Array.prototype.slice.call(document.querySelectorAll(itemSelector));
+      if (!controls || !track || !items.length) return;
+      var progressFill = controls.querySelector('.mobile-carousel-progress span');
+
+      var index = 0;
+      function render() {
+        if (!window.matchMedia('(max-width: 640px)').matches) {
+          track.style.transform = '';
+          return;
+        }
+        index = clamp(index, 0, items.length - 1);
+        var step = items[0].getBoundingClientRect().width + 12;
+        track.style.transform = 'translate3d(' + (-index * step) + 'px,0,0)';
+        if (progressFill) progressFill.style.width = (((index + 1) / items.length) * 100).toFixed(2) + '%';
+      }
+
+      controls.addEventListener('click', function(event){
+        var button = event.target.closest('button[data-dir]');
+        if (!button) return;
+        index = clamp(index + Number(button.getAttribute('data-dir')), 0, items.length - 1);
+        render();
+      });
+      window.addEventListener('resize', render);
+      render();
+    }
+
+    initMobileCarousel('[data-carousel="scenario"]', '.product-page-usd .scenario-track', '.product-page-usd .scenario-card:not([aria-hidden="true"])');
+    initMobileCarousel('[data-carousel="voice"]', '.product-page-usd .voice-grid', '.product-page-usd .voice-card');
+    initMobileCarousel('[data-carousel="rmb-scenario"]', '.rmb-scenario-track', '.rmb-scenario-track .scenario-card:not([aria-hidden="true"])');
+    initMobileCarousel('[data-carousel="rmb-voice"]', '.rmb-voice-grid', '.rmb-voice-grid .voice-card');
+
+    if (typeof IntersectionObserver === 'undefined') {
+      document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
