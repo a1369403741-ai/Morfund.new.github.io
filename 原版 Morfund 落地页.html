@@ -3790,10 +3790,10 @@
       line-height:1.55;
     }
     .advantage-visual-card img{
-      width:116%;
+      width:112%;
       max-width:none;
       height:auto;
-      margin-left:-32px;
+      margin-left:-25px;
       transform:none;
       transform-origin:left top;
       object-fit:contain;
@@ -4022,7 +4022,7 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    height:54px;
+    height:44px;
     margin-top:28px;
     border:1px solid transparent;
     border-radius:99px;
@@ -4031,7 +4031,7 @@
       linear-gradient(147deg,#FF267F 0%,#A53DFF 32%,#1C76FF 68%,#00AAFF 100%) border-box;
     color:#fff;
     text-decoration:none;
-    font-size:16px;
+    font-size:14px;
     font-weight:500;
   }
   .rmb-spec-note{
@@ -4249,16 +4249,12 @@
     .rmb-section-header p{ font-size:12px; }
     .product-page-rmb .rmb-product-spec .sec-title,
     .product-page-rmb .rmb-process .sec-title{
-      white-space:normal;
       font-size:28px !important;
-      line-height:1.25;
     }
     .product-page-usd #products .sec-title,
     .product-page-usd #process .sec-title,
     .product-page-usd #scenarios .sec-title{
-      white-space:normal;
       font-size:28px !important;
-      line-height:1.25;
     }
     .product-page-usd #products .sec-title br,
     .product-page-usd #process .sec-title br,
@@ -4330,7 +4326,7 @@
     }
     .product-page-rmb .rmb-admission-list li{
       display:grid;
-      grid-template-columns:16px 54px minmax(0,1fr);
+      grid-template-columns:16px 68px minmax(0,1fr);
       column-gap:6px;
       align-items:start;
       padding-left:0;
@@ -4345,16 +4341,32 @@
       grid-column:2;
       width:auto;
       text-align:left;
+      white-space:nowrap;
     }
-    .product-page-usd .advantages-header h2,
-    .product-page-usd .sec-title,
-    .product-page-rmb .rmb-section-header h2,
-    .product-page-rmb .sec-title{
+    .product-page-rmb .rmb-product-spec .sec-title,
+    .product-page-rmb .rmb-process .sec-title,
+    .product-page-usd #products .sec-title,
+    .product-page-usd #process .sec-title,
+    .product-page-usd #scenarios .sec-title{
+      display:block;
+      width:100%;
       max-width:100%;
       font-size:28px !important;
       line-height:1.28;
       white-space:normal !important;
-      overflow-wrap:break-word;
+      text-wrap:wrap;
+      word-break:normal;
+      overflow-wrap:normal;
+      letter-spacing:0;
+    }
+    .product-page-rmb .rmb-product-spec .sec-title *,
+    .product-page-rmb .rmb-process .sec-title *,
+    .product-page-usd #products .sec-title *,
+    .product-page-usd #process .sec-title *,
+    .product-page-usd #scenarios .sec-title *{
+      white-space:normal !important;
+      word-break:normal;
+      overflow-wrap:normal;
     }
     .rmb-dowsure .rmb-dowsure-band{
       font-size:18px;
