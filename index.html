@@ -1495,6 +1495,9 @@
     opacity:0;
     animation:heroFadeUp 1s var(--ease-out) .12s forwards;
   }
+  .hero-scroll-guide{
+    display:none;
+  }
   .reveal{
     opacity: 0;
     transform: translateY(14px);
@@ -1506,6 +1509,7 @@
   }
   @media (prefers-reduced-motion: reduce){
     .hero-copy{ opacity:1; animation:none; }
+    .hero-scroll-guide{ opacity:1; animation:none; }
     .reveal{ opacity: 1; transform: none; transition: none; }
   }
 
@@ -2137,6 +2141,21 @@
   }
   .hero-ctas{ margin-top:20px; gap:12px; }
   .hero-ctas .btn{ flex:1; min-width:0; height:60px; }
+  .hero-scroll-guide{
+    display:flex;
+    justify-content:center;
+    width:36px;
+    height:36px;
+    margin:56px auto 0;
+    opacity:0;
+    animation:heroFadeUp 1s var(--ease-out) 1.12s forwards;
+    pointer-events:none;
+  }
+  .hero-scroll-guide img{
+    width:36px;
+    height:36px;
+    object-fit:contain;
+  }
   .sec{
     padding:120px 0;
     background:#050509;
@@ -3483,6 +3502,10 @@
   .advantages-header .eyebrow-blue{
     color:#287EFF !important;
   }
+  #why .advantages-header .eyebrow-blue{
+    font-size:18px !important;
+    font-weight:500 !important;
+  }
   ::selection{
     background:#287EFF;
     color:#fff;
@@ -3970,7 +3993,7 @@
     flex-direction:column;
     justify-content:space-between;
     min-height:600px;
-    padding:40px 32px;
+    padding:32px 32px;
     border:1px solid rgba(255,255,255,.05);
     border-radius:24px;
     background:linear-gradient(122.62deg, rgba(10,10,15,.8) 0%, rgba(13,13,20,.6) 100%);
@@ -4573,6 +4596,9 @@
     .hero-copy{
       padding-top:160px !important;
     }
+    .hero-scroll-guide{
+      display:none !important;
+    }
     .morfund-intro,
     .rmb-intro{
       padding-top:140px !important;
@@ -4603,7 +4629,7 @@
       </h1>
 
       <p class="hero-sub">
-        为跨境卖家提供人民币/美元融资，解决在库存备货、旺季冲量、平台账期周转中的资金瓶颈。
+        根据店铺经营数据匹配人民币或美元融资额度，覆盖备货、旺季冲量与平台账期周转等资金需求。
       </p>
 
       <div class="product-chooser">
@@ -4614,6 +4640,10 @@
             <button class="product-tab" type="button" role="tab" aria-selected="false" data-product="usd">美元融资产品</button>
           </div>
         </div>
+      </div>
+
+      <div class="hero-scroll-guide" aria-hidden="true">
+        <img src="./assets/Hero-向下指引icon.svg" alt="">
       </div>
 
       <div class="hero-meta">
@@ -4674,7 +4704,7 @@
         <div class="advantages-tabs" role="tablist" aria-label="人民币六大核心优势">
           <button class="advantage-tab active" type="button" role="tab" aria-selected="true" data-index="0">
             <span>额度覆盖广</span>
-            <p>个人产品最高 100 万元；对公产品最高 2000 万元（广发、微众），满足不同规模卖家的备货需求。</p>
+            <p>个人产品最高 100 万元；对公产品最高 2,000 万元（广发、微众），满足不同规模卖家的备货需求。</p>
           </button>
           <button class="advantage-tab" type="button" role="tab" aria-selected="false" data-index="1">
             <span>费率低至 3%</span>
@@ -4702,7 +4732,7 @@
           <div class="advantage-card-track">
             <article class="advantage-visual-card active" data-index="0">
               <img src="./assets/rmb-adv-quota.png" alt="人民币额度覆盖广">
-              <div class="mobile-adv-copy"><h3>额度覆盖广</h3><p>个人产品最高 100 万元；对公产品最高 2000 万元（广发、微众），满足不同规模卖家的备货需求。</p></div>
+              <div class="mobile-adv-copy"><h3>额度覆盖广</h3><p>个人产品最高 100 万元；对公产品最高 2,000 万元（广发、微众），满足不同规模卖家的备货需求。</p></div>
             </article>
             <article class="advantage-visual-card" data-index="1">
               <img src="./assets/rmb-adv-rate.png" alt="人民币费率低至 3%">
@@ -4838,18 +4868,18 @@
         <div class="sec-eyebrow"><span class="sec-num">四个场景</span></div>
         <h2 class="sec-title">场景化解决方案</h2>
       </div>
-      <p class="sec-desc">无论你在冲旺季、快速起步、融资成本，Morfund 都能匹配解决方案。</p>
+      <p class="sec-desc">无论你是在冲刺旺季、快速起步，还是优化资金成本，Morfund 都能为你匹配合适的解决方案。</p>
     </div>
     <div class="scenario-marquee reveal" aria-label="人民币场景化解决方案">
       <div class="scenario-track rmb-scenario-track">
         <article class="scenario-card"><h4>旺季备货冲刺</h4><p class="scenario-bg">Prime Day、黑五、圣诞等旺季前，卖家需提前备货，资金缺口大。</p><blockquote>旺季前把额度备好，缺货的时候不用临时找钱，安心冲榜。</blockquote><ul class="scenario-list"><li>广发对公额度最高 2,000 万元，覆盖大批量采购需求</li><li>最长 9 个月贷款期限（微众对公），完美匹配备货—销售—回款周期</li><li>额度可循环随借随还，旺季回款后即可归还，为下一轮备货再次支用</li></ul></article>
-        <article class="scenario-card"><h4>中小卖家快速起步</h4><p class="scenario-bg">GMV规模尚在成长阶段，资金需求在百万级别，希望审批快、门槛低。</p><blockquote>开店刚满一年就能申请，线上搞定，不用请假去银行跑材料。</blockquote><ul class="scenario-list"><li>广发个人产品额度最高 100 万元，成立满 1 年即可申请</li><li>微众对公 500 万以下纯线上办理，无需跑银行，资料上传即可审批</li><li>3 个月短期周转产品（广发个人）灵活匹配小批量备货节奏</li></ul></article>
+        <article class="scenario-card"><h4>中小卖家快速起步</h4><p class="scenario-bg">GMV 规模尚在成长阶段，资金需求在百万级别，希望审批快、门槛低。</p><blockquote>开店刚满一年就能申请，线上搞定，不用请假去银行跑材料。</blockquote><ul class="scenario-list"><li>广发个人产品额度最高 100 万元，成立满 1 年即可申请</li><li>微众对公 500 万以下纯线上办理，无需跑银行，资料上传即可审批</li><li>3 个月短期周转产品（广发个人）灵活匹配小批量备货节奏</li></ul></article>
         <article class="scenario-card"><h4>多银行分散授信</h4><p class="scenario-bg">卖家希望分散资金来源，不过度依赖单一银行，提升整体授信上限。</p><blockquote>一家不够，几家一起，资金来源稳了，心里才踏实。</blockquote><ul class="scenario-list"><li>同时对接广发、微众、浦发、建行多家银行产品，可叠加申请</li><li>各产品准入条件差异化，依据店铺数据匹配最优方案</li><li>建议额度基于月均回款倍数科学测算，避免过度负债</li></ul></article>
-        <article class="scenario-card"><h4>低利率降低融资成本</h4><p class="scenario-bg">卖家已有贷款，但融资利率较高，希望寻找更优惠的资金来源。</p><blockquote>利率比之前低了一半，每年省下来的利息就是纯利润。</blockquote><ul class="scenario-list"><li>浦发对公利率3%–7%，宁波地区低至3%，大幅降低融资成本</li><li>广发对公利率低至4%，支持先息后本，前期资金压力小</li><li>提前还款无违约金，随时还款，不产生额外利息负担</li></ul></article>
+        <article class="scenario-card"><h4>低利率降低融资成本</h4><p class="scenario-bg">卖家已有贷款，但融资利率较高，希望寻找更优惠的资金来源。</p><blockquote>利率比之前低了一半，每年省下来的利息就是纯利润。</blockquote><ul class="scenario-list"><li>浦发对公利率 3%–7%，宁波地区低至 3%，大幅降低融资成本</li><li>广发对公利率低至 4%，支持先息后本，前期资金压力小</li><li>提前还款无违约金，随时还款，不产生额外利息负担</li></ul></article>
         <article class="scenario-card" aria-hidden="true"><h4>旺季备货冲刺</h4><p class="scenario-bg">Prime Day、黑五、圣诞等旺季前，卖家需提前备货，资金缺口大。</p><blockquote>旺季前把额度备好，缺货的时候不用临时找钱，安心冲榜。</blockquote><ul class="scenario-list"><li>广发对公额度最高 2,000 万元，覆盖大批量采购需求</li><li>最长 9 个月贷款期限（微众对公），完美匹配备货—销售—回款周期</li><li>额度可循环随借随还，旺季回款后即可归还，为下一轮备货再次支用</li></ul></article>
-        <article class="scenario-card" aria-hidden="true"><h4>中小卖家快速起步</h4><p class="scenario-bg">GMV规模尚在成长阶段，资金需求在百万级别，希望审批快、门槛低。</p><blockquote>开店刚满一年就能申请，线上搞定，不用请假去银行跑材料。</blockquote><ul class="scenario-list"><li>广发个人产品额度最高 100 万元，成立满 1 年即可申请</li><li>微众对公 500 万以下纯线上办理，无需跑银行，资料上传即可审批</li><li>3 个月短期周转产品（广发个人）灵活匹配小批量备货节奏</li></ul></article>
+        <article class="scenario-card" aria-hidden="true"><h4>中小卖家快速起步</h4><p class="scenario-bg">GMV 规模尚在成长阶段，资金需求在百万级别，希望审批快、门槛低。</p><blockquote>开店刚满一年就能申请，线上搞定，不用请假去银行跑材料。</blockquote><ul class="scenario-list"><li>广发个人产品额度最高 100 万元，成立满 1 年即可申请</li><li>微众对公 500 万以下纯线上办理，无需跑银行，资料上传即可审批</li><li>3 个月短期周转产品（广发个人）灵活匹配小批量备货节奏</li></ul></article>
         <article class="scenario-card" aria-hidden="true"><h4>多银行分散授信</h4><p class="scenario-bg">卖家希望分散资金来源，不过度依赖单一银行，提升整体授信上限。</p><blockquote>一家不够，几家一起，资金来源稳了，心里才踏实。</blockquote><ul class="scenario-list"><li>同时对接广发、微众、浦发、建行多家银行产品，可叠加申请</li><li>各产品准入条件差异化，依据店铺数据匹配最优方案</li><li>建议额度基于月均回款倍数科学测算，避免过度负债</li></ul></article>
-        <article class="scenario-card" aria-hidden="true"><h4>低利率降低融资成本</h4><p class="scenario-bg">卖家已有贷款，但融资利率较高，希望寻找更优惠的资金来源。</p><blockquote>利率比之前低了一半，每年省下来的利息就是纯利润。</blockquote><ul class="scenario-list"><li>浦发对公利率3%–7%，宁波地区低至3%，大幅降低融资成本</li><li>广发对公利率低至4%，支持先息后本，前期资金压力小</li><li>提前还款无违约金，随时还款，不产生额外利息负担</li></ul></article>
+        <article class="scenario-card" aria-hidden="true"><h4>低利率降低融资成本</h4><p class="scenario-bg">卖家已有贷款，但融资利率较高，希望寻找更优惠的资金来源。</p><blockquote>利率比之前低了一半，每年省下来的利息就是纯利润。</blockquote><ul class="scenario-list"><li>浦发对公利率 3%–7%，宁波地区低至 3%，大幅降低融资成本</li><li>广发对公利率低至 4%，支持先息后本，前期资金压力小</li><li>提前还款无违约金，随时还款，不产生额外利息负担</li></ul></article>
       </div>
       <div class="mobile-carousel-controls" data-carousel="rmb-scenario" aria-label="切换人民币场景卡片"><div class="mobile-carousel-progress" aria-hidden="true"><span></span></div><button type="button" data-dir="-1" aria-label="上一个场景">‹</button><button type="button" data-dir="1" aria-label="下一个场景">›</button></div>
     </div>
@@ -4859,34 +4889,34 @@
 <div class="seam"></div>
 
 <section class="sec rmb-admission" id="admission-rmb">
-  <div class="container">
-    <div class="rmb-section-header reveal"><div class="eyebrow-blue">准入条件速查</div></div>
-    <div class="admission-panel reveal">
-      <div class="rmb-bank-tabs" role="tablist" aria-label="银行准入条件">
-        <button class="rmb-bank-tab active" type="button" data-bank="gfb" aria-selected="true"><img src="./assets/bank-gfb.svg" alt="广发银行"></button>
-        <button class="rmb-bank-tab" type="button" data-bank="webank" aria-selected="false"><img src="./assets/bank-webank.svg" alt="微众银行"></button>
-        <button class="rmb-bank-tab" type="button" data-bank="pf" aria-selected="false"><img src="./assets/bank-pf.svg" alt="浦发银行"></button>
-        <button class="rmb-bank-tab" type="button" data-bank="ccb" aria-selected="false"><img src="./assets/bank-ccb.svg" alt="建设银行"></button>
-      </div>
-      <div class="rmb-admission-card active" data-bank-panel="gfb">
-        <div class="rmb-admission-card-header"><img src="./assets/bank-gfb.svg" alt="广发银行"></div>
-        <div class="rmb-admission-group"><span class="rmb-admission-pill">个人</span><ul class="rmb-admission-list"><li><b>申请人</b>25–55周岁中国大陆居民，企业法人或占股20%以上股东</li><li><b>企业</b>成立年限&gt;1年，全国有广发银行网点的县市（部分地区除外）</li><li><b>店铺</b>经营时长≥1年，加总年GMV≥50万元，服装退货率≤20%/其他≤15%</li><li><b>支持站点</b>Amazon美国站、德国站</li></ul></div>
-        <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>企业</b>注册≥2年（或实控人从业3年以上且企业成立≥1年），A类外汇企业，信用评级≥BB+，近两年盈利，资产负债率≤70%</li><li><b>店铺</b>合计年GMV≥3000万元，主店铺实际经营满1年，各店铺近一年销售增长率≥-20%</li><li><b>实控人</b>本地户籍或有房产</li></ul></div>
-      </div>
-      <div class="rmb-admission-card" data-bank-panel="webank">
-        <div class="rmb-admission-card-header"><img src="./assets/bank-webank.svg" alt="微众银行"></div>
-        <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>企业</b>注册时长≥0.5年，无失信/限高，无当前逾期</li><li><b>法人</b>23–65岁，近24个月无连续逾期3期，近半年逾期≤2次</li><li><b>店铺</b>≥2个店铺（或单店近12月GMV&gt;2000万），至少1店经营≥1年，近12月总销售额≥200万，AHR评分≥200分</li></ul></div>
-      </div>
-      <div class="rmb-admission-card" data-bank-panel="pf">
-        <div class="rmb-admission-card-header"><img src="./assets/bank-pf.svg" alt="浦发银行"></div>
-        <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>企业</b>经营时长≥1年，无失信/限高，无当前逾期</li><li><b>店铺</b>Amazon美国站或德国站，经营时长≥6个月，月均销售额≥100万，退货率≤40%，年GMV≥3000万</li></ul></div>
-      </div>
-      <div class="rmb-admission-card" data-bank-panel="ccb">
-        <div class="rmb-admission-card-header"><img src="./assets/bank-ccb.svg" alt="建设银行"></div>
-        <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>授信主体</b>大陆地区注册的小型或微型企业</li><li><b>店铺</b>经营年限&gt;1年，近1年退款率≤40%，近12月月均回款额&gt;10000美元，近1年回款率≥20%</li><li><b>FBA比例</b>FBA≤10%且年回款&gt;50%，或FBA&gt;10%均可准入</li></ul></div>
-      </div>
-    </div>
-  </div>
+ <div class="container">
+ <div class="rmb-section-header reveal"><div class="eyebrow-blue">准入条件速查</div></div>
+ <div class="admission-panel reveal">
+ <div class="rmb-bank-tabs" role="tablist" aria-label="银行准入条件">
+ <button class="rmb-bank-tab active" type="button" data-bank="gfb" aria-selected="true"><img src="./assets/bank-gfb.svg" alt="广发银行"></button>
+ <button class="rmb-bank-tab" type="button" data-bank="webank" aria-selected="false"><img src="./assets/bank-webank.svg" alt="微众银行"></button>
+ <button class="rmb-bank-tab" type="button" data-bank="pf" aria-selected="false"><img src="./assets/bank-pf.svg" alt="浦发银行"></button>
+ <button class="rmb-bank-tab" type="button" data-bank="ccb" aria-selected="false"><img src="./assets/bank-ccb.svg" alt="建设银行"></button>
+ </div>
+ <div class="rmb-admission-card active" data-bank-panel="gfb">
+ <div class="rmb-admission-card-header"><img src="./assets/bank-gfb.svg" alt="广发银行"></div>
+ <div class="rmb-admission-group"><span class="rmb-admission-pill">个人</span><ul class="rmb-admission-list"><li><b>申请人</b>25–55 周岁中国大陆居民，企业法人或占股 20% 以上股东</li><li><b>企业</b>成立年限 &gt; 1 年，全国有广发银行网点的县市（部分地区除外）</li><li><b>店铺</b>经营时长 ≥ 1 年，加总年 GMV ≥ 50 万元，服装退货率 ≤ 20%/其他 ≤ 15%</li><li><b>支持站点</b>Amazon 美国站、德国站</li></ul></div>
+ <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>企业</b>注册 ≥ 2 年（或实控人从业 3 年以上且企业成立 ≥ 1 年），A 类外汇企业，信用评级 ≥ BB+，近两年盈利，资产负债率 ≤ 70%</li><li><b>店铺</b>合计年 GMV ≥ 3,000 万元，主店铺实际经营满 1 年，各店铺近一年销售增长率 ≥ -20%</li><li><b>实控人</b>本地户籍或有房产</li></ul></div>
+ </div>
+ <div class="rmb-admission-card" data-bank-panel="webank">
+ <div class="rmb-admission-card-header"><img src="./assets/bank-webank.svg" alt="微众银行"></div>
+ <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>企业</b>注册时长 ≥ 0.5 年，无失信/限高，无当前逾期</li><li><b>法人</b>23–65 岁，近 24 个月无连续逾期 3 期，近半年逾期 ≤ 2 次</li><li><b>店铺</b> ≥ 2 个店铺（或单店近 12 月 GMV &gt; 2,000 万），至少 1 店经营 ≥ 1 年，近 12 月总销售额 ≥ 200 万，AHR 评分 ≥ 200 分</li></ul></div>
+ </div>
+ <div class="rmb-admission-card" data-bank-panel="pf">
+ <div class="rmb-admission-card-header"><img src="./assets/bank-pf.svg" alt="浦发银行"></div>
+ <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>企业</b>经营时长 ≥ 1 年，无失信/限高，无当前逾期</li><li><b>店铺</b>Amazon 美国站或德国站，经营时长 ≥ 6 个月，月均销售额 ≥ 100 万，退货率 ≤ 40%，年 GMV ≥ 3,000 万</li></ul></div>
+ </div>
+ <div class="rmb-admission-card" data-bank-panel="ccb">
+ <div class="rmb-admission-card-header"><img src="./assets/bank-ccb.svg" alt="建设银行"></div>
+ <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>授信主体</b>大陆地区注册的小型或微型企业</li><li><b>店铺</b>经营年限 &gt; 1 年，近 1 年退款率 ≤ 40%，近 12 月月均回款额 &gt; 10,000 美元，近 1 年回款率 ≥ 20%</li><li><b>FBA 比例</b>FBA ≤ 10% 且年回款 &gt; 50%，或 FBA &gt; 10% 均可准入</li></ul></div>
+ </div>
+ </div>
+ </div>
 </section>
 
 <div class="seam"></div>
@@ -4900,10 +4930,10 @@
   <div class="container">
     <div class="sec-head reveal">
       <div>
-        <div class="sec-eyebrow"><span class="sec-num">关于 Dowsure豆沙包</span></div>
+        <div class="sec-eyebrow"><span class="sec-num">关于 Dowsure 豆沙包</span></div>
         <h2 class="sec-title">专注于为出口跨境电商提供<br class="dowsure-title-break">一站式智能科技服务的创新企业</h2>
       </div>
-      <p class="sec-desc">公司在深圳、上海、香港、新加坡、胡志明多地设有分支机构及业务团队。公司以"智能科技赋能跨境电商"为使命，与 Amazon、Walmart、eBay、Shopee 等全球主流电商平台建立了长期或独家战略合作关系，同时联合产业内头部支付、物流等服务商，共同构建跨境电商数字基础设施。依托 API、云计算等先进技术，结合 AI 驱动的智能算法与风控模型，Dowsure豆沙包为金融机构提供覆盖信贷、保险、跨境支付、财富、外汇及风险管理等环节的一站式科技解决方案。</p>
+      <p class="sec-desc">公司在深圳、上海、香港、新加坡、胡志明多地设有分支机构及业务团队。公司以"智能科技赋能跨境电商"为使命，与 Amazon、Walmart、eBay、Shopee 等全球主流电商平台建立了长期或独家战略合作关系，同时联合产业内头部支付、物流等服务商，共同构建跨境电商数字基础设施。依托 API、云计算等先进技术，结合 AI 驱动的智能算法与风控模型，Dowsure 豆沙包为金融机构提供覆盖信贷、保险、跨境支付、财富、外汇及风险管理等环节的一站式科技解决方案。</p>
     </div>
 
     <div class="dowsure-highlight reveal">累计助力 <strong>5 万</strong>卖家获得 <strong>100 亿</strong>发展资金，加速回款金额已达<strong>数亿元</strong></div>
@@ -4933,11 +4963,11 @@
 
 <section class="seller-voices" id="voices-rmb">
   <div class="container">
-    <div class="sec-head reveal"><div><div class="sec-eyebrow"><span class="sec-num">卖家心声</span></div><h2 class="sec-title">用 Dowsure豆沙包 一起<br>服务全球跨境电商卖家</h2></div></div>
+    <div class="sec-head reveal"><div><div class="sec-eyebrow"><span class="sec-num">卖家心声</span></div><h2 class="sec-title">用 Dowsure 豆沙包一起<br>服务全球跨境电商卖家</h2></div></div>
     <div class="voice-carousel-shell reveal">
       <div class="voice-grid rmb-voice-grid">
         <article class="voice-card"><div class="voice-photo"><img src="./assets/seller-female.png" alt="多平台卖家"><div class="voice-caption"><div class="role">多平台卖家</div><div class="title">Amazon + Walmart 双平台运营</div></div></div><p class="voice-quote">“Amazon 和 Walmart 两边都要备货，以前资金拆东墙补西墙。Morfund 把两个平台店铺一起算额度，总共批了 80 万美元，终于不用天天算现金流了。”</p></article>
-        <article class="voice-card"><div class="voice-photo"><img src="./assets/seller-male.png" alt="香港主体卖家"><div class="voice-caption"><div class="role">香港主体卖家</div><div class="title">年销 1000 万美金</div></div></div><p class="voice-quote">“香港公司在银行直接申请融资很难。通过豆沙包的跨境电商美元贷，看店铺数据，直接批了 100 万美元。选择离岸人民币融资年化只有 5 点多，钱进香港账户，税务处理也方便。”</p></article>
+        <article class="voice-card"><div class="voice-photo"><img src="./assets/seller-male.png" alt="香港主体卖家"><div class="voice-caption"><div class="role">香港主体卖家</div><div class="title">年销 1,000 万美金</div></div></div><p class="voice-quote">“香港公司在银行直接申请融资很难。通过豆沙包的跨境电商美元贷，看店铺数据，直接批了 100 万美元。选择离岸人民币融资年化只有 5 点多，钱进香港账户，税务处理也方便。”</p></article>
         <article class="voice-card"><div class="voice-photo"><img src="./assets/seller-warehouse.png" alt="新类目拓展卖家"><div class="voice-caption"><div class="role">新类目拓展卖家</div><div class="title">家居转户外用品</div></div></div><p class="voice-quote">“想试水户外用品但不敢动用全部本金。Morfund 灵活支用，我先提了 8 万测款，卖起来再追加。自己的钱留着做安全垫，心里踏实多了。”</p></article>
       </div>
       <div class="mobile-carousel-controls" data-carousel="rmb-voice" aria-label="切换人民币卖家心声"><div class="mobile-carousel-progress" aria-hidden="true"><span></span></div><button type="button" data-dir="-1" aria-label="上一条卖家心声">‹</button><button type="button" data-dir="1" aria-label="下一条卖家心声">›</button></div>
@@ -4957,9 +4987,9 @@
 <main class="product-page product-page-usd" data-product-page="usd">
 <section class="morfund-intro" id="product-intro" aria-labelledby="morfund-product-title">
   <div class="container reveal">
-    <div class="eyebrow-blue product-intro-label" data-product-motion="usd-intro-label" data-rmb-sync="same-section-motion">Morfund 美金融资产品</div>
+    <div class="eyebrow-blue product-intro-label" data-product-motion="usd-intro-label" data-rmb-sync="same-section-motion">Morfund 美元融资产品</div>
     <!-- RMB_SYNC_MARK: Future RMB product intro sections with matching structure should reuse data-scroll-reveal="reactbits" on PC and mobile. -->
-    <h2 id="morfund-product-title" class="product-fill-title" data-intro-fill data-product-motion="usd-intro" data-rmb-sync="same-section-motion">为 Amazon、Walmart、等主流平台卖家提供<br><span class="intro-fill-gradient">高达 1,000 万美元</span>的美元融资额度，解决跨境卖家在库存备货、旺季冲量、平台账期周转中的资金瓶颈</h2>
+    <h2 id="morfund-product-title" class="product-fill-title" data-intro-fill data-product-motion="usd-intro" data-rmb-sync="same-section-motion">为 Amazon、Walmart 等主流平台卖家提供<br><span class="intro-fill-gradient">高达 1,000 万美元</span>的美元融资额度，解决跨境卖家在库存备货、旺季冲量、平台账期周转中的资金瓶颈</h2>
     <a class="btn btn-primary shiny-cta product-jump" href="#product-tabs" data-product="usd"><span>点击申请美元融资</span></a>
   </div>
 </section>
@@ -4980,15 +5010,15 @@
         <div class="advantages-tabs" role="tablist" aria-label="六大核心优势">
           <button class="advantage-tab active" type="button" role="tab" aria-selected="true" data-index="0">
             <span>额度高</span>
-            <p>最高 1000 万美元 授信，满足大卖家备货旺季资金需求。</p>
+            <p>最高 1,000 万美元授信，满足大卖家备货旺季资金需求。</p>
           </button>
           <button class="advantage-tab" type="button" role="tab" aria-selected="false" data-index="1">
             <span>币种灵活</span>
-            <p>支持 美元融资，也可选择 离岸人民币。</p>
+            <p>支持美元融资，也可选择离岸人民币。</p>
           </button>
           <button class="advantage-tab" type="button" role="tab" aria-selected="false" data-index="2">
             <span>平台官方</span>
-            <p>平台官方合作伙伴；支持 Amazon、Walmart、eBay等平台。</p>
+            <p>平台官方合作伙伴，支持 Amazon、Walmart、eBay 等平台。</p>
           </button>
           <button class="advantage-tab" type="button" role="tab" aria-selected="false" data-index="3">
             <span>申请方便</span>
@@ -5000,7 +5030,7 @@
           </button>
           <button class="advantage-tab" type="button" role="tab" aria-selected="false" data-index="5">
             <span>入账便捷</span>
-            <p>资金直达 香港企业账户，跨境结算更高效。</p>
+            <p>资金直达香港企业账户，跨境结算更高效。</p>
           </button>
         </div>
 
@@ -5010,7 +5040,7 @@
               <img src="./assets/advantage-quota.png" alt="最高额度可达 $10,000,000">
               <div class="mobile-adv-copy">
                 <h3>额度高</h3>
-                <p>最高 1000 万美元授信，满足大卖家备货旺季资金需求。</p>
+                <p>最高 1,000 万美元授信，满足大卖家备货旺季资金需求。</p>
                 <a class="mobile-adv-link product-jump" href="#product-tabs" data-product="usd">点击申请美元融资</a>
               </div>
             </article>
@@ -5097,7 +5127,7 @@
         <div>
           <span class="amazon-badge"><span class="amazon-mark">$</span>  </span>
           <h3 class="amazon-card-title">利率低至 <span style="background:var(--grad-trail);-webkit-background-clip:text;background-clip:text;color:transparent;">5.8%</span>，<br>期限 4-6 个月。</h3>
-          <p class="amazon-card-desc">美元 SOFR+4% / 离岸人民币 HBR+4%。先息后本或等额本息，按需匹配你的经营节奏。</p>
+          <p class="amazon-card-desc">美元 SOFR + 4% / 离岸人民币 HBR + 4%。先息后本或等额本息，按需匹配你的经营节奏。</p>
         </div>
 
         <div class="amazon-flow">
@@ -5132,11 +5162,11 @@
         </div>
         <div class="spec-row">
           <span class="spec-l">贷款利率</span>
-          <span class="spec-v">美元 SOFR+4% ; 离岸人民币 HBR+4%（低至5.8%）</span>
+          <span class="spec-v">美元 SOFR + 4% ; 离岸人民币 HBR + 4%（低至 5.8%）</span>
         </div>
         <div class="spec-row">
           <span class="spec-l">还款方式</span>
-          <span class="spec-v">先息后本/前3个月还息后三个月等额本息</span>
+          <span class="spec-v">先息后本/前 3 个月还息后三个月等额本息</span>
         </div>
         <div class="spec-row">
           <span class="spec-l">放款账户</span>
@@ -5221,7 +5251,7 @@
           </div>
         <h2 class="sec-title">五个场景，<br>精准对位你的<span class="ital">资金需求</span></h2>
       </div>
-      <p class="sec-desc">无论你在冲旺季、跨平台扩张、试错新品类，还是港企运营——Morfund 都能匹配解决方案。</p>
+      <p class="sec-desc">无论你是在冲刺旺季、跨平台扩张、试水新品类，还是以港企身份运营，Morfund 都能为你匹配合适的解决方案。</p>
     </div>
 
     <div class="scenario-marquee reveal" aria-label="五大场景化解决方案">
@@ -5244,7 +5274,7 @@
           <p class="scenario-bg"><strong>背景</strong>卖家想从 Amazon 拓展到 Walmart、TikTok Shop 等新平台，需要额外资金启动。</p>
           <blockquote>不用押上全部身家做新平台，用 Morfund 的资金试错，成功了再追加投入。</blockquote>
           <ul class="scenario-list">
-            <li>支持 Amazon+ Walmart（美国站） 同时核额</li>
+            <li>支持 Amazon + Walmart（美国站） 同时核额</li>
             <li>多平台店铺数据汇总评估，额度更充足</li>
             <li>美国站和欧洲站本土店卖家也可申请</li>
           </ul>
@@ -5253,10 +5283,10 @@
         <article class="scenario-card">
           <span class="scenario-num">场景 03</span>
           <h4>旺季备货冲刺</h4>
-          <p class="scenario-bg"><strong>背景</strong>Prime Day、黑五、圣诞等旺季前，卖家需提前1-2个月备货，资金缺口大。</p>
+          <p class="scenario-bg"><strong>背景</strong>Prime Day、黑五、圣诞等旺季前，卖家需提前 1-2 个月备货，资金缺口大。</p>
           <blockquote>旺季前多备 50% 的货，销售额提升 30%，不用因为缺货错失商机。</blockquote>
           <ul class="scenario-list">
-            <li>最高 1000 万美元 额度，覆盖大批量采购需求</li>
+            <li>最高 1,000 万美元额度，覆盖大批量采购需求</li>
             <li>单次周转最长 120 天，完美匹配备货-销售-回款周期</li>
             <li>美元直放，省去汇率兑换损失</li>
           </ul>
@@ -5266,10 +5296,10 @@
           <span class="scenario-num">场景 04</span>
           <h4>汇率避险</h4>
           <p class="scenario-bg"><strong>背景</strong>人民币波动大，卖家担心未来人民币升值侵蚀利润。</p>
-          <blockquote>美元借美元还，不用赌汇率，专心卖货。</blockquote>
+          <blockquote>收入与还款币种保持一致，有助于降低汇率波动对经营现金流的影响。</blockquote>
           <ul class="scenario-list">
-            <li>美元直放，收入支出同币种，天然对冲汇率风险</li>
-            <li>也可选择 离岸人民币（HBR+4%），灵活应对汇率走势</li>
+            <li>美元直放，收入支出同币种天然对冲汇率风险</li>
+            <li>也可选择离岸人民币（HBR + 4%），灵活应对汇率走势</li>
             <li>香港账户结算，跨境资金调配更自由</li>
           </ul>
         </article>
@@ -5280,8 +5310,8 @@
           <p class="scenario-bg"><strong>背景</strong>卖家用香港主体运营店铺，但香港本地银行融资难、门槛高、额度低。</p>
           <blockquote>香港公司也能拿到融资，不用再绕道大陆主体，税务和合规都更简单。</blockquote>
           <ul class="scenario-list">
-            <li>专为 香港企业 设计，无需大陆关联企业担保</li>
-            <li>额度高至 1000 万美元，远超香港本地银行同类产品</li>
+            <li>专为香港企业设计，无需大陆关联企业担保</li>
+            <li>额度高至 1,000 万美元，远超香港本地银行同类产品</li>
             <li>开户绿色通道，最快速度拿下香港汇丰账户</li>
           </ul>
         </article>
@@ -5304,7 +5334,7 @@
           <p class="scenario-bg"><strong>背景</strong>卖家想从 Amazon 拓展到 Walmart、TikTok Shop 等新平台，需要额外资金启动。</p>
           <blockquote>不用押上全部身家做新平台，用 Morfund 的资金试错，成功了再追加投入。</blockquote>
           <ul class="scenario-list">
-            <li>支持 Amazon+ Walmart（美国站） 同时核额</li>
+            <li>支持 Amazon + Walmart（美国站） 同时核额</li>
             <li>多平台店铺数据汇总评估，额度更充足</li>
             <li>美国站和欧洲站本土店卖家也可申请</li>
           </ul>
@@ -5313,10 +5343,10 @@
         <article class="scenario-card" aria-hidden="true">
           <span class="scenario-num">场景 03</span>
           <h4>旺季备货冲刺</h4>
-          <p class="scenario-bg"><strong>背景</strong>Prime Day、黑五、圣诞等旺季前，卖家需提前1-2个月备货，资金缺口大。</p>
+          <p class="scenario-bg"><strong>背景</strong>Prime Day、黑五、圣诞等旺季前，卖家需提前 1-2 个月备货，资金缺口大。</p>
           <blockquote>旺季前多备 50% 的货，销售额提升 30%，不用因为缺货错失商机。</blockquote>
           <ul class="scenario-list">
-            <li>最高 1000 万美元 额度，覆盖大批量采购需求</li>
+            <li>最高 1,000 万美元额度，覆盖大批量采购需求</li>
             <li>单次周转最长 120 天，完美匹配备货-销售-回款周期</li>
             <li>美元直放，省去汇率兑换损失</li>
           </ul>
@@ -5326,10 +5356,10 @@
           <span class="scenario-num">场景 04</span>
           <h4>汇率避险</h4>
           <p class="scenario-bg"><strong>背景</strong>人民币波动大，卖家担心未来人民币升值侵蚀利润。</p>
-          <blockquote>美元借美元还，不用赌汇率，专心卖货。</blockquote>
+          <blockquote>收入与还款币种保持一致，有助于降低汇率波动对经营现金流的影响。</blockquote>
           <ul class="scenario-list">
-            <li>美元直放，收入支出同币种，天然对冲汇率风险</li>
-            <li>也可选择 离岸人民币（HBR+4%），灵活应对汇率走势</li>
+            <li>美元直放，收入支出同币种天然对冲汇率风险</li>
+            <li>也可选择离岸人民币（HBR + 4%），灵活应对汇率走势</li>
             <li>香港账户结算，跨境资金调配更自由</li>
           </ul>
         </article>
@@ -5340,8 +5370,8 @@
           <p class="scenario-bg"><strong>背景</strong>卖家用香港主体运营店铺，但香港本地银行融资难、门槛高、额度低。</p>
           <blockquote>香港公司也能拿到融资，不用再绕道大陆主体，税务和合规都更简单。</blockquote>
           <ul class="scenario-list">
-            <li>专为 香港企业 设计，无需大陆关联企业担保</li>
-            <li>额度高至 1000 万美元，远超香港本地银行同类产品</li>
+            <li>专为香港企业设计，无需大陆关联企业担保</li>
+            <li>额度高至 1,000 万美元，远超香港本地银行同类产品</li>
             <li>开户绿色通道，最快速度拿下香港汇丰账户</li>
           </ul>
         </article>
@@ -5370,11 +5400,11 @@
     <div class="sec-head reveal">
       <div>
         <div class="sec-eyebrow">
-          <span class="sec-num">关于 Dowsure豆沙包</span>
+          <span class="sec-num">关于 Dowsure 豆沙包</span>
         </div>
         <h2 class="sec-title">专注于为出口跨境电商提供<br class="dowsure-title-break">一站式智能科技服务的创新企业</h2>
       </div>
-      <p class="sec-desc">公司在深圳、上海、香港、新加坡、胡志明多地设有分支机构及业务团队。公司以"智能科技赋能跨境电商"为使命，与 Amazon、Walmart、eBay、Shopee 等全球主流电商平台建立了长期或独家战略合作关系，同时联合产业内头部支付、物流等服务商，共同构建跨境电商数字基础设施。依托 API、云计算等先进技术，结合 AI 驱动的智能算法与风控模型，Dowsure豆沙包为金融机构提供覆盖信贷、保险、跨境支付、财富、外汇及风险管理等环节的一站式科技解决方案。</p>
+      <p class="sec-desc">公司在深圳、上海、香港、新加坡、胡志明多地设有分支机构及业务团队。公司以"智能科技赋能跨境电商"为使命，与 Amazon、Walmart、eBay、Shopee 等全球主流电商平台建立了长期或独家战略合作关系，同时联合产业内头部支付、物流等服务商，共同构建跨境电商数字基础设施。依托 API、云计算等先进技术，结合 AI 驱动的智能算法与风控模型，Dowsure 豆沙包为金融机构提供覆盖信贷、保险、跨境支付、财富、外汇及风险管理等环节的一站式科技解决方案。</p>
     </div>
 
     <div class="dowsure-highlight reveal">累计助力 <strong>5 万</strong>卖家获得 <strong>100 亿</strong>发展资金，加速回款金额已达<strong>数亿元</strong></div>
@@ -5412,7 +5442,7 @@
         <div class="sec-eyebrow">
           <span class="sec-num">卖家心声</span>
         </div>
-        <h2 class="sec-title">用 Dowsure豆沙包 一起<br>服务全球跨境电商卖家</h2>
+        <h2 class="sec-title">用 Dowsure 豆沙包一起<br>服务全球跨境电商卖家</h2>
       </div>
     </div>
     <div class="voice-carousel-shell reveal">
@@ -5432,7 +5462,7 @@
             <img src="./assets/seller-male.png" alt="香港主体卖家">
             <div class="voice-caption">
               <div class="role">香港主体卖家</div>
-              <div class="title">年销 1000 万美金</div>
+              <div class="title">年销 1,000 万美金</div>
             </div>
           </div>
           <p class="voice-quote">“香港公司在银行直接申请融资很难。通过豆沙包的跨境电商美元贷，看店铺数据，直接批了 100 万美元。选择离岸人民币融资年化只有 5 点多，钱进香港账户，税务处理也方便。”</p>
