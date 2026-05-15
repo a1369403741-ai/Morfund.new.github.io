@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shiny CTA Button</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,700&display=swap");
+
+    @property --gradient-angle {
+      syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    @property --gradient-angle-offset {
+      syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    @property --gradient-percent {
+      syntax: "<percentage>";
+      initial-value: 5%;
+      inherits: false;
+    }
+
+    @property --gradient-shine {
+      syntax: "<color>";
+      initial-value: white;
+      inherits: false;
+    }
+
+    @property --inner-opacity {
+      syntax: "<number>";
+      initial-value: 0.22;
+      inherits: false;
+    }
+
+    @property --inner-blur {
+      syntax: "<length>";
+      initial-value: 16px;
+      inherits: false;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #111;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+
+    .shiny-cta {
+      --button-bg: #080A0B;
+      --button-fg: #ffffff;
+      --button-border-subtle: #1a1818;
+      --highlight: blue;
+      --highlight-subtle: #8484ff;
+
+      --gradient-angle: 0deg;
+      --gradient-angle-offset: 0deg;
+      --gradient-percent: 5%;
+      --gradient-shine: white;
+
+      --duration: 4.3s;
+      --transition: 420ms linear;
+      --inner-opacity: 0.22;
+      --inner-blur: 16px;
+
+      isolation: isolate;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+
+      min-width: 296px;
+      height: 64px;
+      padding: 0 38px;
+
+      border: 1px solid transparent;
+      border-radius: 360px;
+
+      color: var(--button-fg);
+      background:
+        linear-gradient(var(--button-bg), var(--button-bg)) padding-box,
+        conic-gradient(
+          from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+          transparent,
+          var(--highlight) var(--gradient-percent),
+          var(--gradient-shine) calc(var(--gradient-percent) * 2),
+          var(--highlight) calc(var(--gradient-percent) * 3),
+          transparent calc(var(--gradient-percent) * 4)
+        ) border-box;
+
+      box-shadow:
+        inset 0 0 0 1px var(--button-border-subtle),
+        0 18px 44px rgba(0, 0, 0, 0.36);
+
+      font-family: Inter, sans-serif;
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+
+      animation: gradient-angle var(--duration) linear infinite;
+
+      transition:
+        box-shadow 240ms linear,
+        filter 240ms linear,
+        --gradient-angle-offset var(--transition),
+        --gradient-percent var(--transition),
+        --gradient-shine var(--transition),
+        --inner-opacity var(--transition),
+        --inner-blur var(--transition);
+    }
+
+    .shiny-cta span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .shiny-cta::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      z-index: 1;
+      border-radius: inherit;
+      pointer-events: none;
+
+      background: conic-gradient(
+        from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+        transparent 0deg,
+        transparent 230deg,
+        rgba(0, 0, 255, 0) 252deg,
+        rgba(0, 0, 255, 0.42) 282deg,
+        rgba(132, 132, 255, 0.72) 300deg,
+        rgba(0, 0, 255, 0.46) 318deg,
+        rgba(0, 0, 255, 0) 344deg,
+        transparent 360deg
+      );
+
+      mask-image: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        transparent 44%,
+        rgba(0, 0, 0, 0.18) 56%,
+        rgba(0, 0, 0, 0.72) 74%,
+        #000 100%
+      );
+      -webkit-mask-image: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        transparent 44%,
+        rgba(0, 0, 0, 0.18) 56%,
+        rgba(0, 0, 0, 0.72) 74%,
+        #000 100%
+      );
+
+      filter: blur(var(--inner-blur));
+      opacity: var(--inner-opacity);
+      mix-blend-mode: screen;
+    }
+
+    .shiny-cta:hover,
+    .shiny-cta:focus-visible {
+      --gradient-percent: 19%;
+      --gradient-angle-offset: 95deg;
+      --gradient-shine: var(--highlight-subtle);
+      --inner-opacity: 0.84;
+      --inner-blur: 18px;
+
+      filter: brightness(1.05);
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.055),
+        0 18px 44px rgba(0, 0, 0, 0.38),
+        0 10px 36px rgba(38, 56, 255, 0.12);
+    }
+
+    .shiny-cta:active {
+      translate: 0 1px;
+    }
+
+    @keyframes gradient-angle {
+      to {
+        --gradient-angle: 360deg;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="shiny-cta" type="button">
+    <span>Get unlimited access</span>
+  </button>
+</body>
+</html>

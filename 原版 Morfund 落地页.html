@@ -1485,8 +1485,16 @@
   }
 
   /* ============================================================
-     MOTION — subtle fade-up on scroll, no opening animation
+     MOTION — subtle fade-up on scroll and hero entrance
      ============================================================ */
+  @keyframes heroFadeUp{
+    from{ opacity:0; transform:translateY(28px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  .hero-copy{
+    opacity:0;
+    animation:heroFadeUp 1s var(--ease-out) .12s forwards;
+  }
   .reveal{
     opacity: 0;
     transform: translateY(14px);
@@ -1497,6 +1505,7 @@
     transform: none;
   }
   @media (prefers-reduced-motion: reduce){
+    .hero-copy{ opacity:1; animation:none; }
     .reveal{ opacity: 1; transform: none; transition: none; }
   }
 
@@ -2085,7 +2094,7 @@
   }
   .hero h1{
     margin:0;
-    color:#F2F2F6;
+    color:#FFFFFF;
     font-family:var(--font-sans);
     font-size:68px;
     line-height:89px;
@@ -3236,7 +3245,8 @@
       height:auto;
       min-height:0;
       background:#07070c;
-      overflow:visible;
+      overflow:hidden;
+      overscroll-behavior-x:none;
     }
     .advantages-sticky{
       position:relative;
@@ -3250,7 +3260,7 @@
     .advantages-sticky .container{
       padding-left:20px;
       padding-right:20px;
-      overflow:visible;
+      overflow:hidden;
     }
     .advantages-header{
       gap:16px;
@@ -3266,19 +3276,22 @@
       color:#f2f2f6;
     }
     .advantages-header p{
+      max-width:100%;
       font-size:12px;
       line-height:1.6;
+      white-space:normal;
+      overflow-wrap:break-word;
     }
     .advantages-grid{
       display:block;
-      overflow:visible;
+      overflow:hidden;
     }
     .advantages-tabs{
       display:none;
     }
     .advantage-mask-shell{
       height:auto;
-      overflow:visible;
+      overflow:hidden;
     }
     .advantage-card-track{
       position:relative;
@@ -3286,6 +3299,10 @@
       flex-direction:column;
       gap:20px;
       width:100%;
+      max-width:100%;
+      overflow:visible;
+      touch-action:pan-y;
+      overscroll-behavior-x:none;
       transform:none !important;
       transition:none;
       will-change:auto;
@@ -3293,6 +3310,8 @@
     .advantage-visual-card{
       flex:0 0 auto;
       width:100%;
+      max-width:100%;
+      box-sizing:border-box;
       height:auto;
       min-height:0;
       aspect-ratio:auto;
@@ -3315,6 +3334,8 @@
     .mobile-adv-copy{
       display:block;
       padding:0 4px;
+      max-width:100%;
+      box-sizing:border-box;
     }
     .mobile-adv-copy h3{
       margin:0 0 8px;
@@ -3328,6 +3349,8 @@
       color:#b0b0be;
       font-size:12px;
       line-height:1.65;
+      white-space:normal;
+      overflow-wrap:break-word;
     }
     .mobile-adv-link{
       display:none;
@@ -3694,6 +3717,15 @@
       justify-content:flex-start;
       text-align:left;
     }
+    .reveal{
+      opacity:0;
+      transform:none;
+      transition:opacity .72s var(--ease-out);
+    }
+    .reveal.in{
+      opacity:1;
+      transform:none;
+    }
     .hero-copy{
       align-items:flex-start;
       text-align:left;
@@ -3948,24 +3980,28 @@
   .rmb-bank-line{
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:10px;
     min-height:26px;
     white-space:nowrap;
+    min-width:0;
+    width:100%;
   }
-  .rmb-bank-line img{ height:26px; width:auto; max-width:150px; object-fit:contain; }
-  .rmb-bank-line span{ font-size:16px; color:#fff; }
+  .rmb-bank-line img{ flex:0 1 auto; height:26px; width:auto; max-width:132px; object-fit:contain; }
+  .rmb-bank-line span{ flex:0 0 auto; font-size:14px; color:#fff; }
   .rmb-recommend{
+    flex:0 0 auto;
     margin-left:auto;
     display:inline-flex;
     align-items:center;
     justify-content:center;
     height:26px;
-    padding:0 14px;
+    padding:0 12px;
     border:1px solid rgba(40,126,255,.3);
     border-radius:99px;
     background:rgba(21,126,246,.07);
     color:#287EFF;
     font-size:14px;
+    font-style:normal;
     font-weight:500;
   }
   .rmb-tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:16px; }
@@ -4018,6 +4054,10 @@
     padding:4px 0;
   }
   .rmb-detail-list span:first-child{ color:#B0B0BE; }
+  .rmb-detail-list b{
+    color:#E0E0E8;
+    font-weight:400;
+  }
   .rmb-card-button{
     display:flex;
     align-items:center;
@@ -4178,22 +4218,25 @@
   @media(max-width:1024px){
     .rmb-advantages-scroll{
       height:auto;
+      overflow:hidden;
+      overscroll-behavior-x:none;
     }
     .rmb-advantages-scroll .advantages-sticky{
       position:relative;
       min-height:0;
       padding:96px 0;
-      overflow:visible;
+      overflow:hidden;
     }
     .rmb-advantages-scroll .advantages-grid{
       display:block;
+      overflow:hidden;
     }
     .rmb-advantages-scroll .advantages-tabs{
       display:none;
     }
     .rmb-advantages-scroll .advantage-mask-shell{
       height:auto;
-      overflow:visible;
+      overflow:hidden;
       -webkit-mask-image:none;
       mask-image:none;
     }
@@ -4201,24 +4244,32 @@
       position:relative;
       transform:none !important;
       gap:20px;
+      width:100%;
+      max-width:100%;
+      overflow:visible;
+      touch-action:pan-y;
+      overscroll-behavior-x:none;
     }
     .rmb-advantages-scroll .advantage-visual-card{
-      width:115%;
+      width:100%;
+      max-width:100%;
+      box-sizing:border-box;
       height:auto;
       min-height:0;
       opacity:1 !important;
       display:flex;
       flex-direction:column;
       gap:0;
+      overflow:hidden;
     }
     .rmb-advantages-scroll .advantage-visual-card img{
-      width:98%;
+      width:116%;
       height:auto;
-      max-width:100%;
+      max-width:none;
       aspect-ratio:353/231;
       object-fit:cover;
       border-radius:12px;
-      transform:none;
+      transform:translateX(-6%);
     }
     .rmb-process .process-grid.is-4{
       grid-template-columns:repeat(2,1fr);
@@ -4447,6 +4498,45 @@
     }
   }
 
+  @media(max-width:640px){
+    .product-page-usd .advantages-scroll,
+    .product-page-rmb .rmb-advantages-scroll{
+      overflow-x:hidden;
+    }
+    .product-page-usd .advantages-header,
+    .product-page-rmb .rmb-section-header{
+      padding-right:0;
+      max-width:100%;
+    }
+    .product-page-usd .advantages-header p,
+    .product-page-rmb .rmb-section-header p{
+      max-width:100%;
+      white-space:normal;
+      overflow-wrap:break-word;
+      word-break:normal;
+    }
+    .product-page-rmb .rmb-advantages-scroll .advantage-card-track{
+      gap:20px;
+    }
+    .product-page-rmb .rmb-advantages-scroll .advantage-visual-card{
+      width:100% !important;
+      max-width:100% !important;
+      padding:0 !important;
+      overflow:hidden;
+    }
+    .product-page-rmb .rmb-advantages-scroll .advantage-visual-card img{
+      width:114% !important;
+      max-width:none !important;
+      transform:translateX(-6%) !important;
+      margin:0 !important;
+      display:block;
+    }
+    .product-page-usd .advantage-card-track,
+    .product-page-rmb .rmb-advantages-scroll .advantage-card-track{
+      transform:none !important;
+    }
+  }
+
   /* Shared final CTA background for RMB and USD. */
   .product-page .final-cta{
     background:#050509 url("./assets/%E5%BA%95%E9%83%A8-%E6%B8%90%E5%8F%98%E8%83%8C%E6%99%AF.png") center bottom / cover no-repeat !important;
@@ -4657,7 +4747,7 @@
       <article class="rmb-finance-card">
         <div class="rmb-finance-top">
           <div>
-            <div class="rmb-bank-line"><img src="./assets/bank-gfb.png" alt="广发银行"><span>个人融资</span></div>
+            <div class="rmb-bank-line"><img src="./assets/bank-gfb.svg" alt="广发银行"><span>个人融资</span></div>
             <div class="rmb-tags"><span>随借随还</span><span>低门槛</span><span>快速审批</span></div>
           </div>
           <div class="rmb-card-rule"></div>
@@ -4669,7 +4759,7 @@
       <article class="rmb-finance-card">
         <div class="rmb-finance-top">
           <div>
-            <div class="rmb-bank-line"><img src="./assets/bank-gfb.png" alt="广发银行"><span>对公融资</span><em class="rmb-recommend">推荐</em></div>
+            <div class="rmb-bank-line"><img src="./assets/bank-gfb.svg" alt="广发银行"><span>对公融资</span><em class="rmb-recommend">推荐</em></div>
             <div class="rmb-tags"><span>超低利率</span><span>大额度</span><span>灵活还款</span></div>
           </div>
           <div class="rmb-card-rule"></div>
@@ -4681,7 +4771,7 @@
       <article class="rmb-finance-card">
         <div class="rmb-finance-top">
           <div>
-            <div class="rmb-bank-line"><img src="./assets/bank-webank.png" alt="微众银行"><span>对公融资</span><em class="rmb-recommend">推荐</em></div>
+            <div class="rmb-bank-line"><img src="./assets/bank-webank.svg" alt="微众银行"><span>对公融资</span><em class="rmb-recommend">推荐</em></div>
             <div class="rmb-tags"><span>纯线上</span><span>长周期</span><span>智能审批</span></div>
           </div>
           <div class="rmb-card-rule"></div>
@@ -4693,7 +4783,7 @@
       <article class="rmb-finance-card">
         <div class="rmb-finance-top">
           <div>
-            <div class="rmb-bank-line"><img src="./assets/bank-pf.png" alt="浦发银行"><span>对公融资</span><em class="rmb-recommend">推荐</em></div>
+            <div class="rmb-bank-line"><img src="./assets/bank-pf.svg" alt="浦发银行"><span>对公融资</span><em class="rmb-recommend">推荐</em></div>
             <div class="rmb-tags"><span>极低利率</span><span>宁波专享</span><span>企业首选</span></div>
           </div>
           <div class="rmb-card-rule"></div>
@@ -4705,7 +4795,7 @@
       <article class="rmb-finance-card">
         <div class="rmb-finance-top">
           <div>
-            <div class="rmb-bank-line"><img src="./assets/bank-ccb.png" alt="建设银行"><span>对公融资</span></div>
+            <div class="rmb-bank-line"><img src="./assets/bank-ccb.svg" alt="建设银行"><span>对公融资</span></div>
             <div class="rmb-tags"><span>国有银行</span><span>稳定可靠</span></div>
           </div>
           <div class="rmb-card-rule"></div>
@@ -4773,26 +4863,26 @@
     <div class="rmb-section-header reveal"><div class="eyebrow-blue">准入条件速查</div></div>
     <div class="admission-panel reveal">
       <div class="rmb-bank-tabs" role="tablist" aria-label="银行准入条件">
-        <button class="rmb-bank-tab active" type="button" data-bank="gfb" aria-selected="true"><img src="./assets/bank-gfb.png" alt="广发银行"></button>
-        <button class="rmb-bank-tab" type="button" data-bank="webank" aria-selected="false"><img src="./assets/bank-webank.png" alt="微众银行"></button>
-        <button class="rmb-bank-tab" type="button" data-bank="pf" aria-selected="false"><img src="./assets/bank-pf.png" alt="浦发银行"></button>
-        <button class="rmb-bank-tab" type="button" data-bank="ccb" aria-selected="false"><img src="./assets/bank-ccb.png" alt="建设银行"></button>
+        <button class="rmb-bank-tab active" type="button" data-bank="gfb" aria-selected="true"><img src="./assets/bank-gfb.svg" alt="广发银行"></button>
+        <button class="rmb-bank-tab" type="button" data-bank="webank" aria-selected="false"><img src="./assets/bank-webank.svg" alt="微众银行"></button>
+        <button class="rmb-bank-tab" type="button" data-bank="pf" aria-selected="false"><img src="./assets/bank-pf.svg" alt="浦发银行"></button>
+        <button class="rmb-bank-tab" type="button" data-bank="ccb" aria-selected="false"><img src="./assets/bank-ccb.svg" alt="建设银行"></button>
       </div>
       <div class="rmb-admission-card active" data-bank-panel="gfb">
-        <div class="rmb-admission-card-header"><img src="./assets/bank-gfb.png" alt="广发银行"></div>
+        <div class="rmb-admission-card-header"><img src="./assets/bank-gfb.svg" alt="广发银行"></div>
         <div class="rmb-admission-group"><span class="rmb-admission-pill">个人</span><ul class="rmb-admission-list"><li><b>申请人</b>25–55周岁中国大陆居民，企业法人或占股20%以上股东</li><li><b>企业</b>成立年限&gt;1年，全国有广发银行网点的县市（部分地区除外）</li><li><b>店铺</b>经营时长≥1年，加总年GMV≥50万元，服装退货率≤20%/其他≤15%</li><li><b>支持站点</b>Amazon美国站、德国站</li></ul></div>
         <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>企业</b>注册≥2年（或实控人从业3年以上且企业成立≥1年），A类外汇企业，信用评级≥BB+，近两年盈利，资产负债率≤70%</li><li><b>店铺</b>合计年GMV≥3000万元，主店铺实际经营满1年，各店铺近一年销售增长率≥-20%</li><li><b>实控人</b>本地户籍或有房产</li></ul></div>
       </div>
       <div class="rmb-admission-card" data-bank-panel="webank">
-        <div class="rmb-admission-card-header"><img src="./assets/bank-webank.png" alt="微众银行"></div>
+        <div class="rmb-admission-card-header"><img src="./assets/bank-webank.svg" alt="微众银行"></div>
         <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>企业</b>注册时长≥0.5年，无失信/限高，无当前逾期</li><li><b>法人</b>23–65岁，近24个月无连续逾期3期，近半年逾期≤2次</li><li><b>店铺</b>≥2个店铺（或单店近12月GMV&gt;2000万），至少1店经营≥1年，近12月总销售额≥200万，AHR评分≥200分</li></ul></div>
       </div>
       <div class="rmb-admission-card" data-bank-panel="pf">
-        <div class="rmb-admission-card-header"><img src="./assets/bank-pf.png" alt="浦发银行"></div>
+        <div class="rmb-admission-card-header"><img src="./assets/bank-pf.svg" alt="浦发银行"></div>
         <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>企业</b>经营时长≥1年，无失信/限高，无当前逾期</li><li><b>店铺</b>Amazon美国站或德国站，经营时长≥6个月，月均销售额≥100万，退货率≤40%，年GMV≥3000万</li></ul></div>
       </div>
       <div class="rmb-admission-card" data-bank-panel="ccb">
-        <div class="rmb-admission-card-header"><img src="./assets/bank-ccb.png" alt="建设银行"></div>
+        <div class="rmb-admission-card-header"><img src="./assets/bank-ccb.svg" alt="建设银行"></div>
         <div class="rmb-admission-group"><span class="rmb-admission-pill">对公</span><ul class="rmb-admission-list"><li><b>授信主体</b>大陆地区注册的小型或微型企业</li><li><b>店铺</b>经营年限&gt;1年，近1年退款率≤40%，近12月月均回款额&gt;10000美元，近1年回款率≥20%</li><li><b>FBA比例</b>FBA≤10%且年回款&gt;50%，或FBA&gt;10%均可准入</li></ul></div>
       </div>
     </div>
